@@ -1,0 +1,52 @@
+name: Nightly Build & Deploy
+
+on:
+  schedule:
+    # Every day at 4:30 AM UTC (after scrapers finish)
+    - cron: '30 4 * * *'
+  workflow_dispatch:
+    # Manual trigger from GitHub Actions UI
+
+# Only one deploy at a time
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run build
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: python3 build.py
+
+      - name: Verify build output
+        run: |
+          echo "--- Build output ---"
+          find dist -type f | head -50
+          echo ""
+          echo "--- File counts ---"
+          echo "Total HTML files: $(find dist -name '*.html' | wc -l)"
+          echo "Index exists: $(test -f dist/index.html && echo 'yes' || echo 'NO')"
+          echo "Assets dir: $(test -d dist/assets && echo 'yes' || echo 'NO')"
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=alignai-prompts

@@ -1,0 +1,193 @@
+{% extends "base.html" %}
+
+{% block head_extra %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "AlignAI Prompt Hub",
+  "url": "{{ SITE_URL }}",
+  "description": "Copy-paste AI prompts optimized for Claude, ChatGPT, Gemini & Copilot. Built for small businesses.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web"
+}
+</script>
+{% endblock %}
+
+{% block content %}
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="section-inner">
+    <p class="hero-eyebrow">AI prompts for small business</p>
+    <h1 class="hero-title">Their prompts go stale.<br>Our prompts stay fresh.</h1>
+    <p class="hero-subtitle">
+      Copy-paste prompts optimized for Claude, ChatGPT, Gemini &amp; Copilot.
+      Verified monthly. Updated when models change. Zero fluff.
+    </p>
+    <div class="hero-cta-row">
+      <a href="#categories" class="btn-primary">Browse prompts</a>
+      <button class="btn-outline" id="btn-request-prompt" type="button">Request a prompt</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Stats Bar ===== -->
+<section class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat">
+      <span class="stat-number">{{ total_prompts }}</span>
+      <span class="stat-label">Prompts</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">{{ total_variants }}</span>
+      <span class="stat-label">Variants</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">{{ total_categories }}</span>
+      <span class="stat-label">Categories</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number">4</span>
+      <span class="stat-label">AI Models</span>
+    </div>
+    <div class="stat-audit">
+      <span class="stat-audit-label"><span class="stat-audit-dot"></span>{{ site_audit_date }}</span>
+      <span class="stat-audit-sub">Last full audit</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Search ===== -->
+<section class="search-section">
+  <div class="search-inner">
+    <div class="search-box">
+      <input
+        type="text"
+        id="prompt-search"
+        class="search-input"
+        placeholder="Search prompts... e.g. email marketing, cash flow, hiring"
+        aria-label="Search prompts"
+      >
+    </div>
+    <div id="search-results" class="search-results" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ===== Category Cards ===== -->
+<section class="categories-section" id="categories">
+  <div class="section-inner">
+    <h2 class="section-title">Browse by Category</h2>
+    <div class="category-grid">
+      {% for slug, cat in categories.items() %}
+      <a href="/category/{{ slug }}/" class="category-card">
+        <span class="category-label">{{ cat.short_label }}</span>
+        <h3 class="category-name">{{ cat.name }}</h3>
+        {% if cat.description %}
+        <p class="category-desc">{{ cat.description | truncate_text(120) }}</p>
+        {% endif %}
+        <span class="category-count-badge">{{ cat.prompt_count }} prompt{{ "s" if cat.prompt_count != 1 }}</span>
+      </a>
+      {% else %}
+      <p class="empty-state">No categories yet. Check back soon.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ===== Popular Prompts ===== -->
+{% if featured %}
+<section class="featured-section">
+  <div class="section-inner">
+    <h2 class="section-title">Popular Prompts</h2>
+    <div class="prompt-grid">
+      {% for p in featured %}
+      <a href="/prompts/{{ p.slug }}/" class="prompt-card">
+        <div class="prompt-card-left">
+          <h3 class="prompt-card-title">{{ p.title }}</h3>
+          <span class="prompt-card-category">{{ p.category_name | default("") }}</span>
+        </div>
+        <div class="prompt-card-right">
+          <span class="badge {{ p.difficulty | difficulty_color }}">{{ p.difficulty | default("Beginner") }}</span>
+          {% if p.business_value %}
+          <span class="badge badge-value">{{ p.business_value }}</span>
+          {% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ===== Missing a Prompt? ===== -->
+<section class="request-section">
+  <div class="section-inner">
+    <h2 class="section-title">Missing a prompt?</h2>
+    <p class="section-subtitle">Tell us what you need and we'll build it.</p>
+    <button class="btn-primary" id="btn-request-prompt-bottom" type="button">Request a Prompt</button>
+  </div>
+</section>
+
+<!-- ===== Email Capture ===== -->
+<section class="email-section" id="signup">
+  <div class="section-inner">
+    <h2 class="section-title">Get New Prompts Weekly</h2>
+    <p class="section-subtitle">No spam. Just field-tested AI prompts for your business, every week.</p>
+    <form class="email-form" id="email-form">
+      <input
+        type="email"
+        id="email-input"
+        class="email-input"
+        placeholder="you@yourbusiness.com"
+        required
+        aria-label="Email address"
+      >
+      <button type="submit" class="btn-primary">Subscribe</button>
+    </form>
+    <p class="email-status" id="email-status"></p>
+  </div>
+</section>
+
+<!-- ===== Request Prompt Modal ===== -->
+<div class="modal-overlay" id="modal-request" aria-hidden="true">
+  <div class="modal-content">
+    <button class="modal-close" id="modal-request-close" type="button" aria-label="Close">&times;</button>
+    <h3 class="modal-title">Request a Prompt</h3>
+    <form id="request-form">
+      <label for="req-description">What do you need a prompt for?</label>
+      <textarea id="req-description" class="form-textarea" rows="4" required placeholder="e.g. I need a prompt to write LinkedIn outreach for B2B SaaS founders..."></textarea>
+      <label for="req-model">Preferred AI model (optional)</label>
+      <select id="req-model" class="form-select">
+        <option value="">Any</option>
+        <option value="claude">Claude</option>
+        <option value="chatgpt">ChatGPT</option>
+        <option value="gemini">Gemini</option>
+        <option value="copilot">Copilot</option>
+      </select>
+      <label for="req-email">Your email</label>
+      <input type="email" id="req-email" class="form-input" required placeholder="you@example.com">
+      <button type="submit" class="btn-primary">Submit Request</button>
+    </form>
+    <p class="modal-status" id="request-status"></p>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts_extra %}
+<script>
+(function() {
+  // Modal toggle for both request buttons
+  var modal = document.getElementById('modal-request');
+  var close = document.getElementById('modal-request-close');
+  function openModal() { modal.setAttribute('aria-hidden', 'false'); }
+  function closeModal() { modal.setAttribute('aria-hidden', 'true'); }
+  document.getElementById('btn-request-prompt').addEventListener('click', openModal);
+  var bottomBtn = document.getElementById('btn-request-prompt-bottom');
+  if (bottomBtn) bottomBtn.addEventListener('click', openModal);
+  close.addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+})();
+</script>
+{% endblock %}

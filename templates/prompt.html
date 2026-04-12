@@ -1,0 +1,278 @@
+{% extends "base.html" %}
+
+{% block head_extra %}
+<!-- JSON-LD: HowTo structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "{{ prompt.title | e }}",
+  "description": "{{ (prompt.use_case or prompt.title) | e }}",
+  "url": "{{ canonical_url }}",
+  "tool": [
+    {% for v in variants %}
+    {
+      "@type": "HowToTool",
+      "name": "{{ v.model_name | e }}"
+    }{{ "," if not loop.last }}
+    {% endfor %}
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Copy the prompt",
+      "text": "Copy the AI prompt text optimized for your chosen model."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Paste into your AI tool",
+      "text": "Open {{ variants[0].model_name | default('your AI tool') | e }} and paste the prompt."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Customize placeholders",
+      "text": "Replace any [bracketed placeholders] with your specific business details."
+    }
+  ]
+}
+</script>
+{% endblock %}
+
+{% block content %}
+
+<!-- ===== Breadcrumb ===== -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Hub Home</a>
+  <span class="breadcrumb-sep">&gt;</span>
+  {% if category and category.slug %}
+  <a href="/category/{{ category.slug }}/">{{ category.name | default("Category") }}</a>
+  <span class="breadcrumb-sep">&gt;</span>
+  {% endif %}
+  <span class="breadcrumb-current">{{ prompt.title }}</span>
+</nav>
+
+<!-- ===== Prompt Header ===== -->
+<section class="prompt-header">
+  <div class="section-inner">
+    <h1 class="prompt-page-title">{{ prompt.title }}</h1>
+    <div class="prompt-meta">
+      <span class="badge {{ prompt.difficulty | difficulty_color }}">{{ prompt.difficulty | default("Beginner") }}</span>
+      {% if prompt.prompt_style %}
+      <span class="badge badge-style">{{ prompt.prompt_style }}</span>
+      {% endif %}
+      {% if prompt.business_value %}
+      <span class="badge badge-value">{{ prompt.business_value }}</span>
+      {% endif %}
+      {% if prompt.view_count %}
+      <span class="view-count">{{ prompt.view_count }} views</span>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<!-- ===== Use Case ===== -->
+{% if prompt.use_case %}
+<section class="prompt-usecase">
+  <div class="section-inner">
+    <h2 class="subsection-title">Use Case</h2>
+    <p class="usecase-text">{{ prompt.use_case }}</p>
+  </div>
+</section>
+{% endif %}
+
+<!-- ===== Pro Tip ===== -->
+{% if prompt.pro_tip %}
+<section class="prompt-protip">
+  <div class="section-inner">
+    <div class="callout">
+      <span class="callout-label">Pro tip</span>
+      <p>{{ prompt.pro_tip }}</p>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ===== Tags ===== -->
+{% if prompt.tags %}
+<section class="prompt-tags-section">
+  <div class="section-inner">
+    <div class="tag-pills">
+      {% for tag in prompt.tags %}
+      <span class="tag-pill">{{ tag }}</span>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ===== Model Variant Tabs ===== -->
+{% if variants %}
+<section class="variants-section">
+  <div class="section-inner">
+    <h2 class="subsection-title">Prompt Variants by Model</h2>
+
+    <!-- Tab buttons -->
+    <div class="variant-tabs" role="tablist" aria-label="AI model variants">
+      {% for v in variants %}
+      <button
+        class="variant-tab{% if loop.first %} active{% endif %}"
+        role="tab"
+        aria-selected="{{ 'true' if loop.first else 'false' }}"
+        aria-controls="panel-{{ v.model_name | lower | replace(' ', '-') }}"
+        data-tab="{{ v.model_name | lower | replace(' ', '-') }}"
+        type="button"
+      >
+        {{ v.model_name }}
+      </button>
+      {% endfor %}
+    </div>
+
+    <!-- Tab panels -->
+    {% for v in variants %}
+    <div
+      class="variant-panel{% if loop.first %} active{% endif %}"
+      role="tabpanel"
+      id="panel-{{ v.model_name | lower | replace(' ', '-') }}"
+      {% if not loop.first %}hidden{% endif %}
+    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">{{ v.model_name }}</span>
+          {% if v.model_version %}
+          <span class="model-version">{{ v.model_version }}</span>
+          {% endif %}
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-{{ v.freshness_class | default('stale') }}">
+          <span>{{ v.freshness_date | default('UNVERIFIED') }}</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>{{ v.prompt_text | prompt_preview }}</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="{{ prompt.slug }}" data-model="{{ v.model_name | lower }}">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>{{ v.prompt_text | prompt_preview }}</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="{{ prompt.slug }}"
+          data-model="{{ v.model_name | lower }}"
+        >
+          <pre class="prompt-text-full"><code>{{ v.prompt_text | e }}</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="{{ prompt.slug }}"
+          data-model="{{ v.model_name | lower }}"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        {% if v.model_notes %}
+        <div class="model-notes">
+          <strong>Notes:</strong> {{ v.model_notes }}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<!-- ===== Related AI Tools ===== -->
+{% if prompt.related_tool_slugs %}
+<section class="related-tools-section">
+  <div class="section-inner">
+    <h2 class="subsection-title">Related AI Tools</h2>
+    <div class="related-tools-list">
+      {% for tool_slug in prompt.related_tool_slugs %}
+      <a href="https://app.alignai.business/tool/{{ tool_slug }}" class="related-tool-link" target="_blank" rel="noopener">
+        {{ tool_slug | replace("-", " ") | title }}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ===== Request Similar ===== -->
+<section class="request-section">
+  <div class="section-inner">
+    <h2 class="section-title">Need Something Similar?</h2>
+    <p class="section-subtitle">Request a prompt tailored to your specific use case.</p>
+    <button class="btn-primary" id="btn-request-similar" type="button">Request a Similar Prompt</button>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block scripts_extra %}
+<script>
+(function() {
+  // Tab switching
+  var tabs = document.querySelectorAll('.variant-tab');
+  var panels = document.querySelectorAll('.variant-panel');
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var target = tab.dataset.tab;
+
+      tabs.forEach(function(t) {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      panels.forEach(function(p) {
+        if (p.id === 'panel-' + target) {
+          p.classList.add('active');
+          p.removeAttribute('hidden');
+        } else {
+          p.classList.remove('active');
+          p.setAttribute('hidden', '');
+        }
+      });
+    });
+  });
+
+  // Toast helper
+  function showToast(msg) {
+    var toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 3000);
+  }
+
+  // Copy button (gated via auth-gate.js)
+  document.querySelectorAll('.btn-copy-prompt').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var panel = btn.closest('.variant-panel');
+      var fullText = panel.querySelector('.prompt-text-full code');
+      if (fullText) {
+        navigator.clipboard.writeText(fullText.textContent).then(function() {
+          showToast('Prompt copied to clipboard');
+        });
+      }
+    });
+  });
+})();
+</script>
+{% endblock %}
