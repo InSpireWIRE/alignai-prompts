@@ -32,31 +32,13 @@
   </div>
 </section>
 
-<!-- ===== Stats Bar ===== -->
-<section class="stats-bar">
-  <div class="stats-inner">
-    <div class="stat">
-      <span class="stat-number">{{ total_prompts }}</span>
-      <span class="stat-label">Prompts</span>
-    </div>
-    <div class="stat">
-      <span class="stat-number">{{ total_variants }}</span>
-      <span class="stat-label">Variants</span>
-    </div>
-    <div class="stat">
-      <span class="stat-number">{{ total_categories }}</span>
-      <span class="stat-label">Categories</span>
-    </div>
-    <div class="stat">
-      <span class="stat-number">4</span>
-      <span class="stat-label">AI Models</span>
-    </div>
-    <div class="stat-audit">
-      <span class="stat-audit-label"><span class="stat-audit-dot"></span>{{ site_audit_date }}</span>
-      <span class="stat-audit-sub">Last full audit</span>
-    </div>
+<!-- ===== Trust Bar ===== -->
+<div class="section-inner">
+  <div class="trust-bar">
+    <span class="freshness-dot"></span>
+    <span>FRESH &mdash; All prompts verified {{ site_audit_date }}. Updated when AI models change.</span>
   </div>
-</section>
+</div>
 
 <!-- ===== Search ===== -->
 <section class="search-section">
@@ -86,7 +68,7 @@
         {% if cat.description %}
         <p class="category-desc">{{ cat.description | truncate_text(120) }}</p>
         {% endif %}
-        <span class="category-count-badge">{{ cat.prompt_count }} prompt{{ "s" if cat.prompt_count != 1 }}</span>
+        <span class="category-count-badge">{{ cat.prompt_count }} CURATED PROMPT{{ "S" if cat.prompt_count != 1 }}</span>
       </a>
       {% else %}
       <p class="empty-state">No categories yet. Check back soon.</p>

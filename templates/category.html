@@ -113,9 +113,6 @@
         </div>
         <div class="prompt-card-right">
           <span class="badge {{ p.difficulty | difficulty_color }}">{{ p.difficulty | default("Beginner") }}</span>
-          {% if p.prompt_style %}
-          <span class="badge badge-style">{{ p.prompt_style }}</span>
-          {% endif %}
           {% if p.business_value %}
           <span class="badge badge-value">{{ p.business_value }}</span>
           {% endif %}

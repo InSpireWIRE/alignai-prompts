@@ -85,7 +85,7 @@ def compute_freshness(last_verified_at: Optional[str]) -> Tuple[str, str]:
     Returns (freshness_class, display_date) tuple.
 
     freshness_class: 'fresh' (<=30 days), 'aging' (31-90), 'stale' (91+ or NULL)
-    display_date: 'APR 2026' format or 'UNVERIFIED'
+    display_date: label + date string, e.g. 'FRESH APR 2026' or 'UNVERIFIED'
     """
     if not last_verified_at:
         return ("stale", "UNVERIFIED")
@@ -102,14 +102,14 @@ def compute_freshness(last_verified_at: Optional[str]) -> Tuple[str, str]:
 
     now = datetime.now(timezone.utc)
     days_ago = (now - verified).days
-    display_date = verified.strftime("%b %Y").upper()  # e.g. "APR 2026"
+    month_year = verified.strftime("%b %Y").upper()  # e.g. "APR 2026"
 
     if days_ago <= 30:
-        return ("fresh", display_date)
+        return ("fresh", "FRESH " + month_year)
     elif days_ago <= 90:
-        return ("aging", display_date)
+        return ("aging", "UPDATED " + month_year)
     else:
-        return ("stale", display_date)
+        return ("stale", "AGING " + month_year)
 
 
 # ---------------------------------------------------------------------------
@@ -139,6 +139,30 @@ def make_short_label(category_name: str) -> str:
     # Default: first word uppercased
     first_word = category_name.strip().split()[0] if category_name.strip() else "OTHER"
     return first_word.upper()
+
+
+# ---------------------------------------------------------------------------
+# Friendly style labels
+# ---------------------------------------------------------------------------
+
+def friendly_style(style: Optional[str]) -> Optional[str]:
+    """
+    Map technical prompt-style names to plain English labels.
+    Used on the prompt detail page badges.
+    """
+    if not style:
+        return None
+    mapping = {
+        "Zero-shot": "PASTE & GO",
+        "zero-shot": "PASTE & GO",
+        "Few-shot": "ADD YOUR EXAMPLES",
+        "few-shot": "ADD YOUR EXAMPLES",
+        "Chain-of-thought": "STEP BY STEP",
+        "chain-of-thought": "STEP BY STEP",
+        "Agentic": "MULTI-STEP WORKFLOW",
+        "agentic": "MULTI-STEP WORKFLOW",
+    }
+    return mapping.get(style, style.upper())
 
 
 # ---------------------------------------------------------------------------
@@ -343,6 +367,9 @@ def build_prompt_pages(env: Environment, ctx: dict) -> int:
 
         cat_slug = prompt.get("category_slug", "")
         cat = ctx["categories"].get(cat_slug, {})
+
+        # Add friendly style label for detail page badge
+        prompt["friendly_style"] = friendly_style(prompt.get("prompt_style"))
 
         html = tpl.render(
             page_title=f"{prompt.get('title', 'Prompt')} -- AlignAI Prompt Hub",

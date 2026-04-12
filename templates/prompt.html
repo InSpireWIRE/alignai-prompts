@@ -57,8 +57,8 @@
     <h1 class="prompt-page-title">{{ prompt.title }}</h1>
     <div class="prompt-meta">
       <span class="badge {{ prompt.difficulty | difficulty_color }}">{{ prompt.difficulty | default("Beginner") }}</span>
-      {% if prompt.prompt_style %}
-      <span class="badge badge-style">{{ prompt.prompt_style }}</span>
+      {% if prompt.friendly_style %}
+      <span class="badge badge-style">{{ prompt.friendly_style }}</span>
       {% endif %}
       {% if prompt.business_value %}
       <span class="badge badge-value">{{ prompt.business_value }}</span>
@@ -74,7 +74,7 @@
 {% if prompt.use_case %}
 <section class="prompt-usecase">
   <div class="section-inner">
-    <h2 class="subsection-title">Use Case</h2>
+    <h2 class="subsection-title">Use this prompt to</h2>
     <p class="usecase-text">{{ prompt.use_case }}</p>
   </div>
 </section>
