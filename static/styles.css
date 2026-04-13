@@ -276,7 +276,7 @@ h3 {
 .fear-body {
   font-family: 'DM Sans', sans-serif;
   font-size: 15px;
-  color: #90A4AE;
+  color: #FAFBFC;
   line-height: 1.7;
   margin-bottom: 0;
 }
@@ -778,7 +778,7 @@ h3 {
 .gate-value-line {
   font-size: 13px;
   font-weight: 400;
-  color: #90A4AE;
+  color: #FAFBFC;
   margin-bottom: 4px;
 }
 
@@ -898,7 +898,7 @@ h3 {
 .prompt-subtitle {
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
-  color: #90A4AE;
+  color: #FAFBFC;
   line-height: 1.6;
   margin-top: 10px;
   margin-bottom: 16px;
@@ -945,7 +945,7 @@ h3 {
 .category-page-desc {
   margin-top: 10px;
   font-size: 15px;
-  color: #90A4AE;
+  color: #FAFBFC;
   line-height: 1.6;
   max-width: 600px;
   margin-bottom: 20px;
