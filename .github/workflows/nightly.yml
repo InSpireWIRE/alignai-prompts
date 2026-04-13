@@ -1,0 +1,49 @@
+name: Nightly Build & Deploy
+
+on:
+  schedule:
+    - cron: '30 4 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run build
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: python3 build.py
+
+      - name: Verify build output
+        run: |
+          echo "--- Build output ---"
+          find dist -type f | head -50
+          echo ""
+          echo "--- File counts ---"
+          echo "Total HTML files: $(find dist -name '*.html' | wc -l)"
+          echo "Index exists: $(test -f dist/index.html && echo 'yes' || echo 'NO')"
+          echo "Assets dir: $(test -d dist/assets && echo 'yes' || echo 'NO')"
+
+      - name: Commit and push dist
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dist/
+          git diff --staged --quiet && echo "No changes to dist/" || (git commit -m "build: nightly rebuild $(date -u +%Y-%m-%d)" && git push)
