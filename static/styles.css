@@ -775,6 +775,13 @@ h3 {
   color: #FAFBFC;
 }
 
+.gate-value-line {
+  font-size: 13px;
+  font-weight: 400;
+  color: #90A4AE;
+  margin-bottom: 4px;
+}
+
 .gated-overlay-cta .gate-email-input {
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
@@ -888,6 +895,15 @@ h3 {
   line-height: 1.15;
 }
 
+.prompt-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  color: #90A4AE;
+  line-height: 1.6;
+  margin-top: 10px;
+  margin-bottom: 16px;
+}
+
 .prompt-meta {
   display: flex;
   flex-wrap: wrap;
@@ -928,8 +944,34 @@ h3 {
 
 .category-page-desc {
   margin-top: 10px;
-  font-size: 18px;
+  font-size: 15px;
+  color: #90A4AE;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.category-freshness-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(0,200,83,0.08);
+  border: 1px solid rgba(0,200,83,0.2);
+  border-radius: 20px;
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
   color: #FAFBFC;
+  margin-bottom: 16px;
+}
+
+.category-freshness-badge .freshness-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00C853;
+  flex-shrink: 0;
 }
 
 /* ==========================================================================
@@ -937,6 +979,20 @@ h3 {
    ========================================================================== */
 
 .filters-section { padding: 8px 0 0; }
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.filter-sep {
+  width: 1px;
+  height: 16px;
+  background: rgba(255,255,255,0.12);
+  margin: 0 4px;
+}
 
 .filter-group {
   display: flex;
@@ -979,7 +1035,22 @@ h3 {
    Related Tools
    ========================================================================== */
 
+.related-prompts-section { padding: 36px 0; }
+
 .related-tools-section { padding: 24px 0; }
+
+.btn-link {
+  background: none;
+  border: none;
+  color: #00C853;
+  font-family: 'DM Sans', sans-serif;
+  font-size: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+.btn-link:hover { color: #00E676; }
 
 .related-tools-list {
   display: flex;

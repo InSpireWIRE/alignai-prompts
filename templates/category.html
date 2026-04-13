@@ -20,78 +20,29 @@
   </div>
 </section>
 
-<!-- ===== Badge Legend ===== -->
-<section class="section-inner">
-  <div class="badge-legend">
-    <button class="badge-legend-toggle" id="badge-legend-toggle" type="button">What do these badges mean?</button>
-    <div class="badge-legend-content" id="badge-legend-content">
-      <div class="badge-legend-grid">
-        <div class="badge-legend-group">
-          <h4>Difficulty</h4>
-          <div class="badge-legend-item">
-            <span class="badge badge-beginner">Beginner</span>
-            <span>Paste and go &mdash; fill in a few blanks</span>
-          </div>
-          <div class="badge-legend-item">
-            <span class="badge badge-intermediate">Intermediate</span>
-            <span>Bring your own context &mdash; examples, data, brand voice</span>
-          </div>
-          <div class="badge-legend-item">
-            <span class="badge badge-expert">Expert</span>
-            <span>Multi-step workflow &mdash; needs setup and iteration</span>
-          </div>
-        </div>
-        <div class="badge-legend-group">
-          <h4>Style</h4>
-          <div class="badge-legend-item">
-            <span class="badge badge-style">Zero-shot</span>
-            <span>One instruction, no examples needed</span>
-          </div>
-          <div class="badge-legend-item">
-            <span class="badge badge-style">Few-shot</span>
-            <span>Includes examples so the AI learns your pattern</span>
-          </div>
-          <div class="badge-legend-item">
-            <span class="badge badge-style">Chain-of-thought</span>
-            <span>Forces the AI to reason step by step</span>
-          </div>
-          <div class="badge-legend-item">
-            <span class="badge badge-style">Agentic</span>
-            <span>Multi-step workflow with tools and iteration</span>
-          </div>
-        </div>
-      </div>
-    </div>
+<!-- ===== Freshness Badge ===== -->
+<div class="section-inner">
+  <div class="category-freshness-badge">
+    <span class="freshness-dot"></span>
+    <span><span style="color:#00C853">FRESH</span> &mdash; All prompts verified {{ site_audit_date }}</span>
   </div>
-</section>
+</div>
 
-<!-- ===== Filter Chips ===== -->
-<section class="filters-section">
+<!-- ===== Compact Filters (hidden if ≤4 prompts) ===== -->
+{% if prompts | length > 4 %}
+<section class="filters-section filters-compact">
   <div class="section-inner">
-    <div class="filter-group" role="group" aria-label="Filter by difficulty">
-      <span class="filter-label">Difficulty:</span>
+    <div class="filter-row" role="group" aria-label="Filter prompts">
+      <span class="filter-label">Filter:</span>
       <button class="filter-chip active" data-filter="difficulty" data-value="all" type="button">All</button>
+      <span class="filter-sep"></span>
       <button class="filter-chip" data-filter="difficulty" data-value="beginner" type="button">Beginner</button>
       <button class="filter-chip" data-filter="difficulty" data-value="intermediate" type="button">Intermediate</button>
       <button class="filter-chip" data-filter="difficulty" data-value="expert" type="button">Expert</button>
     </div>
-    <div class="filter-group" role="group" aria-label="Filter by style">
-      <span class="filter-label">Style:</span>
-      <button class="filter-chip active" data-filter="style" data-value="all" type="button">All</button>
-      <button class="filter-chip" data-filter="style" data-value="zero-shot" type="button">Zero-shot</button>
-      <button class="filter-chip" data-filter="style" data-value="few-shot" type="button">Few-shot</button>
-      <button class="filter-chip" data-filter="style" data-value="chain-of-thought" type="button">Chain-of-thought</button>
-      <button class="filter-chip" data-filter="style" data-value="agentic" type="button">Agentic</button>
-    </div>
-    <div class="filter-group" role="group" aria-label="Filter by business value">
-      <span class="filter-label">Value:</span>
-      <button class="filter-chip active" data-filter="value" data-value="all" type="button">All</button>
-      <button class="filter-chip" data-filter="value" data-value="time-saver" type="button">Time-Saver</button>
-      <button class="filter-chip" data-filter="value" data-value="revenue" type="button">Revenue</button>
-      <button class="filter-chip" data-filter="value" data-value="quality" type="button">Quality</button>
-    </div>
   </div>
 </section>
+{% endif %}
 
 <!-- ===== Prompt Cards ===== -->
 <section class="prompts-section">
@@ -130,37 +81,22 @@
 {% block scripts_extra %}
 <script>
 (function() {
-  // Badge legend toggle
-  var toggle = document.getElementById('badge-legend-toggle');
-  var content = document.getElementById('badge-legend-content');
-  toggle.addEventListener('click', function() {
-    content.classList.toggle('open');
-    toggle.textContent = content.classList.contains('open')
-      ? 'Hide badge definitions'
-      : 'What do these badges mean?';
-  });
-
-  // Client-side filtering
   var chips = document.querySelectorAll('.filter-chip');
   var cards = document.querySelectorAll('.prompt-card');
-  var activeFilters = { difficulty: 'all', style: 'all', value: 'all' };
+  if (!chips.length) return;
 
   chips.forEach(function(chip) {
     chip.addEventListener('click', function() {
-      var filterType = chip.dataset.filter;
       var filterVal = chip.dataset.value;
-      activeFilters[filterType] = filterVal;
 
-      chip.closest('.filter-group').querySelectorAll('.filter-chip').forEach(function(c) {
-        c.classList.remove('active');
-      });
+      // Update active state
+      chips.forEach(function(c) { c.classList.remove('active'); });
       chip.classList.add('active');
 
+      // Filter cards by difficulty
       cards.forEach(function(card) {
-        var matchDiff = activeFilters.difficulty === 'all' || card.dataset.difficulty === activeFilters.difficulty;
-        var matchStyle = activeFilters.style === 'all' || card.dataset.style.indexOf(activeFilters.style) !== -1;
-        var matchValue = activeFilters.value === 'all' || card.dataset.value.indexOf(activeFilters.value) !== -1;
-        card.style.display = (matchDiff && matchStyle && matchValue) ? '' : 'none';
+        var match = filterVal === 'all' || card.dataset.difficulty === filterVal;
+        card.style.display = match ? '' : 'none';
       });
     });
   });

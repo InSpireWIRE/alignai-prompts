@@ -193,7 +193,7 @@ def organise(data: dict) -> dict:
         if not cat_slug:
             continue
         if cat_slug not in categories:
-            cat_name = row.get("category_name") or cat_slug.replace("-", " ").title()
+            cat_name = row.get("category_name") or cat_slug
             categories[cat_slug] = {
                 "slug": cat_slug,
                 "name": cat_name,
@@ -338,6 +338,7 @@ def build_index(env: Environment, ctx: dict) -> None:
 def build_category_pages(env: Environment, ctx: dict) -> int:
     """Generate dist/category/{slug}/index.html for every category."""
     tpl = env.get_template("category.html")
+    site_audit_date = datetime.now(timezone.utc).strftime("%b %Y")
     count = 0
     for slug, cat in ctx["categories"].items():
         prompts = ctx["prompts_by_category"].get(slug, [])
@@ -347,6 +348,7 @@ def build_category_pages(env: Environment, ctx: dict) -> int:
             canonical_url=f"{SITE_URL}/category/{slug}/",
             category=cat,
             prompts=prompts,
+            site_audit_date=site_audit_date,
         )
         dest = DIST_DIR / "category" / slug / "index.html"
         write_page(dest, html)
@@ -371,6 +373,12 @@ def build_prompt_pages(env: Environment, ctx: dict) -> int:
         # Add friendly style label for detail page badge
         prompt["friendly_style"] = friendly_style(prompt.get("prompt_style"))
 
+        # Related prompts: up to 3 others from same category, excluding current
+        related = [
+            p for p in ctx["prompts_by_category"].get(cat_slug, [])
+            if p.get("slug") != slug
+        ][:3]
+
         html = tpl.render(
             page_title=f"{prompt.get('title', 'Prompt')} -- AlignAI Prompt Hub",
             page_description=prompt.get("use_case", prompt.get("title", "")),
@@ -378,6 +386,8 @@ def build_prompt_pages(env: Environment, ctx: dict) -> int:
             prompt=prompt,
             variants=variants,
             category=cat,
+            related_prompts=related,
+            total_prompts=ctx["totals"]["total_prompts"],
         )
         dest = DIST_DIR / "prompts" / slug / "index.html"
         write_page(dest, html)

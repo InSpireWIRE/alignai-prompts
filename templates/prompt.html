@@ -60,6 +60,9 @@
 <section class="prompt-header">
   <div class="section-inner">
     <h1 class="prompt-page-title">{{ prompt.title }}</h1>
+    {% if prompt.use_case %}
+    <p class="prompt-subtitle">{{ prompt.use_case }}</p>
+    {% endif %}
     <div class="prompt-meta">
       <span class="badge {{ prompt.difficulty | difficulty_color }}">{{ prompt.difficulty | default("Beginner") }}</span>
       {% if prompt.friendly_style %}
@@ -74,16 +77,6 @@
     </div>
   </div>
 </section>
-
-<!-- ===== Use Case ===== -->
-{% if prompt.use_case %}
-<section class="prompt-usecase">
-  <div class="section-inner">
-    <h2 class="subsection-title">Use this prompt to</h2>
-    <p class="usecase-text">{{ prompt.use_case }}</p>
-  </div>
-</section>
-{% endif %}
 
 <!-- ===== Pro Tip ===== -->
 {% if prompt.pro_tip %}
@@ -166,6 +159,7 @@
           </div>
           <div class="gated-overlay-cta">
             <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all {{ total_prompts }} in the library &mdash; free, updated monthly, zero spam.</p>
             <input type="email" class="gate-email-input" placeholder="you@example.com">
             <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
           </div>
@@ -217,12 +211,40 @@
 </section>
 {% endif %}
 
+<!-- ===== Related Prompts ===== -->
+{% if related_prompts %}
+<section class="related-prompts-section">
+  <div class="section-inner">
+    <h2 class="subsection-title">More in {{ category.name | default("This Category") }}</h2>
+    <div class="prompt-list">
+      {% for rp in related_prompts %}
+      <a
+        href="/prompts/{{ rp.slug }}/"
+        class="prompt-card"
+      >
+        <div class="prompt-card-left">
+          <h3 class="prompt-card-title">{{ rp.title }}</h3>
+          {% if rp.use_case %}
+          <p class="prompt-card-usecase">{{ rp.use_case | truncate_text(100) }}</p>
+          {% endif %}
+        </div>
+        <div class="prompt-card-right">
+          <span class="badge {{ rp.difficulty | difficulty_color }}">{{ rp.difficulty | default("Beginner") }}</span>
+          {% if rp.business_value %}
+          <span class="badge badge-value">{{ rp.business_value }}</span>
+          {% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
 <!-- ===== Request Similar ===== -->
 <section class="request-section">
   <div class="section-inner">
-    <h2 class="section-title">Need Something Similar?</h2>
-    <p class="section-subtitle">Request a prompt tailored to your specific use case.</p>
-    <button class="btn-primary" id="btn-request-similar" type="button">Request a Similar Prompt</button>
+    <p class="section-subtitle">Don&rsquo;t see what you need? <button class="btn-link" id="btn-request-similar" type="button">Request a prompt</button> tailored to your use case.</p>
   </div>
 </section>
 
