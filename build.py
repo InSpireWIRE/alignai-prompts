@@ -193,7 +193,7 @@ def organise(data: dict) -> dict:
         if not cat_slug:
             continue
         if cat_slug not in categories:
-            cat_name = row.get("category_name", cat_slug)
+            cat_name = row.get("category_name") or cat_slug.replace("-", " ").title()
             categories[cat_slug] = {
                 "slug": cat_slug,
                 "name": cat_name,
