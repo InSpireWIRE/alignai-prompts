@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Ticket Triage &amp; Response Drafter -- AlignAI Prompt Hub</title>
+  <meta name="description" content="Classify incoming support tickets by urgency and category, then draft context-aware first responses using your knowledge base and past resolution patterns as few-shot examples.">
+  <link rel="canonical" href="https://prompts.alignai.business/prompts/support-ticket-triage-response-drafter/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Support Ticket Triage &amp; Response Drafter -- AlignAI Prompt Hub">
+  <meta property="og:description" content="Classify incoming support tickets by urgency and category, then draft context-aware first responses using your knowledge base and past resolution patterns as few-shot examples.">
+  <meta property="og:image" content="https://prompts.alignai.business/assets/og-image.png">
+  <meta property="og:url" content="https://prompts.alignai.business/prompts/support-ticket-triage-response-drafter/">
+  <meta property="og:site_name" content="AlignAI Prompt Hub">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Support Ticket Triage &amp; Response Drafter -- AlignAI Prompt Hub">
+  <meta name="twitter:description" content="Classify incoming support tickets by urgency and category, then draft context-aware first responses using your knowledge base and past resolution patterns as few-shot examples.">
+  <meta name="twitter:image" content="https://prompts.alignai.business/assets/og-image.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles.css">
+
+<!-- JSON-LD: HowTo structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Support Ticket Triage &amp; Response Drafter",
+  "description": "Classify incoming support tickets by urgency and category, then draft context-aware first responses using your knowledge base and past resolution patterns as few-shot examples.",
+  "url": "https://prompts.alignai.business/prompts/support-ticket-triage-response-drafter/",
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Claude"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "ChatGPT"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Gemini"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Copilot"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Copy the prompt",
+      "text": "Copy the AI prompt text optimized for your chosen model."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Paste into your AI tool",
+      "text": "Open Claude and paste the prompt."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Customize placeholders",
+      "text": "Replace any [bracketed placeholders] with your specific business details."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="AlignAI home"><span style="font-family:'Space Mono',monospace;font-size:18px;font-weight:700;"><span style="color:rgba(250,251,252,0.4);">[</span><span style="color:#FAFBFC;">align</span><span style="color:#00C853;">.ai</span><span style="color:rgba(250,251,252,0.4);">]</span></span></a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/" class="nav-link">Prompt Hub</a>
+        <a href="https://app.alignai.business" class="nav-link">Browse AI Tools</a>
+        <button class="btn-signin" id="btn-signin" type="button">Sign In</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <main class="site-main">
+
+<!-- ===== Back Link ===== -->
+<div class="section-inner">
+  <a href="javascript:history.back()" class="back-link" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;color:#00C853;text-decoration:none;margin-bottom:12px;">&larr; Back</a>
+</div>
+
+<!-- ===== Breadcrumb ===== -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Hub Home</a>
+  <span class="breadcrumb-sep">&gt;</span>
+  <a href="/category/customer-service/">customer-service</a>
+  <span class="breadcrumb-sep">&gt;</span>
+  <span class="breadcrumb-current">Support Ticket Triage &amp; Response Drafter</span>
+</nav>
+
+<!-- ===== Prompt Header ===== -->
+<section class="prompt-header">
+  <div class="section-inner">
+    <h1 class="prompt-page-title">Support Ticket Triage &amp; Response Drafter</h1>
+    <p class="prompt-subtitle">Classify incoming support tickets by urgency and category, then draft context-aware first responses using your knowledge base and past resolution patterns as few-shot examples.</p>
+    <div class="prompt-meta">
+      <span class="badge badge-intermediate">Intermediate</span>
+      <span class="badge badge-style">ADD YOUR EXAMPLES</span>
+      <span class="badge badge-value">Time-saving</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Pro Tip ===== -->
+<section class="prompt-protip">
+  <div class="section-inner">
+    <div class="callout">
+      <span class="callout-label">Pro tip</span>
+      <p>Upload your top 20 most-common ticket-resolution pairs as few-shot examples. Include your SLA tiers so the AI can flag tickets approaching breach.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Tags ===== -->
+<section class="prompt-tags-section">
+  <div class="section-inner">
+    <div class="tag-pills">
+      <span class="tag-pill">support</span>
+      <span class="tag-pill">tickets</span>
+      <span class="tag-pill">triage</span>
+      <span class="tag-pill">helpdesk</span>
+      <span class="tag-pill">sla</span>
+      <span class="tag-pill">response templates</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Model Variant Tabs ===== -->
+<section class="variants-section">
+  <div class="section-inner">
+    <h2 class="subsection-title">Prompt Variants by Model</h2>
+
+    <!-- Tab buttons -->
+    <div class="variant-tabs" role="tablist" aria-label="AI model variants">
+      <button
+        class="variant-tab active"
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel-claude"
+        data-tab="claude"
+        type="button"
+      >
+        Claude
+      </button>
+      <button
+        class="variant-tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-chatgpt"
+        data-tab="chatgpt"
+        type="button"
+      >
+        ChatGPT
+      </button>
+      <button
+        class="variant-tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-gemini"
+        data-tab="gemini"
+        type="button"
+      >
+        Gemini
+      </button>
+      <button
+        class="variant-tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-copilot"
+        data-tab="copilot"
+        type="button"
+      >
+        Copilot
+      </button>
+    </div>
+
+    <!-- Tab panels -->
+    <div
+      class="variant-panel active"
+      role="tabpanel"
+      id="panel-claude"
+    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">Claude</span>
+          <span class="model-version">Claude 4.x</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>You are a Tier 1 support agent for [COMPANY_NAME], a [INDUSTRY] business. Your job is to triage incoming support tickets and draft first responses.
+
+&lt;knowledge_base&gt;
+[PASTE YOUR TOP 20 FAQ Q&amp;A PAIRS...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="support-ticket-triage-response-drafter" data-model="claude">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>You are a Tier 1 support agent for [COMPANY_NAME], a [INDUSTRY] business. Your job is to triage incoming support tickets and draft first responses.
+
+&lt;knowledge_base&gt;
+[PASTE YOUR TOP 20 FAQ Q&amp;A PAIRS...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="support-ticket-triage-response-drafter"
+          data-model="claude"
+        >
+          <pre class="prompt-text-full"><code>You are a Tier 1 support agent for [COMPANY_NAME], a [INDUSTRY] business. Your job is to triage incoming support tickets and draft first responses.
+
+&lt;knowledge_base&gt;
+[PASTE YOUR TOP 20 FAQ Q&amp;A PAIRS OR LINK TO KNOWLEDGE BASE]
+&lt;/knowledge_base&gt;
+
+&lt;sla_tiers&gt;
+- Critical (service down): Respond within 1 hour
+- High (feature broken): Respond within 4 hours
+- Medium (how-to question): Respond within 8 hours
+- Low (feature request): Respond within 24 hours
+&lt;/sla_tiers&gt;
+
+&lt;resolution_examples&gt;
+Example 1: Customer asked &#34;[PAST TICKET]&#34; → Resolution: &#34;[HOW IT WAS RESOLVED]&#34;
+Example 2: Customer asked &#34;[PAST TICKET]&#34; → Resolution: &#34;[HOW IT WAS RESOLVED]&#34;
+Example 3: Customer asked &#34;[PAST TICKET]&#34; → Resolution: &#34;[HOW IT WAS RESOLVED]&#34;
+&lt;/resolution_examples&gt;
+
+For each ticket I paste, provide:
+1. **Classification:** Category + SLA tier + urgency flag
+2. **Root cause hypothesis:** What is likely going on
+3. **Draft response:** Empathetic, actionable, includes next steps. Reference KB article if applicable.
+4. **Escalation check:** Does this need human/Tier 2 review? Why or why not?
+
+Here is the ticket:
+&#34;[PASTE TICKET]&#34;</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="support-ticket-triage-response-drafter"
+          data-model="claude"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Load your entire knowledge base into a Claude Project for persistent context. Few-shot resolution examples significantly improve accuracy.
+        </div>
+      </div>
+    </div>
+    <div
+      class="variant-panel"
+      role="tabpanel"
+      id="panel-chatgpt"
+hidden    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">ChatGPT</span>
+          <span class="model-version">GPT-5</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>You are a customer support triage specialist for [COMPANY_NAME] ([INDUSTRY]).
+
+**Our Knowledge Base (top FAQs):**
+[PASTE TOP 20 Q&amp;A PAIRS]
+
+**SLA...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="support-ticket-triage-response-drafter" data-model="chatgpt">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>You are a customer support triage specialist for [COMPANY_NAME] ([INDUSTRY]).
+
+**Our Knowledge Base (top FAQs):**
+[PASTE TOP 20 Q&amp;A PAIRS]
+
+**SLA...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="support-ticket-triage-response-drafter"
+          data-model="chatgpt"
+        >
+          <pre class="prompt-text-full"><code>You are a customer support triage specialist for [COMPANY_NAME] ([INDUSTRY]).
+
+**Our Knowledge Base (top FAQs):**
+[PASTE TOP 20 Q&amp;A PAIRS]
+
+**SLA Tiers:**
+- Critical (service down): 1-hour response
+- High (feature broken): 4-hour response
+- Medium (how-to): 8-hour response
+- Low (feature request): 24-hour response
+
+**Past Resolution Examples:**
+1. Ticket: &#34;[EXAMPLE]&#34; → Fix: &#34;[RESOLUTION]&#34;
+2. Ticket: &#34;[EXAMPLE]&#34; → Fix: &#34;[RESOLUTION]&#34;
+3. Ticket: &#34;[EXAMPLE]&#34; → Fix: &#34;[RESOLUTION]&#34;
+
+When I paste a support ticket, give me:
+1. Category + SLA tier + urgency level
+2. Likely root cause
+3. A ready-to-send customer response (empathetic, clear next steps, reference relevant FAQ)
+4. Whether it needs escalation to Tier 2 and why
+
+Ticket:
+&#34;[PASTE TICKET]&#34;</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="support-ticket-triage-response-drafter"
+          data-model="chatgpt"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Build a Custom GPT with your full KB and resolution history for instant triage.
+        </div>
+      </div>
+    </div>
+    <div
+      class="variant-panel"
+      role="tabpanel"
+      id="panel-gemini"
+hidden    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">Gemini</span>
+          <span class="model-version">Gemini 3 Pro</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>I need help triaging customer support tickets for [COMPANY_NAME] ([INDUSTRY]).
+
+**Our common FAQ answers:**
+[PASTE TOP 20 Q&amp;A PAIRS]
+
+**Our response...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="support-ticket-triage-response-drafter" data-model="gemini">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>I need help triaging customer support tickets for [COMPANY_NAME] ([INDUSTRY]).
+
+**Our common FAQ answers:**
+[PASTE TOP 20 Q&amp;A PAIRS]
+
+**Our response...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="support-ticket-triage-response-drafter"
+          data-model="gemini"
+        >
+          <pre class="prompt-text-full"><code>I need help triaging customer support tickets for [COMPANY_NAME] ([INDUSTRY]).
+
+**Our common FAQ answers:**
+[PASTE TOP 20 Q&amp;A PAIRS]
+
+**Our response time rules:**
+- Critical (service is down): respond within 1 hour
+- High (something is broken): respond within 4 hours
+- Medium (how-to question): respond within 8 hours
+- Low (feature request): respond within 24 hours
+
+**Examples of how we resolved past tickets:**
+1. &#34;[TICKET]&#34; → &#34;[RESOLUTION]&#34;
+2. &#34;[TICKET]&#34; → &#34;[RESOLUTION]&#34;
+3. &#34;[TICKET]&#34; → &#34;[RESOLUTION]&#34;
+
+For the ticket below, tell me:
+1. What category and urgency level it is
+2. What you think the root cause is
+3. A draft response to send the customer (empathetic, with clear next steps)
+4. Whether a human needs to review this
+
+Ticket: &#34;[PASTE]&#34;</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="support-ticket-triage-response-drafter"
+          data-model="gemini"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Gemini in Google Workspace can integrate with Gmail to triage tickets arriving by email.
+        </div>
+      </div>
+    </div>
+    <div
+      class="variant-panel"
+      role="tabpanel"
+      id="panel-copilot"
+hidden    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">Copilot</span>
+          <span class="model-version">Copilot (Microsoft 365)</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>I need help sorting and responding to customer support tickets for my [INDUSTRY] business, [COMPANY_NAME].
+
+**Our FAQ...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="support-ticket-triage-response-drafter" data-model="copilot">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>I need help sorting and responding to customer support tickets for my [INDUSTRY] business, [COMPANY_NAME].
+
+**Our FAQ...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="support-ticket-triage-response-drafter"
+          data-model="copilot"
+        >
+          <pre class="prompt-text-full"><code>I need help sorting and responding to customer support tickets for my [INDUSTRY] business, [COMPANY_NAME].
+
+**Our FAQ answers:**
+[PASTE TOP 20 Q&amp;A PAIRS]
+
+**How fast we need to respond:**
+- Critical (service down): 1 hour
+- High (something broken): 4 hours
+- Medium (how-to): 8 hours
+- Low (feature request): 24 hours
+
+**Examples of past tickets we solved:**
+1. &#34;[TICKET]&#34; → We fixed it by &#34;[RESOLUTION]&#34;
+2. &#34;[TICKET]&#34; → We fixed it by &#34;[RESOLUTION]&#34;
+
+For this ticket, tell me:
+1. How urgent it is and what category
+2. What is probably going wrong
+3. Write a friendly response I can send right away
+4. Should I escalate this to my team lead?
+
+Here is the ticket:
+&#34;[PASTE]&#34;</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="support-ticket-triage-response-drafter"
+          data-model="copilot"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Copilot integrates with Dynamics 365 Customer Service for automated triage.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Related AI Tools ===== -->
+
+<!-- ===== Related Prompts ===== -->
+<section class="related-prompts-section">
+  <div class="section-inner">
+    <h2 class="subsection-title">More in customer-service</h2>
+    <div class="prompt-list">
+      <a
+        href="/prompts/loyalty-program-design-comms-builder/"
+        class="prompt-card"
+      >
+        <div class="prompt-card-left">
+          <h3 class="prompt-card-title">Loyalty Program Design &amp; Comms Builder</h3>
+          <p class="prompt-card-usecase">Design a complete customer loyalty program including tier structure, point mechanics, reward...</p>
+        </div>
+        <div class="prompt-card-right">
+          <span class="badge badge-expert">Expert</span>
+          <span class="badge badge-value">Revenue-driving</span>
+        </div>
+      </a>
+      <a
+        href="/prompts/review-response-template-engine/"
+        class="prompt-card"
+      >
+        <div class="prompt-card-left">
+          <h3 class="prompt-card-title">Review Response Template Engine</h3>
+          <p class="prompt-card-usecase">Generate professional, empathetic responses to Google/Yelp reviews — both positive and negative —...</p>
+        </div>
+        <div class="prompt-card-right">
+          <span class="badge badge-beginner">Beginner</span>
+          <span class="badge badge-value">Reputation-building</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Request Similar ===== -->
+<section class="request-section">
+  <div class="section-inner">
+    <p class="section-subtitle">Don&rsquo;t see what you need? <button class="btn-link" id="btn-request-similar" type="button">Request a prompt</button> tailored to your use case.</p>
+  </div>
+</section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-tagline">
+        Built by <strong>AlignAI</strong> &mdash; They rank who pays. We score what works.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast notification container -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/assets/auth-gate.js"></script>
+  <script src="/assets/analytics.js"></script>
+<script>
+(function() {
+  // Tab switching
+  var tabs = document.querySelectorAll('.variant-tab');
+  var panels = document.querySelectorAll('.variant-panel');
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var target = tab.dataset.tab;
+
+      tabs.forEach(function(t) {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      panels.forEach(function(p) {
+        if (p.id === 'panel-' + target) {
+          p.classList.add('active');
+          p.removeAttribute('hidden');
+        } else {
+          p.classList.remove('active');
+          p.setAttribute('hidden', '');
+        }
+      });
+    });
+  });
+
+  // Toast helper
+  function showToast(msg) {
+    var toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 3000);
+  }
+
+  // Copy button (gated via auth-gate.js)
+  document.querySelectorAll('.btn-copy-prompt').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var panel = btn.closest('.variant-panel');
+      var fullText = panel.querySelector('.prompt-text-full code');
+      if (fullText) {
+        navigator.clipboard.writeText(fullText.textContent).then(function() {
+          showToast('Prompt copied to clipboard');
+        });
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

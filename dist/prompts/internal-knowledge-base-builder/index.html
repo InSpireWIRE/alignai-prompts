@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internal Knowledge Base Builder -- AlignAI Prompt Hub</title>
+  <meta name="description" content="Transform scattered tribal knowledge — SOPs, Slack threads, meeting notes, emails — into a structured, searchable knowledge base. Outputs organized articles with categories, tags, and cross-references that any team member can follow.">
+  <link rel="canonical" href="https://prompts.alignai.business/prompts/internal-knowledge-base-builder/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Internal Knowledge Base Builder -- AlignAI Prompt Hub">
+  <meta property="og:description" content="Transform scattered tribal knowledge — SOPs, Slack threads, meeting notes, emails — into a structured, searchable knowledge base. Outputs organized articles with categories, tags, and cross-references that any team member can follow.">
+  <meta property="og:image" content="https://prompts.alignai.business/assets/og-image.png">
+  <meta property="og:url" content="https://prompts.alignai.business/prompts/internal-knowledge-base-builder/">
+  <meta property="og:site_name" content="AlignAI Prompt Hub">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Internal Knowledge Base Builder -- AlignAI Prompt Hub">
+  <meta name="twitter:description" content="Transform scattered tribal knowledge — SOPs, Slack threads, meeting notes, emails — into a structured, searchable knowledge base. Outputs organized articles with categories, tags, and cross-references that any team member can follow.">
+  <meta name="twitter:image" content="https://prompts.alignai.business/assets/og-image.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles.css">
+
+<!-- JSON-LD: HowTo structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Internal Knowledge Base Builder",
+  "description": "Transform scattered tribal knowledge — SOPs, Slack threads, meeting notes, emails — into a structured, searchable knowledge base. Outputs organized articles with categories, tags, and cross-references that any team member can follow.",
+  "url": "https://prompts.alignai.business/prompts/internal-knowledge-base-builder/",
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Claude"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "ChatGPT"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Gemini"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Copilot"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Copy the prompt",
+      "text": "Copy the AI prompt text optimized for your chosen model."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Paste into your AI tool",
+      "text": "Open Claude and paste the prompt."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Customize placeholders",
+      "text": "Replace any [bracketed placeholders] with your specific business details."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="AlignAI home"><span style="font-family:'Space Mono',monospace;font-size:18px;font-weight:700;"><span style="color:rgba(250,251,252,0.4);">[</span><span style="color:#FAFBFC;">align</span><span style="color:#00C853;">.ai</span><span style="color:rgba(250,251,252,0.4);">]</span></span></a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/" class="nav-link">Prompt Hub</a>
+        <a href="https://app.alignai.business" class="nav-link">Browse AI Tools</a>
+        <button class="btn-signin" id="btn-signin" type="button">Sign In</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <main class="site-main">
+
+<!-- ===== Back Link ===== -->
+<div class="section-inner">
+  <a href="javascript:history.back()" class="back-link" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;color:#00C853;text-decoration:none;margin-bottom:12px;">&larr; Back</a>
+</div>
+
+<!-- ===== Breadcrumb ===== -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Hub Home</a>
+  <span class="breadcrumb-sep">&gt;</span>
+  <a href="/category/training-and-knowledge/">training-and-knowledge</a>
+  <span class="breadcrumb-sep">&gt;</span>
+  <span class="breadcrumb-current">Internal Knowledge Base Builder</span>
+</nav>
+
+<!-- ===== Prompt Header ===== -->
+<section class="prompt-header">
+  <div class="section-inner">
+    <h1 class="prompt-page-title">Internal Knowledge Base Builder</h1>
+    <p class="prompt-subtitle">Transform scattered tribal knowledge — SOPs, Slack threads, meeting notes, emails — into a structured, searchable knowledge base. Outputs organized articles with categories, tags, and cross-references that any team member can follow.</p>
+    <div class="prompt-meta">
+      <span class="badge badge-beginner">Beginner</span>
+      <span class="badge badge-style">PASTE &amp; GO</span>
+      <span class="badge badge-value">Time-saving</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Pro Tip ===== -->
+<section class="prompt-protip">
+  <div class="section-inner">
+    <div class="callout">
+      <span class="callout-label">Pro tip</span>
+      <p>Dump in everything messy — raw Slack messages, rough notes, half-finished docs. AI is better at extracting structure from chaos than you are at organizing it manually.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Tags ===== -->
+<section class="prompt-tags-section">
+  <div class="section-inner">
+    <div class="tag-pills">
+      <span class="tag-pill">knowledge base</span>
+      <span class="tag-pill">documentation</span>
+      <span class="tag-pill">SOP</span>
+      <span class="tag-pill">wiki</span>
+      <span class="tag-pill">internal docs</span>
+      <span class="tag-pill">tribal knowledge</span>
+      <span class="tag-pill">onboarding</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Model Variant Tabs ===== -->
+<section class="variants-section">
+  <div class="section-inner">
+    <h2 class="subsection-title">Prompt Variants by Model</h2>
+
+    <!-- Tab buttons -->
+    <div class="variant-tabs" role="tablist" aria-label="AI model variants">
+      <button
+        class="variant-tab active"
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel-claude"
+        data-tab="claude"
+        type="button"
+      >
+        Claude
+      </button>
+      <button
+        class="variant-tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-chatgpt"
+        data-tab="chatgpt"
+        type="button"
+      >
+        ChatGPT
+      </button>
+      <button
+        class="variant-tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-gemini"
+        data-tab="gemini"
+        type="button"
+      >
+        Gemini
+      </button>
+      <button
+        class="variant-tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-copilot"
+        data-tab="copilot"
+        type="button"
+      >
+        Copilot
+      </button>
+    </div>
+
+    <!-- Tab panels -->
+    <div
+      class="variant-panel active"
+      role="tabpanel"
+      id="panel-claude"
+    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">Claude</span>
+          <span class="model-version">Claude 4.x</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>You are a technical writer organizing a small business knowledge base.
+
+&lt;raw_content&gt;
+[PASTE EVERYTHING — SOPs, Slack messages, meeting notes, emails, rough docs, bullet points, anything related to...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="internal-knowledge-base-builder" data-model="claude">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>You are a technical writer organizing a small business knowledge base.
+
+&lt;raw_content&gt;
+[PASTE EVERYTHING — SOPs, Slack messages, meeting notes, emails, rough docs, bullet points, anything related to...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="internal-knowledge-base-builder"
+          data-model="claude"
+        >
+          <pre class="prompt-text-full"><code>You are a technical writer organizing a small business knowledge base.
+
+&lt;raw_content&gt;
+[PASTE EVERYTHING — SOPs, Slack messages, meeting notes, emails, rough docs, bullet points, anything related to this topic]
+&lt;/raw_content&gt;
+
+&lt;context&gt;
+Topic area: [e.g., &#34;How we handle refunds&#34;, &#34;Client onboarding process&#34;, &#34;Social media publishing workflow&#34;]
+Who needs this: [roles that will reference this knowledge]
+Knowledge base tool: [Notion / Confluence / Google Docs / Slite / other]
+Tone: [formal / casual / somewhere in between]
+&lt;/context&gt;
+
+Transform this into structured knowledge base content:
+
+1. **Article structure** — organize the raw content into 1-3 articles. For each article:
+   - Title (clear, searchable)
+   - Category suggestion
+   - Tags (5-8 keywords)
+   - Summary (2-3 sentences)
+   - Full content with headers, steps, and callouts for important notes
+   - Related articles (cross-references to other topics mentioned)
+
+2. **Gap identification** — what questions would a reader have that the raw content does NOT answer? List them as &#34;TODO: get answer from [likely person]&#34;.
+
+3. **Decision log** — extract any decisions or rules embedded in the raw content and format them as a clear decision table.
+
+4. **Quick reference** — a TL;DR version (under 200 words) for people who just need the answer fast.</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="internal-knowledge-base-builder"
+          data-model="claude"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Claude handles large dumps of messy content well inside XML tags. Paste raw Slack exports, meeting transcripts, and email threads — Claude will extract the signal from the noise.
+        </div>
+      </div>
+    </div>
+    <div
+      class="variant-panel"
+      role="tabpanel"
+      id="panel-chatgpt"
+hidden    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">ChatGPT</span>
+          <span class="model-version">GPT-5</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>Act as a technical writer organizing scattered business knowledge into clean documentation.
+
+I am going to give you a messy collection of...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="internal-knowledge-base-builder" data-model="chatgpt">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>Act as a technical writer organizing scattered business knowledge into clean documentation.
+
+I am going to give you a messy collection of...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="internal-knowledge-base-builder"
+          data-model="chatgpt"
+        >
+          <pre class="prompt-text-full"><code>Act as a technical writer organizing scattered business knowledge into clean documentation.
+
+I am going to give you a messy collection of content about a topic. Turn it into structured knowledge base articles.
+
+Topic: [WHAT AREA]
+Who reads this: [ROLES]
+KB tool: [Notion / Confluence / Google Docs / other]
+Tone: [formal / casual]
+
+Raw content:
+[PASTE EVERYTHING — SOPs, Slack messages, notes, emails, docs]
+
+Create:
+1. 1-3 structured articles with: title, category, tags, summary, full content with headers and steps, cross-references
+2. Gap list — unanswered questions marked &#34;TODO: ask [person]&#34;
+3. Decision log — rules and decisions extracted into a table
+4. TL;DR quick reference (under 200 words)</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="internal-knowledge-base-builder"
+          data-model="chatgpt"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> ChatGPT handles conversational content well. For Slack threads, paste the raw export and ask it to separate facts from opinions. Follow up with &#34;Now create a Notion template for this article.&#34;
+        </div>
+      </div>
+    </div>
+    <div
+      class="variant-panel"
+      role="tabpanel"
+      id="panel-gemini"
+hidden    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">Gemini</span>
+          <span class="model-version">Gemini 3 Pro</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>Help me organize messy business knowledge into structured documentation.
+
+**Topic:** [WHAT AREA]
+**Readers:**...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="internal-knowledge-base-builder" data-model="gemini">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>Help me organize messy business knowledge into structured documentation.
+
+**Topic:** [WHAT AREA]
+**Readers:**...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="internal-knowledge-base-builder"
+          data-model="gemini"
+        >
+          <pre class="prompt-text-full"><code>Help me organize messy business knowledge into structured documentation.
+
+**Topic:** [WHAT AREA]
+**Readers:** [ROLES]
+**KB tool:** [Notion / Confluence / Google Docs]
+**Tone:** [formal / casual]
+
+**Raw content:**
+[PASTE EVERYTHING]
+
+Create:
+1. 1-3 structured articles — title, category, tags, summary, full content, cross-references
+2. Knowledge gaps — unanswered questions with &#34;TODO: ask [person]&#34;
+3. Decision log table
+4. TL;DR quick reference (under 200 words)
+
+If the content references tools or processes, research current best practices to fill obvious gaps.</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="internal-knowledge-base-builder"
+          data-model="gemini"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Gemini works well with Google Docs and can reference linked documents. If your raw content is in Google Workspace, share links and Gemini will pull context from connected docs.
+        </div>
+      </div>
+    </div>
+    <div
+      class="variant-panel"
+      role="tabpanel"
+      id="panel-copilot"
+hidden    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">Copilot</span>
+          <span class="model-version">Copilot (Microsoft 365)</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>Turn my messy notes into organized knowledge base articles.
+
+Topic:...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="internal-knowledge-base-builder" data-model="copilot">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>Turn my messy notes into organized knowledge base articles.
+
+Topic:...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="internal-knowledge-base-builder"
+          data-model="copilot"
+        >
+          <pre class="prompt-text-full"><code>Turn my messy notes into organized knowledge base articles.
+
+Topic: [WHAT AREA]
+Readers: [ROLES]
+KB tool: [Notion / Confluence / Google Docs]
+Tone: [formal / casual]
+
+Raw content:
+[PASTE EVERYTHING]
+
+Create:
+1. 1-3 articles with title, category, tags, summary, content, cross-references
+2. Gap list with TODO items
+3. Decision log table
+4. TL;DR (under 200 words)</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="internal-knowledge-base-builder"
+          data-model="copilot"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Copilot can create the articles directly in Word or OneNote with proper formatting. If using SharePoint as your KB, Copilot can suggest the site structure and page hierarchy.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Related AI Tools ===== -->
+
+<!-- ===== Related Prompts ===== -->
+<section class="related-prompts-section">
+  <div class="section-inner">
+    <h2 class="subsection-title">More in training-and-knowledge</h2>
+    <div class="prompt-list">
+      <a
+        href="/prompts/employee-training-module-builder/"
+        class="prompt-card"
+      >
+        <div class="prompt-card-left">
+          <h3 class="prompt-card-title">Employee Training Module Builder</h3>
+          <p class="prompt-card-usecase">Create a complete training module for any role or skill — learning objectives, lesson content,...</p>
+        </div>
+        <div class="prompt-card-right">
+          <span class="badge badge-intermediate">Intermediate</span>
+          <span class="badge badge-value">Time-saving</span>
+        </div>
+      </a>
+      <a
+        href="/prompts/meeting-to-action-transformer/"
+        class="prompt-card"
+      >
+        <div class="prompt-card-left">
+          <h3 class="prompt-card-title">Meeting-to-Action Transformer</h3>
+          <p class="prompt-card-usecase">Transform meeting recordings, transcripts, or notes into structured action items with owners,...</p>
+        </div>
+        <div class="prompt-card-right">
+          <span class="badge badge-beginner">Beginner</span>
+          <span class="badge badge-value">Time-saving</span>
+        </div>
+      </a>
+      <a
+        href="/prompts/process-documentation-generator/"
+        class="prompt-card"
+      >
+        <div class="prompt-card-left">
+          <h3 class="prompt-card-title">Process Documentation Generator</h3>
+          <p class="prompt-card-usecase">Turn a verbal or rough explanation of how you do something into a clean, step-by-step SOP that...</p>
+        </div>
+        <div class="prompt-card-right">
+          <span class="badge badge-beginner">Beginner</span>
+          <span class="badge badge-value">Time-saving</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Request Similar ===== -->
+<section class="request-section">
+  <div class="section-inner">
+    <p class="section-subtitle">Don&rsquo;t see what you need? <button class="btn-link" id="btn-request-similar" type="button">Request a prompt</button> tailored to your use case.</p>
+  </div>
+</section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-tagline">
+        Built by <strong>AlignAI</strong> &mdash; They rank who pays. We score what works.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast notification container -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/assets/auth-gate.js"></script>
+  <script src="/assets/analytics.js"></script>
+<script>
+(function() {
+  // Tab switching
+  var tabs = document.querySelectorAll('.variant-tab');
+  var panels = document.querySelectorAll('.variant-panel');
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var target = tab.dataset.tab;
+
+      tabs.forEach(function(t) {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      panels.forEach(function(p) {
+        if (p.id === 'panel-' + target) {
+          p.classList.add('active');
+          p.removeAttribute('hidden');
+        } else {
+          p.classList.remove('active');
+          p.setAttribute('hidden', '');
+        }
+      });
+    });
+  });
+
+  // Toast helper
+  function showToast(msg) {
+    var toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 3000);
+  }
+
+  // Copy button (gated via auth-gate.js)
+  document.querySelectorAll('.btn-copy-prompt').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var panel = btn.closest('.variant-panel');
+      var fullText = panel.querySelector('.prompt-text-full code');
+      if (fullText) {
+        navigator.clipboard.writeText(fullText.textContent).then(function() {
+          showToast('Prompt copied to clipboard');
+        });
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

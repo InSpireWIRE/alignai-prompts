@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Description &amp; Posting Generator -- AlignAI Prompt Hub</title>
+  <meta name="description" content="Generate a compelling, inclusive job description with role summary, responsibilities, requirements (must-have vs. nice-to-have), compensation range framing, and a culture section — optimized for job board SEO.">
+  <link rel="canonical" href="https://prompts.alignai.business/prompts/job-description-posting-generator/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Job Description &amp; Posting Generator -- AlignAI Prompt Hub">
+  <meta property="og:description" content="Generate a compelling, inclusive job description with role summary, responsibilities, requirements (must-have vs. nice-to-have), compensation range framing, and a culture section — optimized for job board SEO.">
+  <meta property="og:image" content="https://prompts.alignai.business/assets/og-image.png">
+  <meta property="og:url" content="https://prompts.alignai.business/prompts/job-description-posting-generator/">
+  <meta property="og:site_name" content="AlignAI Prompt Hub">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Job Description &amp; Posting Generator -- AlignAI Prompt Hub">
+  <meta name="twitter:description" content="Generate a compelling, inclusive job description with role summary, responsibilities, requirements (must-have vs. nice-to-have), compensation range framing, and a culture section — optimized for job board SEO.">
+  <meta name="twitter:image" content="https://prompts.alignai.business/assets/og-image.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles.css">
+
+<!-- JSON-LD: HowTo structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Job Description &amp; Posting Generator",
+  "description": "Generate a compelling, inclusive job description with role summary, responsibilities, requirements (must-have vs. nice-to-have), compensation range framing, and a culture section — optimized for job board SEO.",
+  "url": "https://prompts.alignai.business/prompts/job-description-posting-generator/",
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Claude"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "ChatGPT"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Gemini"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Copilot"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Copy the prompt",
+      "text": "Copy the AI prompt text optimized for your chosen model."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Paste into your AI tool",
+      "text": "Open Claude and paste the prompt."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Customize placeholders",
+      "text": "Replace any [bracketed placeholders] with your specific business details."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="AlignAI home"><span style="font-family:'Space Mono',monospace;font-size:18px;font-weight:700;"><span style="color:rgba(250,251,252,0.4);">[</span><span style="color:#FAFBFC;">align</span><span style="color:#00C853;">.ai</span><span style="color:rgba(250,251,252,0.4);">]</span></span></a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/" class="nav-link">Prompt Hub</a>
+        <a href="https://app.alignai.business" class="nav-link">Browse AI Tools</a>
+        <button class="btn-signin" id="btn-signin" type="button">Sign In</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <main class="site-main">
+
+<!-- ===== Back Link ===== -->
+<div class="section-inner">
+  <a href="javascript:history.back()" class="back-link" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;color:#00C853;text-decoration:none;margin-bottom:12px;">&larr; Back</a>
+</div>
+
+<!-- ===== Breadcrumb ===== -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Hub Home</a>
+  <span class="breadcrumb-sep">&gt;</span>
+  <a href="/category/human-resources/">human-resources</a>
+  <span class="breadcrumb-sep">&gt;</span>
+  <span class="breadcrumb-current">Job Description &amp; Posting Generator</span>
+</nav>
+
+<!-- ===== Prompt Header ===== -->
+<section class="prompt-header">
+  <div class="section-inner">
+    <h1 class="prompt-page-title">Job Description &amp; Posting Generator</h1>
+    <p class="prompt-subtitle">Generate a compelling, inclusive job description with role summary, responsibilities, requirements (must-have vs. nice-to-have), compensation range framing, and a culture section — optimized for job board SEO.</p>
+    <div class="prompt-meta">
+      <span class="badge badge-beginner">Beginner</span>
+      <span class="badge badge-style">PASTE &amp; GO</span>
+      <span class="badge badge-value">Time-saving</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Pro Tip ===== -->
+<section class="prompt-protip">
+  <div class="section-inner">
+    <div class="callout">
+      <span class="callout-label">Pro tip</span>
+      <p>Specify your DEI goals upfront. Ask the AI to flag any language that research shows deters underrepresented candidates (e.g., &#34;rockstar&#34;, unnecessarily gendered terms). Always include salary transparency.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Tags ===== -->
+<section class="prompt-tags-section">
+  <div class="section-inner">
+    <div class="tag-pills">
+      <span class="tag-pill">hiring</span>
+      <span class="tag-pill">job description</span>
+      <span class="tag-pill">recruiting</span>
+      <span class="tag-pill">dei</span>
+      <span class="tag-pill">job posting</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Model Variant Tabs ===== -->
+<section class="variants-section">
+  <div class="section-inner">
+    <h2 class="subsection-title">Prompt Variants by Model</h2>
+
+    <!-- Tab buttons -->
+    <div class="variant-tabs" role="tablist" aria-label="AI model variants">
+      <button
+        class="variant-tab active"
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel-claude"
+        data-tab="claude"
+        type="button"
+      >
+        Claude
+      </button>
+      <button
+        class="variant-tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-chatgpt"
+        data-tab="chatgpt"
+        type="button"
+      >
+        ChatGPT
+      </button>
+      <button
+        class="variant-tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-gemini"
+        data-tab="gemini"
+        type="button"
+      >
+        Gemini
+      </button>
+      <button
+        class="variant-tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-copilot"
+        data-tab="copilot"
+        type="button"
+      >
+        Copilot
+      </button>
+    </div>
+
+    <!-- Tab panels -->
+    <div
+      class="variant-panel active"
+      role="tabpanel"
+      id="panel-claude"
+    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">Claude</span>
+          <span class="model-version">Claude 4.x</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>You are an HR specialist who writes compelling, inclusive job descriptions optimized for job board search. Create a job posting for the following role:
+
+&lt;role_details&gt;
+Title: [JOB_TITLE]
+Department:...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="job-description-posting-generator" data-model="claude">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>You are an HR specialist who writes compelling, inclusive job descriptions optimized for job board search. Create a job posting for the following role:
+
+&lt;role_details&gt;
+Title: [JOB_TITLE]
+Department:...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="job-description-posting-generator"
+          data-model="claude"
+        >
+          <pre class="prompt-text-full"><code>You are an HR specialist who writes compelling, inclusive job descriptions optimized for job board search. Create a job posting for the following role:
+
+&lt;role_details&gt;
+Title: [JOB_TITLE]
+Department: [DEPARTMENT]
+Reports to: [MANAGER_TITLE]
+Location: [LOCATION / REMOTE / HYBRID]
+Employment type: [FULL-TIME / PART-TIME / CONTRACT]
+Compensation range: $[MIN]-$[MAX] [per hour/per year]
+Company: [NAME] — [BRIEF DESCRIPTION]
+Team size: [NUMBER]
+&lt;/role_details&gt;
+
+Include:
+1. **Compelling opening** (3-4 sentences — sell the opportunity, not just the requirements)
+2. **Role summary** (what this person will own and why it matters)
+3. **Key responsibilities** (8-10 bullet points, action-verb format)
+4. **Must-have qualifications** (5-7 items — real requirements only, no wish lists)
+5. **Nice-to-have qualifications** (3-4 items — clearly separated)
+6. **What we offer** (compensation, benefits, culture, growth)
+7. **DEI statement** (authentic, not boilerplate)
+8. **Application instructions**
+
+After drafting, review the posting and flag any language that research shows discourages applications from underrepresented candidates. Suggest alternatives.</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="job-description-posting-generator"
+          data-model="claude"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Claude is excellent at the DEI language review step — flags gendered language, unnecessary requirements, and exclusionary jargon.
+        </div>
+      </div>
+    </div>
+    <div
+      class="variant-panel"
+      role="tabpanel"
+      id="panel-chatgpt"
+hidden    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">ChatGPT</span>
+          <span class="model-version">GPT-5</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>Act as a senior HR recruiter specializing in inclusive job descriptions. Write a job posting for:
+
+**Role:** [JOB_TITLE]
+**Department:** [DEPARTMENT]
+**Reports to:**...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="job-description-posting-generator" data-model="chatgpt">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>Act as a senior HR recruiter specializing in inclusive job descriptions. Write a job posting for:
+
+**Role:** [JOB_TITLE]
+**Department:** [DEPARTMENT]
+**Reports to:**...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="job-description-posting-generator"
+          data-model="chatgpt"
+        >
+          <pre class="prompt-text-full"><code>Act as a senior HR recruiter specializing in inclusive job descriptions. Write a job posting for:
+
+**Role:** [JOB_TITLE]
+**Department:** [DEPARTMENT]
+**Reports to:** [MANAGER_TITLE]
+**Location:** [LOCATION/REMOTE/HYBRID]
+**Type:** [FULL-TIME/PART-TIME/CONTRACT]
+**Pay:** $[MIN]-$[MAX] [hourly/annually]
+**Company:** [NAME] — [BRIEF DESCRIPTION]
+**Team:** [NUMBER] people
+
+**Structure:**
+1. Opening hook (3-4 sentences — sell the role)
+2. Role summary (what they will own)
+3. Responsibilities (8-10 action-verb bullets)
+4. Must-have qualifications (5-7, essentials only)
+5. Nice-to-have qualifications (3-4, clearly labeled)
+6. What we offer (comp, benefits, culture)
+7. DEI commitment (genuine, not generic)
+8. How to apply
+
+Then: Review the posting and flag language that might deter underrepresented candidates. Suggest replacements.</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="job-description-posting-generator"
+          data-model="chatgpt"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> ChatGPT handles job descriptions well with persona prompting. Use a Custom GPT with your tone guide and benefits pre-loaded.
+        </div>
+      </div>
+    </div>
+    <div
+      class="variant-panel"
+      role="tabpanel"
+      id="panel-gemini"
+hidden    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">Gemini</span>
+          <span class="model-version">Gemini 3 Pro</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>I need to write a job description for a new hire. Help me make it compelling and inclusive.
+
+**The role:**
+- Title: [JOB_TITLE]
+- Department: [DEPARTMENT]
+-...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="job-description-posting-generator" data-model="gemini">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>I need to write a job description for a new hire. Help me make it compelling and inclusive.
+
+**The role:**
+- Title: [JOB_TITLE]
+- Department: [DEPARTMENT]
+-...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="job-description-posting-generator"
+          data-model="gemini"
+        >
+          <pre class="prompt-text-full"><code>I need to write a job description for a new hire. Help me make it compelling and inclusive.
+
+**The role:**
+- Title: [JOB_TITLE]
+- Department: [DEPARTMENT]
+- Reports to: [MANAGER_TITLE]
+- Location: [LOCATION/REMOTE/HYBRID]
+- Type: [FULL-TIME/PART-TIME/CONTRACT]
+- Pay range: $[MIN]-$[MAX]
+- Company: [NAME] — [DESCRIPTION]
+
+**Please write:**
+1. An engaging opening that sells the opportunity
+2. A summary of what the person will own
+3. 8-10 responsibilities (start each with an action verb)
+4. Must-have qualifications (only true requirements)
+5. Nice-to-haves (clearly separated)
+6. What we offer (pay, benefits, culture, growth)
+7. An authentic DEI statement
+8. Application instructions
+
+Then review the full posting and flag any wording that might discourage underrepresented groups. Suggest better alternatives.</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="job-description-posting-generator"
+          data-model="gemini"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Gemini can research salary benchmarks for the role in real-time.
+        </div>
+      </div>
+    </div>
+    <div
+      class="variant-panel"
+      role="tabpanel"
+      id="panel-copilot"
+hidden    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">Copilot</span>
+          <span class="model-version">Copilot (Microsoft 365)</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>Help me write a job posting that will attract great, diverse candidates.
+
+**The position:**
+- Job title: [JOB_TITLE]
+- Department: [DEPARTMENT]
+- Manager: [MANAGER_TITLE]
+-...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="job-description-posting-generator" data-model="copilot">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>Help me write a job posting that will attract great, diverse candidates.
+
+**The position:**
+- Job title: [JOB_TITLE]
+- Department: [DEPARTMENT]
+- Manager: [MANAGER_TITLE]
+-...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="job-description-posting-generator"
+          data-model="copilot"
+        >
+          <pre class="prompt-text-full"><code>Help me write a job posting that will attract great, diverse candidates.
+
+**The position:**
+- Job title: [JOB_TITLE]
+- Department: [DEPARTMENT]
+- Manager: [MANAGER_TITLE]
+- Where: [LOCATION/REMOTE/HYBRID]
+- Full-time, part-time, or contract: [TYPE]
+- Salary: $[MIN]-$[MAX]
+- About us: [COMPANY NAME] — [SHORT DESCRIPTION]
+
+**Write a posting with:**
+1. A strong opening that makes people want to apply (3-4 sentences)
+2. What this person will be responsible for
+3. 8-10 key duties (start each with an action word)
+4. What they absolutely need to have (keep this realistic)
+5. What would be nice but is not required
+6. Why this is a great place to work (pay, perks, culture)
+7. Our commitment to diversity (make it genuine)
+8. How to apply
+
+After writing it, check for any language that might turn away women, minorities, or other underrepresented candidates and suggest fixes.</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="job-description-posting-generator"
+          data-model="copilot"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Copilot in Word generates the posting directly in a formatted document. Integrates with LinkedIn for direct posting.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Related AI Tools ===== -->
+
+<!-- ===== Related Prompts ===== -->
+<section class="related-prompts-section">
+  <div class="section-inner">
+    <h2 class="subsection-title">More in human-resources</h2>
+    <div class="prompt-list">
+      <a
+        href="/prompts/90-day-onboarding-program-builder/"
+        class="prompt-card"
+      >
+        <div class="prompt-card-left">
+          <h3 class="prompt-card-title">90-Day Onboarding Program Builder</h3>
+          <p class="prompt-card-usecase">Create a structured 90-day onboarding plan broken into Week 1 (orientation), Weeks 2-4 (role ramp),...</p>
+        </div>
+        <div class="prompt-card-right">
+          <span class="badge badge-intermediate">Intermediate</span>
+          <span class="badge badge-value">Employee-retention</span>
+        </div>
+      </a>
+      <a
+        href="/prompts/performance-review-cycle-automation/"
+        class="prompt-card"
+      >
+        <div class="prompt-card-left">
+          <h3 class="prompt-card-title">Performance Review Cycle Automation</h3>
+          <p class="prompt-card-usecase">Design an end-to-end performance review workflow: self-assessment prompts, manager evaluation...</p>
+        </div>
+        <div class="prompt-card-right">
+          <span class="badge badge-expert">Expert</span>
+          <span class="badge badge-value">Time-saving</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Request Similar ===== -->
+<section class="request-section">
+  <div class="section-inner">
+    <p class="section-subtitle">Don&rsquo;t see what you need? <button class="btn-link" id="btn-request-similar" type="button">Request a prompt</button> tailored to your use case.</p>
+  </div>
+</section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-tagline">
+        Built by <strong>AlignAI</strong> &mdash; They rank who pays. We score what works.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast notification container -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/assets/auth-gate.js"></script>
+  <script src="/assets/analytics.js"></script>
+<script>
+(function() {
+  // Tab switching
+  var tabs = document.querySelectorAll('.variant-tab');
+  var panels = document.querySelectorAll('.variant-panel');
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var target = tab.dataset.tab;
+
+      tabs.forEach(function(t) {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      panels.forEach(function(p) {
+        if (p.id === 'panel-' + target) {
+          p.classList.add('active');
+          p.removeAttribute('hidden');
+        } else {
+          p.classList.remove('active');
+          p.setAttribute('hidden', '');
+        }
+      });
+    });
+  });
+
+  // Toast helper
+  function showToast(msg) {
+    var toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 3000);
+  }
+
+  // Copy button (gated via auth-gate.js)
+  document.querySelectorAll('.btn-copy-prompt').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var panel = btn.closest('.variant-panel');
+      var fullText = panel.querySelector('.prompt-text-full code');
+      if (fullText) {
+        navigator.clipboard.writeText(fullText.textContent).then(function() {
+          showToast('Prompt copied to clipboard');
+        });
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

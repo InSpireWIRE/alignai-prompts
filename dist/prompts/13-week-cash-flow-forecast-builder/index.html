@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>13-Week Cash Flow Forecast Builder -- AlignAI Prompt Hub</title>
+  <meta name="description" content="Generate a week-by-week 13-week cash flow forecast template from your current bank balance, expected receivables, and fixed/variable expenses.">
+  <link rel="canonical" href="https://prompts.alignai.business/prompts/13-week-cash-flow-forecast-builder/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="13-Week Cash Flow Forecast Builder -- AlignAI Prompt Hub">
+  <meta property="og:description" content="Generate a week-by-week 13-week cash flow forecast template from your current bank balance, expected receivables, and fixed/variable expenses.">
+  <meta property="og:image" content="https://prompts.alignai.business/assets/og-image.png">
+  <meta property="og:url" content="https://prompts.alignai.business/prompts/13-week-cash-flow-forecast-builder/">
+  <meta property="og:site_name" content="AlignAI Prompt Hub">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="13-Week Cash Flow Forecast Builder -- AlignAI Prompt Hub">
+  <meta name="twitter:description" content="Generate a week-by-week 13-week cash flow forecast template from your current bank balance, expected receivables, and fixed/variable expenses.">
+  <meta name="twitter:image" content="https://prompts.alignai.business/assets/og-image.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles.css">
+
+<!-- JSON-LD: HowTo structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "13-Week Cash Flow Forecast Builder",
+  "description": "Generate a week-by-week 13-week cash flow forecast template from your current bank balance, expected receivables, and fixed/variable expenses.",
+  "url": "https://prompts.alignai.business/prompts/13-week-cash-flow-forecast-builder/",
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Claude"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "ChatGPT"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Gemini"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Copilot"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Copy the prompt",
+      "text": "Copy the AI prompt text optimized for your chosen model."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Paste into your AI tool",
+      "text": "Open Claude and paste the prompt."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Customize placeholders",
+      "text": "Replace any [bracketed placeholders] with your specific business details."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="AlignAI home"><span style="font-family:'Space Mono',monospace;font-size:18px;font-weight:700;"><span style="color:rgba(250,251,252,0.4);">[</span><span style="color:#FAFBFC;">align</span><span style="color:#00C853;">.ai</span><span style="color:rgba(250,251,252,0.4);">]</span></span></a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/" class="nav-link">Prompt Hub</a>
+        <a href="https://app.alignai.business" class="nav-link">Browse AI Tools</a>
+        <button class="btn-signin" id="btn-signin" type="button">Sign In</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <main class="site-main">
+
+<!-- ===== Back Link ===== -->
+<div class="section-inner">
+  <a href="javascript:history.back()" class="back-link" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;color:#00C853;text-decoration:none;margin-bottom:12px;">&larr; Back</a>
+</div>
+
+<!-- ===== Breadcrumb ===== -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Hub Home</a>
+  <span class="breadcrumb-sep">&gt;</span>
+  <a href="/category/finance-and-strategy/">finance-and-strategy</a>
+  <span class="breadcrumb-sep">&gt;</span>
+  <span class="breadcrumb-current">13-Week Cash Flow Forecast Builder</span>
+</nav>
+
+<!-- ===== Prompt Header ===== -->
+<section class="prompt-header">
+  <div class="section-inner">
+    <h1 class="prompt-page-title">13-Week Cash Flow Forecast Builder</h1>
+    <p class="prompt-subtitle">Generate a week-by-week 13-week cash flow forecast template from your current bank balance, expected receivables, and fixed/variable expenses.</p>
+    <div class="prompt-meta">
+      <span class="badge badge-beginner">Beginner</span>
+      <span class="badge badge-style">PASTE &amp; GO</span>
+      <span class="badge badge-value">Risk-reduction</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Pro Tip ===== -->
+<section class="prompt-protip">
+  <div class="section-inner">
+    <div class="callout">
+      <span class="callout-label">Pro tip</span>
+      <p>Even a rough estimate is better than nothing. Update weekly for compounding accuracy. Ask the AI to flag any week where projected balance drops below your 2-week operating expense threshold.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Tags ===== -->
+<section class="prompt-tags-section">
+  <div class="section-inner">
+    <div class="tag-pills">
+      <span class="tag-pill">cash flow</span>
+      <span class="tag-pill">forecast</span>
+      <span class="tag-pill">treasury</span>
+      <span class="tag-pill">runway</span>
+      <span class="tag-pill">financial planning</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Model Variant Tabs ===== -->
+<section class="variants-section">
+  <div class="section-inner">
+    <h2 class="subsection-title">Prompt Variants by Model</h2>
+
+    <!-- Tab buttons -->
+    <div class="variant-tabs" role="tablist" aria-label="AI model variants">
+      <button
+        class="variant-tab active"
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel-claude"
+        data-tab="claude"
+        type="button"
+      >
+        Claude
+      </button>
+      <button
+        class="variant-tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-chatgpt"
+        data-tab="chatgpt"
+        type="button"
+      >
+        ChatGPT
+      </button>
+      <button
+        class="variant-tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-gemini"
+        data-tab="gemini"
+        type="button"
+      >
+        Gemini
+      </button>
+      <button
+        class="variant-tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-copilot"
+        data-tab="copilot"
+        type="button"
+      >
+        Copilot
+      </button>
+    </div>
+
+    <!-- Tab panels -->
+    <div
+      class="variant-panel active"
+      role="tabpanel"
+      id="panel-claude"
+    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">Claude</span>
+          <span class="model-version">Claude 4.x</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>You are a fractional CFO for small businesses. Build a 13-week cash flow forecast for my business.
+
+&lt;financial_context&gt;
+Business type: [INDUSTRY]
+Current bank balance: $[AMOUNT]
+Weekly revenue...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="13-week-cash-flow-forecast-builder" data-model="claude">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>You are a fractional CFO for small businesses. Build a 13-week cash flow forecast for my business.
+
+&lt;financial_context&gt;
+Business type: [INDUSTRY]
+Current bank balance: $[AMOUNT]
+Weekly revenue...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="13-week-cash-flow-forecast-builder"
+          data-model="claude"
+        >
+          <pre class="prompt-text-full"><code>You are a fractional CFO for small businesses. Build a 13-week cash flow forecast for my business.
+
+&lt;financial_context&gt;
+Business type: [INDUSTRY]
+Current bank balance: $[AMOUNT]
+Weekly revenue (average): $[AMOUNT]
+Revenue pattern: [STEADY / SEASONAL / LUMPY — describe]
+Fixed weekly expenses: $[AMOUNT] (rent, payroll, subscriptions, etc.)
+Variable expenses: $[AMOUNT] average (COGS, commissions, etc.)
+Outstanding receivables: $[AMOUNT] expected over next [X] weeks
+Upcoming large expenses: [LIST ANY ONE-TIME COSTS WITH DATES]
+Credit line available: $[AMOUNT]
+&lt;/financial_context&gt;
+
+Generate:
+1. A week-by-week cash flow table (13 rows) with columns: Week | Starting Balance | Cash In | Cash Out | Net Flow | Ending Balance
+2. Flag any week where ending balance drops below [X]-week operating expenses (danger zone)
+3. Highlight the lowest cash point and when it occurs
+4. Provide 3 actionable recommendations to improve cash position
+5. Create a &#34;stress test&#34; scenario: what happens if revenue drops 20% for 4 weeks?
+
+Show your calculations. Use conservative estimates where uncertain.</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="13-week-cash-flow-forecast-builder"
+          data-model="claude"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Claude handles financial reasoning well. Ask it to show calculations for transparency. Update weekly by pasting new actuals.
+        </div>
+      </div>
+    </div>
+    <div
+      class="variant-panel"
+      role="tabpanel"
+      id="panel-chatgpt"
+hidden    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">ChatGPT</span>
+          <span class="model-version">GPT-5</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>Act as a fractional CFO. Build me a 13-week cash flow forecast.
+
+**My financials:**
+- Business: [INDUSTRY]
+- Cash on hand: $[AMOUNT]
+- Average weekly...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="13-week-cash-flow-forecast-builder" data-model="chatgpt">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>Act as a fractional CFO. Build me a 13-week cash flow forecast.
+
+**My financials:**
+- Business: [INDUSTRY]
+- Cash on hand: $[AMOUNT]
+- Average weekly...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="13-week-cash-flow-forecast-builder"
+          data-model="chatgpt"
+        >
+          <pre class="prompt-text-full"><code>Act as a fractional CFO. Build me a 13-week cash flow forecast.
+
+**My financials:**
+- Business: [INDUSTRY]
+- Cash on hand: $[AMOUNT]
+- Average weekly revenue: $[AMOUNT]
+- Revenue pattern: [STEADY/SEASONAL/LUMPY]
+- Fixed weekly costs: $[AMOUNT]
+- Variable weekly costs: $[AMOUNT]
+- Receivables coming in: $[AMOUNT] over [X] weeks
+- Big upcoming expenses: [LIST WITH DATES]
+- Credit line: $[AMOUNT]
+
+**Build a table:** Week | Starting Balance | Cash In | Cash Out | Net Cash Flow | Ending Balance (13 weeks)
+
+Then:
+1. Flag any week where cash drops below [X] weeks of expenses
+2. Tell me the lowest cash point and when
+3. Give me 3 things I can do to improve cash position
+4. Run a stress test: what if revenue drops 20% for a month?
+
+Use Code Interpreter to build the table and any charts.</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="13-week-cash-flow-forecast-builder"
+          data-model="chatgpt"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Use Code Interpreter for automated table generation and stress-test charts. Can export directly to Excel.
+        </div>
+      </div>
+    </div>
+    <div
+      class="variant-panel"
+      role="tabpanel"
+      id="panel-gemini"
+hidden    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">Gemini</span>
+          <span class="model-version">Gemini 3 Pro</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>Help me create a 13-week cash flow forecast for my [INDUSTRY] business.
+
+**Starting position:**
+- Cash on hand: $[AMOUNT]
+- Average weekly...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="13-week-cash-flow-forecast-builder" data-model="gemini">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>Help me create a 13-week cash flow forecast for my [INDUSTRY] business.
+
+**Starting position:**
+- Cash on hand: $[AMOUNT]
+- Average weekly...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="13-week-cash-flow-forecast-builder"
+          data-model="gemini"
+        >
+          <pre class="prompt-text-full"><code>Help me create a 13-week cash flow forecast for my [INDUSTRY] business.
+
+**Starting position:**
+- Cash on hand: $[AMOUNT]
+- Average weekly revenue: $[AMOUNT]
+- Revenue pattern: [DESCRIBE]
+- Fixed weekly expenses: $[AMOUNT]
+- Variable weekly expenses: $[AMOUNT]
+- Receivables expected: $[AMOUNT] over [X] weeks
+- Large upcoming costs: [LIST WITH DATES]
+- Available credit: $[AMOUNT]
+
+**Please create:**
+1. A 13-week table: Week, Starting Balance, Cash In, Cash Out, Net Flow, Ending Balance
+2. Flag weeks where cash falls below a safe threshold
+3. Identify the lowest cash point
+4. 3 recommendations to improve cash flow
+5. A stress test: revenue drops 20% for 4 weeks — what happens?
+
+Show the math and use conservative assumptions.</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="13-week-cash-flow-forecast-builder"
+          data-model="gemini"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Export to Google Sheets for a live tracker. Gemini can update the forecast weekly as you paste in actual figures.
+        </div>
+      </div>
+    </div>
+    <div
+      class="variant-panel"
+      role="tabpanel"
+      id="panel-copilot"
+hidden    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">Copilot</span>
+          <span class="model-version">Copilot (Microsoft 365)</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>I need a 13-week cash flow forecast for my [INDUSTRY] business. Help me see where my cash is going.
+
+**My numbers:**
+- Cash in the bank right now:...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="13-week-cash-flow-forecast-builder" data-model="copilot">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>I need a 13-week cash flow forecast for my [INDUSTRY] business. Help me see where my cash is going.
+
+**My numbers:**
+- Cash in the bank right now:...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="13-week-cash-flow-forecast-builder"
+          data-model="copilot"
+        >
+          <pre class="prompt-text-full"><code>I need a 13-week cash flow forecast for my [INDUSTRY] business. Help me see where my cash is going.
+
+**My numbers:**
+- Cash in the bank right now: $[AMOUNT]
+- Average weekly income: $[AMOUNT]
+- Is income steady or seasonal? [DESCRIBE]
+- Fixed costs per week (rent, payroll, etc.): $[AMOUNT]
+- Variable costs per week: $[AMOUNT]
+- Money owed to me coming in: $[AMOUNT] over [X] weeks
+- Any big expenses coming up: [LIST]
+- Credit line available: $[AMOUNT]
+
+**Please give me:**
+1. A week-by-week table for 13 weeks showing: starting cash, money in, money out, what is left
+2. Warn me about any week where I might be in trouble
+3. Tell me when cash will be at its lowest
+4. 3 practical things I can do to improve my cash situation
+5. What happens if my revenue drops 20% for a month?</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="13-week-cash-flow-forecast-builder"
+          data-model="copilot"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Copilot in Excel is ideal here — builds the forecast directly in a spreadsheet with formulas.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Related AI Tools ===== -->
+
+<!-- ===== Related Prompts ===== -->
+<section class="related-prompts-section">
+  <div class="section-inner">
+    <h2 class="subsection-title">More in finance-and-strategy</h2>
+    <div class="prompt-list">
+      <a
+        href="/prompts/dynamic-pricing-strategy-modeler/"
+        class="prompt-card"
+      >
+        <div class="prompt-card-left">
+          <h3 class="prompt-card-title">Dynamic Pricing Strategy Modeler</h3>
+          <p class="prompt-card-usecase">Build a pricing analysis workflow that ingests your product catalog, cost structure, competitor...</p>
+        </div>
+        <div class="prompt-card-right">
+          <span class="badge badge-expert">Expert</span>
+          <span class="badge badge-value">Revenue-driving</span>
+        </div>
+      </a>
+      <a
+        href="/prompts/swot-to-strategy-action-plan/"
+        class="prompt-card"
+      >
+        <div class="prompt-card-left">
+          <h3 class="prompt-card-title">SWOT-to-Strategy Action Plan</h3>
+          <p class="prompt-card-usecase">Conduct a structured SWOT analysis for your business, then use chain-of-thought reasoning to...</p>
+        </div>
+        <div class="prompt-card-right">
+          <span class="badge badge-intermediate">Intermediate</span>
+          <span class="badge badge-value">Strategic-clarity</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Request Similar ===== -->
+<section class="request-section">
+  <div class="section-inner">
+    <p class="section-subtitle">Don&rsquo;t see what you need? <button class="btn-link" id="btn-request-similar" type="button">Request a prompt</button> tailored to your use case.</p>
+  </div>
+</section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-tagline">
+        Built by <strong>AlignAI</strong> &mdash; They rank who pays. We score what works.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast notification container -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/assets/auth-gate.js"></script>
+  <script src="/assets/analytics.js"></script>
+<script>
+(function() {
+  // Tab switching
+  var tabs = document.querySelectorAll('.variant-tab');
+  var panels = document.querySelectorAll('.variant-panel');
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var target = tab.dataset.tab;
+
+      tabs.forEach(function(t) {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      panels.forEach(function(p) {
+        if (p.id === 'panel-' + target) {
+          p.classList.add('active');
+          p.removeAttribute('hidden');
+        } else {
+          p.classList.remove('active');
+          p.setAttribute('hidden', '');
+        }
+      });
+    });
+  });
+
+  // Toast helper
+  function showToast(msg) {
+    var toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 3000);
+  }
+
+  // Copy button (gated via auth-gate.js)
+  document.querySelectorAll('.btn-copy-prompt').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var panel = btn.closest('.variant-panel');
+      var fullText = panel.querySelector('.prompt-text-full code');
+      if (fullText) {
+        navigator.clipboard.writeText(fullText.textContent).then(function() {
+          showToast('Prompt copied to clipboard');
+        });
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

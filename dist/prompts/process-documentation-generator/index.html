@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Process Documentation Generator -- AlignAI Prompt Hub</title>
+  <meta name="description" content="Turn a verbal or rough explanation of how you do something into a clean, step-by-step SOP that anyone on your team can follow. Includes decision points, edge cases, tool-specific instructions, and a troubleshooting section.">
+  <link rel="canonical" href="https://prompts.alignai.business/prompts/process-documentation-generator/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Process Documentation Generator -- AlignAI Prompt Hub">
+  <meta property="og:description" content="Turn a verbal or rough explanation of how you do something into a clean, step-by-step SOP that anyone on your team can follow. Includes decision points, edge cases, tool-specific instructions, and a troubleshooting section.">
+  <meta property="og:image" content="https://prompts.alignai.business/assets/og-image.png">
+  <meta property="og:url" content="https://prompts.alignai.business/prompts/process-documentation-generator/">
+  <meta property="og:site_name" content="AlignAI Prompt Hub">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Process Documentation Generator -- AlignAI Prompt Hub">
+  <meta name="twitter:description" content="Turn a verbal or rough explanation of how you do something into a clean, step-by-step SOP that anyone on your team can follow. Includes decision points, edge cases, tool-specific instructions, and a troubleshooting section.">
+  <meta name="twitter:image" content="https://prompts.alignai.business/assets/og-image.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles.css">
+
+<!-- JSON-LD: HowTo structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Process Documentation Generator",
+  "description": "Turn a verbal or rough explanation of how you do something into a clean, step-by-step SOP that anyone on your team can follow. Includes decision points, edge cases, tool-specific instructions, and a troubleshooting section.",
+  "url": "https://prompts.alignai.business/prompts/process-documentation-generator/",
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Claude"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "ChatGPT"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Gemini"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Copilot"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Copy the prompt",
+      "text": "Copy the AI prompt text optimized for your chosen model."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Paste into your AI tool",
+      "text": "Open Claude and paste the prompt."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Customize placeholders",
+      "text": "Replace any [bracketed placeholders] with your specific business details."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="AlignAI home"><span style="font-family:'Space Mono',monospace;font-size:18px;font-weight:700;"><span style="color:rgba(250,251,252,0.4);">[</span><span style="color:#FAFBFC;">align</span><span style="color:#00C853;">.ai</span><span style="color:rgba(250,251,252,0.4);">]</span></span></a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/" class="nav-link">Prompt Hub</a>
+        <a href="https://app.alignai.business" class="nav-link">Browse AI Tools</a>
+        <button class="btn-signin" id="btn-signin" type="button">Sign In</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <main class="site-main">
+
+<!-- ===== Back Link ===== -->
+<div class="section-inner">
+  <a href="javascript:history.back()" class="back-link" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;color:#00C853;text-decoration:none;margin-bottom:12px;">&larr; Back</a>
+</div>
+
+<!-- ===== Breadcrumb ===== -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Hub Home</a>
+  <span class="breadcrumb-sep">&gt;</span>
+  <a href="/category/training-and-knowledge/">training-and-knowledge</a>
+  <span class="breadcrumb-sep">&gt;</span>
+  <span class="breadcrumb-current">Process Documentation Generator</span>
+</nav>
+
+<!-- ===== Prompt Header ===== -->
+<section class="prompt-header">
+  <div class="section-inner">
+    <h1 class="prompt-page-title">Process Documentation Generator</h1>
+    <p class="prompt-subtitle">Turn a verbal or rough explanation of how you do something into a clean, step-by-step SOP that anyone on your team can follow. Includes decision points, edge cases, tool-specific instructions, and a troubleshooting section.</p>
+    <div class="prompt-meta">
+      <span class="badge badge-beginner">Beginner</span>
+      <span class="badge badge-style">PASTE &amp; GO</span>
+      <span class="badge badge-value">Time-saving</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Pro Tip ===== -->
+<section class="prompt-protip">
+  <div class="section-inner">
+    <div class="callout">
+      <span class="callout-label">Pro tip</span>
+      <p>Explain the process like you are training someone who has never done it. Include the weird edge cases and the &#34;oh and also&#34; steps you always forget to mention.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Tags ===== -->
+<section class="prompt-tags-section">
+  <div class="section-inner">
+    <div class="tag-pills">
+      <span class="tag-pill">SOP</span>
+      <span class="tag-pill">process</span>
+      <span class="tag-pill">documentation</span>
+      <span class="tag-pill">standard operating procedure</span>
+      <span class="tag-pill">workflow</span>
+      <span class="tag-pill">how-to</span>
+      <span class="tag-pill">operations</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Model Variant Tabs ===== -->
+<section class="variants-section">
+  <div class="section-inner">
+    <h2 class="subsection-title">Prompt Variants by Model</h2>
+
+    <!-- Tab buttons -->
+    <div class="variant-tabs" role="tablist" aria-label="AI model variants">
+      <button
+        class="variant-tab active"
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel-claude"
+        data-tab="claude"
+        type="button"
+      >
+        Claude
+      </button>
+      <button
+        class="variant-tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-chatgpt"
+        data-tab="chatgpt"
+        type="button"
+      >
+        ChatGPT
+      </button>
+      <button
+        class="variant-tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-gemini"
+        data-tab="gemini"
+        type="button"
+      >
+        Gemini
+      </button>
+      <button
+        class="variant-tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-copilot"
+        data-tab="copilot"
+        type="button"
+      >
+        Copilot
+      </button>
+    </div>
+
+    <!-- Tab panels -->
+    <div
+      class="variant-panel active"
+      role="tabpanel"
+      id="panel-claude"
+    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">Claude</span>
+          <span class="model-version">Claude 4.x</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>You are a process documentation specialist. Turn my rough explanation into a clean, followable SOP.
+
+&lt;process_explanation&gt;
+[EXPLAIN THE PROCESS IN YOUR OWN WORDS — messy is fine. Include every step,...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="process-documentation-generator" data-model="claude">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>You are a process documentation specialist. Turn my rough explanation into a clean, followable SOP.
+
+&lt;process_explanation&gt;
+[EXPLAIN THE PROCESS IN YOUR OWN WORDS — messy is fine. Include every step,...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="process-documentation-generator"
+          data-model="claude"
+        >
+          <pre class="prompt-text-full"><code>You are a process documentation specialist. Turn my rough explanation into a clean, followable SOP.
+
+&lt;process_explanation&gt;
+[EXPLAIN THE PROCESS IN YOUR OWN WORDS — messy is fine. Include every step, tool used, decision point, and edge case you can think of. More detail = better doc.]
+&lt;/process_explanation&gt;
+
+&lt;context&gt;
+Process name: [e.g., &#34;How to process a customer refund&#34;]
+Who follows this: [role]
+How often: [daily / weekly / as-needed]
+Tools involved: [list all software/tools used]
+Common mistakes: [what goes wrong when someone does this incorrectly]
+&lt;/context&gt;
+
+Create a production-ready SOP:
+
+1. **Header** — process name, owner, last updated, version number.
+
+2. **Purpose** — one paragraph on why this process exists and when to use it.
+
+3. **Prerequisites** — what the person needs before starting (access, tools, approvals).
+
+4. **Step-by-step procedure** — numbered steps with enough detail that someone doing this for the first time can follow without asking questions. Include:
+   - Which tool/screen for each step
+   - What to click or where to navigate
+   - Decision points marked clearly (&#34;IF [condition] → do X, ELSE → do Y&#34;)
+   - Expected result after each step
+
+5. **Edge cases** — the weird situations and how to handle them.
+
+6. **Troubleshooting** — common errors and fixes.
+
+7. **Quality check** — how to verify the process was done correctly.
+
+8. **Revision history** — blank template for tracking updates.</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="process-documentation-generator"
+          data-model="claude"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Claude produces exceptionally detailed SOPs. The more raw and messy your input, the better — Claude will ask clarifying questions if important steps seem missing. Use XML tags to separate the explanation from context.
+        </div>
+      </div>
+    </div>
+    <div
+      class="variant-panel"
+      role="tabpanel"
+      id="panel-chatgpt"
+hidden    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">ChatGPT</span>
+          <span class="model-version">GPT-5</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>Act as a process documentation specialist. I am going to explain how I do something, and you will turn it into a clean SOP anyone can follow.
+
+Process name:...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="process-documentation-generator" data-model="chatgpt">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>Act as a process documentation specialist. I am going to explain how I do something, and you will turn it into a clean SOP anyone can follow.
+
+Process name:...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="process-documentation-generator"
+          data-model="chatgpt"
+        >
+          <pre class="prompt-text-full"><code>Act as a process documentation specialist. I am going to explain how I do something, and you will turn it into a clean SOP anyone can follow.
+
+Process name: [NAME]
+Who follows this: [ROLE]
+Frequency: [how often]
+Tools used: [list]
+Common mistakes: [what goes wrong]
+
+Here is how I do it:
+[EXPLAIN EVERYTHING — messy is fine]
+
+Create:
+1. Header — name, owner, version, last updated
+2. Purpose — why this exists
+3. Prerequisites — what they need before starting
+4. Step-by-step procedure with tool-specific instructions, decision points (IF/ELSE), and expected results
+5. Edge cases and how to handle them
+6. Troubleshooting — common errors and fixes
+7. Quality check — how to verify it was done right
+8. Revision history template
+
+Write for someone doing this for the first time. No assumed knowledge.</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="process-documentation-generator"
+          data-model="chatgpt"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Record yourself doing the process via screen share, get a transcript, and paste that in. ChatGPT will extract the steps from your narration. Follow up with &#34;What steps did I probably skip?&#34;
+        </div>
+      </div>
+    </div>
+    <div
+      class="variant-panel"
+      role="tabpanel"
+      id="panel-gemini"
+hidden    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">Gemini</span>
+          <span class="model-version">Gemini 3 Pro</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>Turn my rough process explanation into a clean SOP.
+
+**Process:** [NAME]
+**Who follows it:**...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="process-documentation-generator" data-model="gemini">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>Turn my rough process explanation into a clean SOP.
+
+**Process:** [NAME]
+**Who follows it:**...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="process-documentation-generator"
+          data-model="gemini"
+        >
+          <pre class="prompt-text-full"><code>Turn my rough process explanation into a clean SOP.
+
+**Process:** [NAME]
+**Who follows it:** [ROLE]
+**Frequency:** [how often]
+**Tools:** [list]
+**Common mistakes:** [what goes wrong]
+
+**My explanation:**
+[EXPLAIN EVERYTHING]
+
+Create:
+1. Header with name, owner, version
+2. Purpose statement
+3. Prerequisites
+4. Step-by-step with tool instructions, decision points, expected results
+5. Edge cases
+6. Troubleshooting
+7. Quality check
+8. Revision history template
+
+If the process references specific tools, research their current interface to make instructions accurate.</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="process-documentation-generator"
+          data-model="gemini"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Gemini can verify tool-specific instructions against current documentation via search grounding. If the SOP references Stripe, Shopify, or other platforms, Gemini will check that button names and navigation paths are current.
+        </div>
+      </div>
+    </div>
+    <div
+      class="variant-panel"
+      role="tabpanel"
+      id="panel-copilot"
+hidden    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">Copilot</span>
+          <span class="model-version">Copilot (Microsoft 365)</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>Turn my process explanation into a professional SOP.
+
+Process: [NAME]
+Who follows...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="process-documentation-generator" data-model="copilot">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>Turn my process explanation into a professional SOP.
+
+Process: [NAME]
+Who follows...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="process-documentation-generator"
+          data-model="copilot"
+        >
+          <pre class="prompt-text-full"><code>Turn my process explanation into a professional SOP.
+
+Process: [NAME]
+Who follows it: [ROLE]
+Frequency: [how often]
+Tools: [list]
+Common mistakes: [what goes wrong]
+
+My explanation:
+[EXPLAIN EVERYTHING]
+
+Create:
+1. Header — name, owner, version
+2. Purpose
+3. Prerequisites
+4. Step-by-step with tools, decision points, expected results
+5. Edge cases
+6. Troubleshooting
+7. Quality check
+8. Revision history template</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="process-documentation-generator"
+          data-model="copilot"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Copilot creates the SOP directly in Word with proper formatting, numbered steps, and callout boxes for warnings. Ask it to add a Visio-style flowchart of the decision points.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Related AI Tools ===== -->
+
+<!-- ===== Related Prompts ===== -->
+<section class="related-prompts-section">
+  <div class="section-inner">
+    <h2 class="subsection-title">More in training-and-knowledge</h2>
+    <div class="prompt-list">
+      <a
+        href="/prompts/employee-training-module-builder/"
+        class="prompt-card"
+      >
+        <div class="prompt-card-left">
+          <h3 class="prompt-card-title">Employee Training Module Builder</h3>
+          <p class="prompt-card-usecase">Create a complete training module for any role or skill — learning objectives, lesson content,...</p>
+        </div>
+        <div class="prompt-card-right">
+          <span class="badge badge-intermediate">Intermediate</span>
+          <span class="badge badge-value">Time-saving</span>
+        </div>
+      </a>
+      <a
+        href="/prompts/internal-knowledge-base-builder/"
+        class="prompt-card"
+      >
+        <div class="prompt-card-left">
+          <h3 class="prompt-card-title">Internal Knowledge Base Builder</h3>
+          <p class="prompt-card-usecase">Transform scattered tribal knowledge — SOPs, Slack threads, meeting notes, emails — into a...</p>
+        </div>
+        <div class="prompt-card-right">
+          <span class="badge badge-beginner">Beginner</span>
+          <span class="badge badge-value">Time-saving</span>
+        </div>
+      </a>
+      <a
+        href="/prompts/meeting-to-action-transformer/"
+        class="prompt-card"
+      >
+        <div class="prompt-card-left">
+          <h3 class="prompt-card-title">Meeting-to-Action Transformer</h3>
+          <p class="prompt-card-usecase">Transform meeting recordings, transcripts, or notes into structured action items with owners,...</p>
+        </div>
+        <div class="prompt-card-right">
+          <span class="badge badge-beginner">Beginner</span>
+          <span class="badge badge-value">Time-saving</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Request Similar ===== -->
+<section class="request-section">
+  <div class="section-inner">
+    <p class="section-subtitle">Don&rsquo;t see what you need? <button class="btn-link" id="btn-request-similar" type="button">Request a prompt</button> tailored to your use case.</p>
+  </div>
+</section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-tagline">
+        Built by <strong>AlignAI</strong> &mdash; They rank who pays. We score what works.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast notification container -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/assets/auth-gate.js"></script>
+  <script src="/assets/analytics.js"></script>
+<script>
+(function() {
+  // Tab switching
+  var tabs = document.querySelectorAll('.variant-tab');
+  var panels = document.querySelectorAll('.variant-panel');
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var target = tab.dataset.tab;
+
+      tabs.forEach(function(t) {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      panels.forEach(function(p) {
+        if (p.id === 'panel-' + target) {
+          p.classList.add('active');
+          p.removeAttribute('hidden');
+        } else {
+          p.classList.remove('active');
+          p.setAttribute('hidden', '');
+        }
+      });
+    });
+  });
+
+  // Toast helper
+  function showToast(msg) {
+    var toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 3000);
+  }
+
+  // Copy button (gated via auth-gate.js)
+  document.querySelectorAll('.btn-copy-prompt').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var panel = btn.closest('.variant-panel');
+      var fullText = panel.querySelector('.prompt-text-full code');
+      if (fullText) {
+        navigator.clipboard.writeText(fullText.textContent).then(function() {
+          showToast('Prompt copied to clipboard');
+        });
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

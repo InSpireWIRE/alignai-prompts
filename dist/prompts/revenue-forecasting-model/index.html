@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revenue Forecasting Model Builder -- AlignAI Prompt Hub</title>
+  <meta name="description" content="Build a multi-scenario revenue forecast from your historical data — baseline, optimistic, and conservative — with monthly projections, assumption documentation, and sensitivity analysis. Output is investor-ready or usable for internal planning.">
+  <link rel="canonical" href="https://prompts.alignai.business/prompts/revenue-forecasting-model/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Revenue Forecasting Model Builder -- AlignAI Prompt Hub">
+  <meta property="og:description" content="Build a multi-scenario revenue forecast from your historical data — baseline, optimistic, and conservative — with monthly projections, assumption documentation, and sensitivity analysis. Output is investor-ready or usable for internal planning.">
+  <meta property="og:image" content="https://prompts.alignai.business/assets/og-image.png">
+  <meta property="og:url" content="https://prompts.alignai.business/prompts/revenue-forecasting-model/">
+  <meta property="og:site_name" content="AlignAI Prompt Hub">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Revenue Forecasting Model Builder -- AlignAI Prompt Hub">
+  <meta name="twitter:description" content="Build a multi-scenario revenue forecast from your historical data — baseline, optimistic, and conservative — with monthly projections, assumption documentation, and sensitivity analysis. Output is investor-ready or usable for internal planning.">
+  <meta name="twitter:image" content="https://prompts.alignai.business/assets/og-image.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles.css">
+
+<!-- JSON-LD: HowTo structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Revenue Forecasting Model Builder",
+  "description": "Build a multi-scenario revenue forecast from your historical data — baseline, optimistic, and conservative — with monthly projections, assumption documentation, and sensitivity analysis. Output is investor-ready or usable for internal planning.",
+  "url": "https://prompts.alignai.business/prompts/revenue-forecasting-model/",
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Claude"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "ChatGPT"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Gemini"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Copilot"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Copy the prompt",
+      "text": "Copy the AI prompt text optimized for your chosen model."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Paste into your AI tool",
+      "text": "Open Claude and paste the prompt."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Customize placeholders",
+      "text": "Replace any [bracketed placeholders] with your specific business details."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="AlignAI home"><span style="font-family:'Space Mono',monospace;font-size:18px;font-weight:700;"><span style="color:rgba(250,251,252,0.4);">[</span><span style="color:#FAFBFC;">align</span><span style="color:#00C853;">.ai</span><span style="color:rgba(250,251,252,0.4);">]</span></span></a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/" class="nav-link">Prompt Hub</a>
+        <a href="https://app.alignai.business" class="nav-link">Browse AI Tools</a>
+        <button class="btn-signin" id="btn-signin" type="button">Sign In</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <main class="site-main">
+
+<!-- ===== Back Link ===== -->
+<div class="section-inner">
+  <a href="javascript:history.back()" class="back-link" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;color:#00C853;text-decoration:none;margin-bottom:12px;">&larr; Back</a>
+</div>
+
+<!-- ===== Breadcrumb ===== -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Hub Home</a>
+  <span class="breadcrumb-sep">&gt;</span>
+  <a href="/category/data-and-reporting/">data-and-reporting</a>
+  <span class="breadcrumb-sep">&gt;</span>
+  <span class="breadcrumb-current">Revenue Forecasting Model Builder</span>
+</nav>
+
+<!-- ===== Prompt Header ===== -->
+<section class="prompt-header">
+  <div class="section-inner">
+    <h1 class="prompt-page-title">Revenue Forecasting Model Builder</h1>
+    <p class="prompt-subtitle">Build a multi-scenario revenue forecast from your historical data — baseline, optimistic, and conservative — with monthly projections, assumption documentation, and sensitivity analysis. Output is investor-ready or usable for internal planning.</p>
+    <div class="prompt-meta">
+      <span class="badge badge-expert">Expert</span>
+      <span class="badge badge-style">STEP BY STEP</span>
+      <span class="badge badge-value">Revenue-driving</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Pro Tip ===== -->
+<section class="prompt-protip">
+  <div class="section-inner">
+    <div class="callout">
+      <span class="callout-label">Pro tip</span>
+      <p>Include at least 6 months of historical monthly revenue. Adding seasonality notes and planned initiatives (new product launch, price change, marketing push) dramatically improves accuracy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Tags ===== -->
+<section class="prompt-tags-section">
+  <div class="section-inner">
+    <div class="tag-pills">
+      <span class="tag-pill">revenue</span>
+      <span class="tag-pill">forecasting</span>
+      <span class="tag-pill">financial model</span>
+      <span class="tag-pill">projections</span>
+      <span class="tag-pill">planning</span>
+      <span class="tag-pill">scenarios</span>
+      <span class="tag-pill">spreadsheet</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Model Variant Tabs ===== -->
+<section class="variants-section">
+  <div class="section-inner">
+    <h2 class="subsection-title">Prompt Variants by Model</h2>
+
+    <!-- Tab buttons -->
+    <div class="variant-tabs" role="tablist" aria-label="AI model variants">
+      <button
+        class="variant-tab active"
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel-claude"
+        data-tab="claude"
+        type="button"
+      >
+        Claude
+      </button>
+      <button
+        class="variant-tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-chatgpt"
+        data-tab="chatgpt"
+        type="button"
+      >
+        ChatGPT
+      </button>
+      <button
+        class="variant-tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-gemini"
+        data-tab="gemini"
+        type="button"
+      >
+        Gemini
+      </button>
+      <button
+        class="variant-tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-copilot"
+        data-tab="copilot"
+        type="button"
+      >
+        Copilot
+      </button>
+    </div>
+
+    <!-- Tab panels -->
+    <div
+      class="variant-panel active"
+      role="tabpanel"
+      id="panel-claude"
+    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">Claude</span>
+          <span class="model-version">Claude 4.x</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>You are a financial analyst building a revenue forecast for a small business.
+
+&lt;historical_data&gt;
+[PASTE MONTHLY REVENUE DATA — at least 6 months, ideally...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="revenue-forecasting-model" data-model="claude">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>You are a financial analyst building a revenue forecast for a small business.
+
+&lt;historical_data&gt;
+[PASTE MONTHLY REVENUE DATA — at least 6 months, ideally...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="revenue-forecasting-model"
+          data-model="claude"
+        >
+          <pre class="prompt-text-full"><code>You are a financial analyst building a revenue forecast for a small business.
+
+&lt;historical_data&gt;
+[PASTE MONTHLY REVENUE DATA — at least 6 months, ideally 12+]
+&lt;/historical_data&gt;
+
+&lt;business_context&gt;
+Business type: [YOUR_BUSINESS_TYPE]
+Revenue model: [subscriptions / one-time sales / retainers / mixed]
+Seasonality notes: [e.g., &#34;Q4 is 2x normal&#34; or &#34;summer is slow&#34;]
+Planned changes: [new product launch, price increase, marketing campaign, hiring — anything that will affect revenue]
+Growth goal: [target revenue or growth rate for next 12 months]
+&lt;/business_context&gt;
+
+Build a 12-month revenue forecast with:
+
+1. **Methodology** — explain which forecasting approach fits my data (trend extrapolation, cohort-based, bottoms-up) and why.
+
+2. **Three scenarios** — Conservative (what if growth slows), Baseline (current trajectory continues), Optimistic (planned initiatives succeed). Show monthly projections for each.
+
+3. **Assumptions table** — every assumption behind each scenario, documented clearly so I can update them.
+
+4. **Sensitivity analysis** — which 3 variables have the biggest impact on the forecast? Show what happens if each moves ±20%.
+
+5. **Monthly tracking template** — a table I can fill in each month to compare actual vs forecast and recalibrate.
+
+Make this usable in a spreadsheet. Use formulas I can replicate.</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="revenue-forecasting-model"
+          data-model="claude"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Claude handles complex multi-step financial analysis well with chain-of-thought. The XML tags keep historical data separate from instructions. Ask for CSV-formatted output you can paste directly into Sheets.
+        </div>
+      </div>
+    </div>
+    <div
+      class="variant-panel"
+      role="tabpanel"
+      id="panel-chatgpt"
+hidden    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">ChatGPT</span>
+          <span class="model-version">GPT-5</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>Act as a financial analyst who specializes in building revenue models for small businesses and startups.
+
+I need a 12-month revenue forecast. Here is my data:
+
+Monthly revenue history:
+[PASTE...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="revenue-forecasting-model" data-model="chatgpt">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>Act as a financial analyst who specializes in building revenue models for small businesses and startups.
+
+I need a 12-month revenue forecast. Here is my data:
+
+Monthly revenue history:
+[PASTE...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="revenue-forecasting-model"
+          data-model="chatgpt"
+        >
+          <pre class="prompt-text-full"><code>Act as a financial analyst who specializes in building revenue models for small businesses and startups.
+
+I need a 12-month revenue forecast. Here is my data:
+
+Monthly revenue history:
+[PASTE MONTHLY REVENUE — 6+ months]
+
+Business details:
+- Type: [YOUR_BUSINESS_TYPE]
+- Revenue model: [subscriptions / one-time / retainers / mixed]
+- Seasonality: [e.g., &#34;Q4 is strongest&#34; or &#34;summer dips&#34;]
+- Planned changes: [new product, price change, marketing spend increase, etc.]
+- Growth target: [target revenue or % growth for next 12 months]
+
+Build me:
+1. Your recommended forecasting method and why it fits my data
+2. Three scenarios (conservative, baseline, optimistic) with monthly projections
+3. An assumptions table documenting every assumption per scenario
+4. Sensitivity analysis — the 3 variables that matter most, showing ±20% impact
+5. A monthly tracking table to compare actual vs forecast
+
+Make everything spreadsheet-ready with formulas I can replicate in Google Sheets or Excel.</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="revenue-forecasting-model"
+          data-model="chatgpt"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Use Code Interpreter to upload your revenue CSV — ChatGPT will build the model in Python and generate charts. Ask it to export as a downloadable Excel file for the most practical output.
+        </div>
+      </div>
+    </div>
+    <div
+      class="variant-panel"
+      role="tabpanel"
+      id="panel-gemini"
+hidden    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">Gemini</span>
+          <span class="model-version">Gemini 3 Pro</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>I need a revenue forecast for my small business.
+
+**Monthly revenue history:**
+[PASTE 6+ MONTHS OF DATA]
+
+**Business type:** [YOUR_BUSINESS_TYPE]
+**Revenue...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="revenue-forecasting-model" data-model="gemini">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>I need a revenue forecast for my small business.
+
+**Monthly revenue history:**
+[PASTE 6+ MONTHS OF DATA]
+
+**Business type:** [YOUR_BUSINESS_TYPE]
+**Revenue...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="revenue-forecasting-model"
+          data-model="gemini"
+        >
+          <pre class="prompt-text-full"><code>I need a revenue forecast for my small business.
+
+**Monthly revenue history:**
+[PASTE 6+ MONTHS OF DATA]
+
+**Business type:** [YOUR_BUSINESS_TYPE]
+**Revenue model:** [subscriptions / one-time / retainers / mixed]
+**Seasonality:** [notes on seasonal patterns]
+**Planned changes:** [upcoming launches, price changes, campaigns]
+**Growth target:** [revenue goal or growth % for next year]
+
+Research current growth benchmarks for my industry, then build:
+1. Recommended forecasting method with reasoning
+2. Three scenarios (conservative, baseline, optimistic) — monthly projections
+3. Documented assumptions table for each scenario
+4. Sensitivity analysis on the 3 highest-impact variables (±20%)
+5. Monthly actual-vs-forecast tracking template
+
+Make it spreadsheet-compatible with replicable formulas.</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="revenue-forecasting-model"
+          data-model="gemini"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Gemini can pull real-time industry growth benchmarks to calibrate your scenarios. If your data lives in Google Sheets, share the sheet link and ask Gemini to build the forecast directly in a new tab.
+        </div>
+      </div>
+    </div>
+    <div
+      class="variant-panel"
+      role="tabpanel"
+      id="panel-copilot"
+hidden    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">Copilot</span>
+          <span class="model-version">Copilot (Microsoft 365)</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>I need to build a 12-month revenue forecast for my small business.
+
+Here is my monthly revenue history:
+[PASTE 6+ MONTHS OF DATA]
+
+Business type:...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="revenue-forecasting-model" data-model="copilot">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>I need to build a 12-month revenue forecast for my small business.
+
+Here is my monthly revenue history:
+[PASTE 6+ MONTHS OF DATA]
+
+Business type:...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="revenue-forecasting-model"
+          data-model="copilot"
+        >
+          <pre class="prompt-text-full"><code>I need to build a 12-month revenue forecast for my small business.
+
+Here is my monthly revenue history:
+[PASTE 6+ MONTHS OF DATA]
+
+Business type: [YOUR_BUSINESS_TYPE]
+Revenue model: [subscriptions / one-time / retainers / mixed]
+Seasonality: [any seasonal patterns]
+Planned changes: [launches, price changes, campaigns]
+Growth target: [revenue target or growth %]
+
+Build me:
+1. Which forecasting method to use and why
+2. Three scenarios — conservative, baseline, optimistic — with monthly numbers
+3. Assumptions table for each scenario
+4. Sensitivity analysis — the 3 variables that matter most, with ±20% impact
+5. Monthly tracking table to compare forecast vs actual
+
+Format everything so I can paste it into Excel. Include formulas.</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="revenue-forecasting-model"
+          data-model="copilot"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Use this directly in Excel with Copilot — paste your revenue data, then prompt Copilot in the sheet. It can build the model with live formulas, conditional formatting, and scenario toggle cells.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Related AI Tools ===== -->
+
+<!-- ===== Related Prompts ===== -->
+<section class="related-prompts-section">
+  <div class="section-inner">
+    <h2 class="subsection-title">More in data-and-reporting</h2>
+    <div class="prompt-list">
+      <a
+        href="/prompts/customer-churn-early-warning/"
+        class="prompt-card"
+      >
+        <div class="prompt-card-left">
+          <h3 class="prompt-card-title">Customer Churn Early Warning System</h3>
+          <p class="prompt-card-usecase">Analyze your customer data to identify churn risk patterns, build an early warning checklist, and...</p>
+        </div>
+        <div class="prompt-card-right">
+          <span class="badge badge-intermediate">Intermediate</span>
+          <span class="badge badge-value">Revenue-protecting</span>
+        </div>
+      </a>
+      <a
+        href="/prompts/kpi-dashboard-blueprint/"
+        class="prompt-card"
+      >
+        <div class="prompt-card-left">
+          <h3 class="prompt-card-title">KPI Dashboard Blueprint</h3>
+          <p class="prompt-card-usecase">Generate a complete KPI dashboard specification from your business goals — what to track, how to...</p>
+        </div>
+        <div class="prompt-card-right">
+          <span class="badge badge-intermediate">Intermediate</span>
+          <span class="badge badge-value">Decision-making</span>
+        </div>
+      </a>
+      <a
+        href="/prompts/survey-feedback-insight-extractor/"
+        class="prompt-card"
+      >
+        <div class="prompt-card-left">
+          <h3 class="prompt-card-title">Survey &amp; Feedback Insight Extractor</h3>
+          <p class="prompt-card-usecase">Turn a pile of survey responses, NPS comments, support tickets, or review feedback into a...</p>
+        </div>
+        <div class="prompt-card-right">
+          <span class="badge badge-beginner">Beginner</span>
+          <span class="badge badge-value">Decision-making</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Request Similar ===== -->
+<section class="request-section">
+  <div class="section-inner">
+    <p class="section-subtitle">Don&rsquo;t see what you need? <button class="btn-link" id="btn-request-similar" type="button">Request a prompt</button> tailored to your use case.</p>
+  </div>
+</section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-tagline">
+        Built by <strong>AlignAI</strong> &mdash; They rank who pays. We score what works.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast notification container -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/assets/auth-gate.js"></script>
+  <script src="/assets/analytics.js"></script>
+<script>
+(function() {
+  // Tab switching
+  var tabs = document.querySelectorAll('.variant-tab');
+  var panels = document.querySelectorAll('.variant-panel');
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var target = tab.dataset.tab;
+
+      tabs.forEach(function(t) {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      panels.forEach(function(p) {
+        if (p.id === 'panel-' + target) {
+          p.classList.add('active');
+          p.removeAttribute('hidden');
+        } else {
+          p.classList.remove('active');
+          p.setAttribute('hidden', '');
+        }
+      });
+    });
+  });
+
+  // Toast helper
+  function showToast(msg) {
+    var toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 3000);
+  }
+
+  // Copy button (gated via auth-gate.js)
+  document.querySelectorAll('.btn-copy-prompt').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var panel = btn.closest('.variant-panel');
+      var fullText = panel.querySelector('.prompt-text-full code');
+      if (fullText) {
+        navigator.clipboard.writeText(fullText.textContent).then(function() {
+          showToast('Prompt copied to clipboard');
+        });
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
