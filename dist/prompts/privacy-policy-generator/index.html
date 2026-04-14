@@ -230,6 +230,17 @@
           </div>
         </div>
 
+        <!-- Copy button — TOP (duplicate of bottom button) -->
+        <button
+          class="btn-copy btn-copy-prompt btn-primary"
+          data-prompt-id="privacy-policy-generator"
+          data-model="claude"
+          type="button"
+          style="margin-bottom: 12px;"
+        >
+          Copy Full Prompt
+        </button>
+
         <!-- Full prompt: gated -->
         <div
           class="gated-content"
@@ -281,11 +292,20 @@ End with: effective date, last updated date, and AI disclaimer recommending lega
 Write in plain English. Use headers that a normal person would understand, not legal section numbers.</code></pre>
         </div>
 
+        <!-- Collapse/expand toggle -->
+        <button class="btn-toggle-prompt" type="button"
+                style="display: block; margin: 8px auto 0; background: transparent; border: 1px solid #37474F;
+                       color: #78909C; padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer;
+                       font-family: 'DM Sans', sans-serif;">
+          Collapse prompt &#9650;
+        </button>
+
         <button
-          class="btn-copy btn-copy-prompt"
+          class="btn-copy btn-copy-prompt btn-primary"
           data-prompt-id="privacy-policy-generator"
           data-model="claude"
           type="button"
+          style="margin-top: 12px;"
         >
           Copy Full Prompt
         </button>
@@ -342,6 +362,17 @@ hidden    >
           </div>
         </div>
 
+        <!-- Copy button — TOP (duplicate of bottom button) -->
+        <button
+          class="btn-copy btn-copy-prompt btn-primary"
+          data-prompt-id="privacy-policy-generator"
+          data-model="chatgpt"
+          type="button"
+          style="margin-bottom: 12px;"
+        >
+          Copy Full Prompt
+        </button>
+
         <!-- Full prompt: gated -->
         <div
           class="gated-content"
@@ -373,11 +404,20 @@ hidden    >
 Plain English. End with effective date and AI disclaimer.</code></pre>
         </div>
 
+        <!-- Collapse/expand toggle -->
+        <button class="btn-toggle-prompt" type="button"
+                style="display: block; margin: 8px auto 0; background: transparent; border: 1px solid #37474F;
+                       color: #78909C; padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer;
+                       font-family: 'DM Sans', sans-serif;">
+          Collapse prompt &#9650;
+        </button>
+
         <button
-          class="btn-copy btn-copy-prompt"
+          class="btn-copy btn-copy-prompt btn-primary"
           data-prompt-id="privacy-policy-generator"
           data-model="chatgpt"
           type="button"
+          style="margin-top: 12px;"
         >
           Copy Full Prompt
         </button>
@@ -434,6 +474,17 @@ hidden    >
           </div>
         </div>
 
+        <!-- Copy button — TOP (duplicate of bottom button) -->
+        <button
+          class="btn-copy btn-copy-prompt btn-primary"
+          data-prompt-id="privacy-policy-generator"
+          data-model="gemini"
+          type="button"
+          style="margin-bottom: 12px;"
+        >
+          Copy Full Prompt
+        </button>
+
         <!-- Full prompt: gated -->
         <div
           class="gated-content"
@@ -463,11 +514,20 @@ Think step by step: first determine which laws apply (GDPR, CCPA, etc.), then wr
 Plain English. End with AI disclaimer.</code></pre>
         </div>
 
+        <!-- Collapse/expand toggle -->
+        <button class="btn-toggle-prompt" type="button"
+                style="display: block; margin: 8px auto 0; background: transparent; border: 1px solid #37474F;
+                       color: #78909C; padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer;
+                       font-family: 'DM Sans', sans-serif;">
+          Collapse prompt &#9650;
+        </button>
+
         <button
-          class="btn-copy btn-copy-prompt"
+          class="btn-copy btn-copy-prompt btn-primary"
           data-prompt-id="privacy-policy-generator"
           data-model="gemini"
           type="button"
+          style="margin-top: 12px;"
         >
           Copy Full Prompt
         </button>
@@ -526,6 +586,17 @@ hidden    >
           </div>
         </div>
 
+        <!-- Copy button — TOP (duplicate of bottom button) -->
+        <button
+          class="btn-copy btn-copy-prompt btn-primary"
+          data-prompt-id="privacy-policy-generator"
+          data-model="copilot"
+          type="button"
+          style="margin-bottom: 12px;"
+        >
+          Copy Full Prompt
+        </button>
+
         <!-- Full prompt: gated -->
         <div
           class="gated-content"
@@ -556,11 +627,20 @@ What I collect, how I collect it, why, what I do with it, who I share it with, c
 Use plain language. End with today&#39;s date and a note that this was AI-generated and should be reviewed by a lawyer.</code></pre>
         </div>
 
+        <!-- Collapse/expand toggle -->
+        <button class="btn-toggle-prompt" type="button"
+                style="display: block; margin: 8px auto 0; background: transparent; border: 1px solid #37474F;
+                       color: #78909C; padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer;
+                       font-family: 'DM Sans', sans-serif;">
+          Collapse prompt &#9650;
+        </button>
+
         <button
-          class="btn-copy btn-copy-prompt"
+          class="btn-copy btn-copy-prompt btn-primary"
           data-prompt-id="privacy-policy-generator"
           data-model="copilot"
           type="button"
+          style="margin-top: 12px;"
         >
           Copy Full Prompt
         </button>
@@ -684,6 +764,23 @@ Use plain language. End with today&#39;s date and a note that this was AI-genera
     toast.classList.add('show');
     setTimeout(function() { toast.classList.remove('show'); }, 3000);
   }
+
+  // Collapse/expand prompt text
+  document.querySelectorAll('.btn-toggle-prompt').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var panel = btn.closest('.variant-panel');
+      var promptText = panel.querySelector('.prompt-text-full');
+      if (promptText) {
+        if (promptText.style.display === 'none') {
+          promptText.style.display = '';
+          btn.innerHTML = 'Collapse prompt &#9650;';
+        } else {
+          promptText.style.display = 'none';
+          btn.innerHTML = 'Expand prompt &#9660;';
+        }
+      }
+    });
+  });
 
   // Copy button (gated via auth-gate.js)
   document.querySelectorAll('.btn-copy-prompt').forEach(function(btn) {

@@ -237,6 +237,17 @@ Business function: [e.g., &#34;customer support triage&#34;, &#34;lead qualifica
           </div>
         </div>
 
+        <!-- Copy button — TOP (duplicate of bottom button) -->
+        <button
+          class="btn-copy btn-copy-prompt btn-primary"
+          data-prompt-id="custom-ai-agent-design-brief"
+          data-model="claude"
+          type="button"
+          style="margin-bottom: 12px;"
+        >
+          Copy Full Prompt
+        </button>
+
         <!-- Full prompt: gated -->
         <div
           class="gated-content"
@@ -273,11 +284,20 @@ Design the agent specification:
 7. **Success metrics** — how to measure if this agent is working (resolution rate, time saved, escalation rate, user satisfaction).</code></pre>
         </div>
 
+        <!-- Collapse/expand toggle -->
+        <button class="btn-toggle-prompt" type="button"
+                style="display: block; margin: 8px auto 0; background: transparent; border: 1px solid #37474F;
+                       color: #78909C; padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer;
+                       font-family: 'DM Sans', sans-serif;">
+          Collapse prompt &#9650;
+        </button>
+
         <button
-          class="btn-copy btn-copy-prompt"
+          class="btn-copy btn-copy-prompt btn-primary"
           data-prompt-id="custom-ai-agent-design-brief"
           data-model="claude"
           type="button"
+          style="margin-top: 12px;"
         >
           Copy Full Prompt
         </button>
@@ -330,6 +350,17 @@ Business function: [e.g.,...</code></pre>
           </div>
         </div>
 
+        <!-- Copy button — TOP (duplicate of bottom button) -->
+        <button
+          class="btn-copy btn-copy-prompt btn-primary"
+          data-prompt-id="custom-ai-agent-design-brief"
+          data-model="chatgpt"
+          type="button"
+          style="margin-bottom: 12px;"
+        >
+          Copy Full Prompt
+        </button>
+
         <!-- Full prompt: gated -->
         <div
           class="gated-content"
@@ -357,11 +388,20 @@ Design:
 7. Success metrics — resolution rate, time saved, escalation rate, satisfaction</code></pre>
         </div>
 
+        <!-- Collapse/expand toggle -->
+        <button class="btn-toggle-prompt" type="button"
+                style="display: block; margin: 8px auto 0; background: transparent; border: 1px solid #37474F;
+                       color: #78909C; padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer;
+                       font-family: 'DM Sans', sans-serif;">
+          Collapse prompt &#9650;
+        </button>
+
         <button
-          class="btn-copy btn-copy-prompt"
+          class="btn-copy btn-copy-prompt btn-primary"
           data-prompt-id="custom-ai-agent-design-brief"
           data-model="chatgpt"
           type="button"
+          style="margin-top: 12px;"
         >
           Copy Full Prompt
         </button>
@@ -414,6 +454,17 @@ hidden    >
           </div>
         </div>
 
+        <!-- Copy button — TOP (duplicate of bottom button) -->
+        <button
+          class="btn-copy btn-copy-prompt btn-primary"
+          data-prompt-id="custom-ai-agent-design-brief"
+          data-model="gemini"
+          type="button"
+          style="margin-bottom: 12px;"
+        >
+          Copy Full Prompt
+        </button>
+
         <!-- Full prompt: gated -->
         <div
           class="gated-content"
@@ -441,11 +492,20 @@ Research current best practices for AI agents in my business function, then desi
 7. Success metrics</code></pre>
         </div>
 
+        <!-- Collapse/expand toggle -->
+        <button class="btn-toggle-prompt" type="button"
+                style="display: block; margin: 8px auto 0; background: transparent; border: 1px solid #37474F;
+                       color: #78909C; padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer;
+                       font-family: 'DM Sans', sans-serif;">
+          Collapse prompt &#9650;
+        </button>
+
         <button
-          class="btn-copy btn-copy-prompt"
+          class="btn-copy btn-copy-prompt btn-primary"
           data-prompt-id="custom-ai-agent-design-brief"
           data-model="gemini"
           type="button"
+          style="margin-top: 12px;"
         >
           Copy Full Prompt
         </button>
@@ -498,6 +558,17 @@ Business function: [support / sales /...</code></pre>
           </div>
         </div>
 
+        <!-- Copy button — TOP (duplicate of bottom button) -->
+        <button
+          class="btn-copy btn-copy-prompt btn-primary"
+          data-prompt-id="custom-ai-agent-design-brief"
+          data-model="copilot"
+          type="button"
+          style="margin-bottom: 12px;"
+        >
+          Copy Full Prompt
+        </button>
+
         <!-- Full prompt: gated -->
         <div
           class="gated-content"
@@ -525,11 +596,20 @@ Design:
 7. Success metrics</code></pre>
         </div>
 
+        <!-- Collapse/expand toggle -->
+        <button class="btn-toggle-prompt" type="button"
+                style="display: block; margin: 8px auto 0; background: transparent; border: 1px solid #37474F;
+                       color: #78909C; padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer;
+                       font-family: 'DM Sans', sans-serif;">
+          Collapse prompt &#9650;
+        </button>
+
         <button
-          class="btn-copy btn-copy-prompt"
+          class="btn-copy btn-copy-prompt btn-primary"
           data-prompt-id="custom-ai-agent-design-brief"
           data-model="copilot"
           type="button"
+          style="margin-top: 12px;"
         >
           Copy Full Prompt
         </button>
@@ -653,6 +733,23 @@ Design:
     toast.classList.add('show');
     setTimeout(function() { toast.classList.remove('show'); }, 3000);
   }
+
+  // Collapse/expand prompt text
+  document.querySelectorAll('.btn-toggle-prompt').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var panel = btn.closest('.variant-panel');
+      var promptText = panel.querySelector('.prompt-text-full');
+      if (promptText) {
+        if (promptText.style.display === 'none') {
+          promptText.style.display = '';
+          btn.innerHTML = 'Collapse prompt &#9650;';
+        } else {
+          promptText.style.display = 'none';
+          btn.innerHTML = 'Expand prompt &#9660;';
+        }
+      }
+    });
+  });
 
   // Copy button (gated via auth-gate.js)
   document.querySelectorAll('.btn-copy-prompt').forEach(function(btn) {

@@ -237,6 +237,17 @@
           </div>
         </div>
 
+        <!-- Copy button — TOP (duplicate of bottom button) -->
+        <button
+          class="btn-copy btn-copy-prompt btn-primary"
+          data-prompt-id="weekly-planning-prioritization"
+          data-model="claude"
+          type="button"
+          style="margin-bottom: 12px;"
+        >
+          Copy Full Prompt
+        </button>
+
         <!-- Full prompt: gated -->
         <div
           class="gated-content"
@@ -279,11 +290,20 @@ Create my weekly plan:
 5. **Friday review prompts** — 5 questions to ask myself at end of week.</code></pre>
         </div>
 
+        <!-- Collapse/expand toggle -->
+        <button class="btn-toggle-prompt" type="button"
+                style="display: block; margin: 8px auto 0; background: transparent; border: 1px solid #37474F;
+                       color: #78909C; padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer;
+                       font-family: 'DM Sans', sans-serif;">
+          Collapse prompt &#9650;
+        </button>
+
         <button
-          class="btn-copy btn-copy-prompt"
+          class="btn-copy btn-copy-prompt btn-primary"
           data-prompt-id="weekly-planning-prioritization"
           data-model="claude"
           type="button"
+          style="margin-top: 12px;"
         >
           Copy Full Prompt
         </button>
@@ -334,6 +354,17 @@ Here is everything on my mind this...</code></pre>
           </div>
         </div>
 
+        <!-- Copy button — TOP (duplicate of bottom button) -->
+        <button
+          class="btn-copy btn-copy-prompt btn-primary"
+          data-prompt-id="weekly-planning-prioritization"
+          data-model="chatgpt"
+          type="button"
+          style="margin-bottom: 12px;"
+        >
+          Copy Full Prompt
+        </button>
+
         <!-- Full prompt: gated -->
         <div
           class="gated-content"
@@ -360,11 +391,20 @@ Create:
 5. Friday review — 5 end-of-week reflection questions</code></pre>
         </div>
 
+        <!-- Collapse/expand toggle -->
+        <button class="btn-toggle-prompt" type="button"
+                style="display: block; margin: 8px auto 0; background: transparent; border: 1px solid #37474F;
+                       color: #78909C; padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer;
+                       font-family: 'DM Sans', sans-serif;">
+          Collapse prompt &#9650;
+        </button>
+
         <button
-          class="btn-copy btn-copy-prompt"
+          class="btn-copy btn-copy-prompt btn-primary"
           data-prompt-id="weekly-planning-prioritization"
           data-model="chatgpt"
           type="button"
+          style="margin-top: 12px;"
         >
           Copy Full Prompt
         </button>
@@ -417,6 +457,17 @@ hidden    >
           </div>
         </div>
 
+        <!-- Copy button — TOP (duplicate of bottom button) -->
+        <button
+          class="btn-copy btn-copy-prompt btn-primary"
+          data-prompt-id="weekly-planning-prioritization"
+          data-model="gemini"
+          type="button"
+          style="margin-bottom: 12px;"
+        >
+          Copy Full Prompt
+        </button>
+
         <!-- Full prompt: gated -->
         <div
           class="gated-content"
@@ -445,11 +496,20 @@ Create:
 Check my Google Calendar if connected and factor in existing events.</code></pre>
         </div>
 
+        <!-- Collapse/expand toggle -->
+        <button class="btn-toggle-prompt" type="button"
+                style="display: block; margin: 8px auto 0; background: transparent; border: 1px solid #37474F;
+                       color: #78909C; padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer;
+                       font-family: 'DM Sans', sans-serif;">
+          Collapse prompt &#9650;
+        </button>
+
         <button
-          class="btn-copy btn-copy-prompt"
+          class="btn-copy btn-copy-prompt btn-primary"
           data-prompt-id="weekly-planning-prioritization"
           data-model="gemini"
           type="button"
+          style="margin-top: 12px;"
         >
           Copy Full Prompt
         </button>
@@ -502,6 +562,17 @@ Everything on my mind:
           </div>
         </div>
 
+        <!-- Copy button — TOP (duplicate of bottom button) -->
+        <button
+          class="btn-copy btn-copy-prompt btn-primary"
+          data-prompt-id="weekly-planning-prioritization"
+          data-model="copilot"
+          type="button"
+          style="margin-bottom: 12px;"
+        >
+          Copy Full Prompt
+        </button>
+
         <!-- Full prompt: gated -->
         <div
           class="gated-content"
@@ -527,11 +598,20 @@ Create:
 5. Friday review questions</code></pre>
         </div>
 
+        <!-- Collapse/expand toggle -->
+        <button class="btn-toggle-prompt" type="button"
+                style="display: block; margin: 8px auto 0; background: transparent; border: 1px solid #37474F;
+                       color: #78909C; padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer;
+                       font-family: 'DM Sans', sans-serif;">
+          Collapse prompt &#9650;
+        </button>
+
         <button
-          class="btn-copy btn-copy-prompt"
+          class="btn-copy btn-copy-prompt btn-primary"
           data-prompt-id="weekly-planning-prioritization"
           data-model="copilot"
           type="button"
+          style="margin-top: 12px;"
         >
           Copy Full Prompt
         </button>
@@ -655,6 +735,23 @@ Create:
     toast.classList.add('show');
     setTimeout(function() { toast.classList.remove('show'); }, 3000);
   }
+
+  // Collapse/expand prompt text
+  document.querySelectorAll('.btn-toggle-prompt').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var panel = btn.closest('.variant-panel');
+      var promptText = panel.querySelector('.prompt-text-full');
+      if (promptText) {
+        if (promptText.style.display === 'none') {
+          promptText.style.display = '';
+          btn.innerHTML = 'Collapse prompt &#9650;';
+        } else {
+          promptText.style.display = 'none';
+          btn.innerHTML = 'Expand prompt &#9660;';
+        }
+      }
+    });
+  });
 
   // Copy button (gated via auth-gate.js)
   document.querySelectorAll('.btn-copy-prompt').forEach(function(btn) {

@@ -239,6 +239,17 @@ Owner...</code></pre>
           </div>
         </div>
 
+        <!-- Copy button — TOP (duplicate of bottom button) -->
+        <button
+          class="btn-copy btn-copy-prompt btn-primary"
+          data-prompt-id="review-response-template-engine"
+          data-model="claude"
+          type="button"
+          style="margin-bottom: 12px;"
+        >
+          Copy Full Prompt
+        </button>
+
         <!-- Full prompt: gated -->
         <div
           class="gated-content"
@@ -270,11 +281,20 @@ Generate responses for each of the following review types. Each response must be
 Make each response feel personally written, not AI-generated.</code></pre>
         </div>
 
+        <!-- Collapse/expand toggle -->
+        <button class="btn-toggle-prompt" type="button"
+                style="display: block; margin: 8px auto 0; background: transparent; border: 1px solid #37474F;
+                       color: #78909C; padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer;
+                       font-family: 'DM Sans', sans-serif;">
+          Collapse prompt &#9650;
+        </button>
+
         <button
-          class="btn-copy btn-copy-prompt"
+          class="btn-copy btn-copy-prompt btn-primary"
           data-prompt-id="review-response-template-engine"
           data-model="claude"
           type="button"
+          style="margin-top: 12px;"
         >
           Copy Full Prompt
         </button>
@@ -327,6 +347,17 @@ Sign off as:...</code></pre>
           </div>
         </div>
 
+        <!-- Copy button — TOP (duplicate of bottom button) -->
+        <button
+          class="btn-copy btn-copy-prompt btn-primary"
+          data-prompt-id="review-response-template-engine"
+          data-model="chatgpt"
+          type="button"
+          style="margin-bottom: 12px;"
+        >
+          Copy Full Prompt
+        </button>
+
         <!-- Full prompt: gated -->
         <div
           class="gated-content"
@@ -352,11 +383,20 @@ Write unique, non-templated responses (under 100 words each) for these reviews:
 Each response should sound like a real person wrote it, not an AI. Vary sentence structure and length.</code></pre>
         </div>
 
+        <!-- Collapse/expand toggle -->
+        <button class="btn-toggle-prompt" type="button"
+                style="display: block; margin: 8px auto 0; background: transparent; border: 1px solid #37474F;
+                       color: #78909C; padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer;
+                       font-family: 'DM Sans', sans-serif;">
+          Collapse prompt &#9650;
+        </button>
+
         <button
-          class="btn-copy btn-copy-prompt"
+          class="btn-copy btn-copy-prompt btn-primary"
           data-prompt-id="review-response-template-engine"
           data-model="chatgpt"
           type="button"
+          style="margin-top: 12px;"
         >
           Copy Full Prompt
         </button>
@@ -409,6 +449,17 @@ I sign off...</code></pre>
           </div>
         </div>
 
+        <!-- Copy button — TOP (duplicate of bottom button) -->
+        <button
+          class="btn-copy btn-copy-prompt btn-primary"
+          data-prompt-id="review-response-template-engine"
+          data-model="gemini"
+          type="button"
+          style="margin-bottom: 12px;"
+        >
+          Copy Full Prompt
+        </button>
+
         <!-- Full prompt: gated -->
         <div
           class="gated-content"
@@ -434,11 +485,20 @@ Please write unique, human-sounding responses (under 100 words each) for:
 Each response should feel personal and genuine, not automated.</code></pre>
         </div>
 
+        <!-- Collapse/expand toggle -->
+        <button class="btn-toggle-prompt" type="button"
+                style="display: block; margin: 8px auto 0; background: transparent; border: 1px solid #37474F;
+                       color: #78909C; padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer;
+                       font-family: 'DM Sans', sans-serif;">
+          Collapse prompt &#9650;
+        </button>
+
         <button
-          class="btn-copy btn-copy-prompt"
+          class="btn-copy btn-copy-prompt btn-primary"
           data-prompt-id="review-response-template-engine"
           data-model="gemini"
           type="button"
+          style="margin-top: 12px;"
         >
           Copy Full Prompt
         </button>
@@ -491,6 +551,17 @@ I sign...</code></pre>
           </div>
         </div>
 
+        <!-- Copy button — TOP (duplicate of bottom button) -->
+        <button
+          class="btn-copy btn-copy-prompt btn-primary"
+          data-prompt-id="review-response-template-engine"
+          data-model="copilot"
+          type="button"
+          style="margin-bottom: 12px;"
+        >
+          Copy Full Prompt
+        </button>
+
         <!-- Full prompt: gated -->
         <div
           class="gated-content"
@@ -516,11 +587,20 @@ Write short (under 100 words), genuine-sounding responses for these reviews:
 Make each reply sound like a real person, not a bot.</code></pre>
         </div>
 
+        <!-- Collapse/expand toggle -->
+        <button class="btn-toggle-prompt" type="button"
+                style="display: block; margin: 8px auto 0; background: transparent; border: 1px solid #37474F;
+                       color: #78909C; padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer;
+                       font-family: 'DM Sans', sans-serif;">
+          Collapse prompt &#9650;
+        </button>
+
         <button
-          class="btn-copy btn-copy-prompt"
+          class="btn-copy btn-copy-prompt btn-primary"
           data-prompt-id="review-response-template-engine"
           data-model="copilot"
           type="button"
+          style="margin-top: 12px;"
         >
           Copy Full Prompt
         </button>
@@ -631,6 +711,23 @@ Make each reply sound like a real person, not a bot.</code></pre>
     toast.classList.add('show');
     setTimeout(function() { toast.classList.remove('show'); }, 3000);
   }
+
+  // Collapse/expand prompt text
+  document.querySelectorAll('.btn-toggle-prompt').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var panel = btn.closest('.variant-panel');
+      var promptText = panel.querySelector('.prompt-text-full');
+      if (promptText) {
+        if (promptText.style.display === 'none') {
+          promptText.style.display = '';
+          btn.innerHTML = 'Collapse prompt &#9650;';
+        } else {
+          promptText.style.display = 'none';
+          btn.innerHTML = 'Expand prompt &#9660;';
+        }
+      }
+    });
+  });
 
   // Copy button (gated via auth-gate.js)
   document.querySelectorAll('.btn-copy-prompt').forEach(function(btn) {

@@ -240,6 +240,17 @@ Typical customer: [WHO —...</code></pre>
           </div>
         </div>
 
+        <!-- Copy button — TOP (duplicate of bottom button) -->
+        <button
+          class="btn-copy btn-copy-prompt btn-primary"
+          data-prompt-id="customer-email-response-templates"
+          data-model="claude"
+          type="button"
+          style="margin-bottom: 12px;"
+        >
+          Copy Full Prompt
+        </button>
+
         <!-- Full prompt: gated -->
         <div
           class="gated-content"
@@ -282,11 +293,20 @@ For each scenario create:
 Use [CUSTOMER_NAME], [ORDER_NUMBER], [PRODUCT], [AMOUNT], [DATE] as merge fields.</code></pre>
         </div>
 
+        <!-- Collapse/expand toggle -->
+        <button class="btn-toggle-prompt" type="button"
+                style="display: block; margin: 8px auto 0; background: transparent; border: 1px solid #37474F;
+                       color: #78909C; padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer;
+                       font-family: 'DM Sans', sans-serif;">
+          Collapse prompt &#9650;
+        </button>
+
         <button
-          class="btn-copy btn-copy-prompt"
+          class="btn-copy btn-copy-prompt btn-primary"
           data-prompt-id="customer-email-response-templates"
           data-model="claude"
           type="button"
+          style="margin-top: 12px;"
         >
           Copy Full Prompt
         </button>
@@ -337,6 +357,17 @@ Business:...</code></pre>
           </div>
         </div>
 
+        <!-- Copy button — TOP (duplicate of bottom button) -->
+        <button
+          class="btn-copy btn-copy-prompt btn-primary"
+          data-prompt-id="customer-email-response-templates"
+          data-model="chatgpt"
+          type="button"
+          style="margin-bottom: 12px;"
+        >
+          Copy Full Prompt
+        </button>
+
         <!-- Full prompt: gated -->
         <div
           class="gated-content"
@@ -363,11 +394,20 @@ For each:
 6. Follow-up timing</code></pre>
         </div>
 
+        <!-- Collapse/expand toggle -->
+        <button class="btn-toggle-prompt" type="button"
+                style="display: block; margin: 8px auto 0; background: transparent; border: 1px solid #37474F;
+                       color: #78909C; padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer;
+                       font-family: 'DM Sans', sans-serif;">
+          Collapse prompt &#9650;
+        </button>
+
         <button
-          class="btn-copy btn-copy-prompt"
+          class="btn-copy btn-copy-prompt btn-primary"
           data-prompt-id="customer-email-response-templates"
           data-model="chatgpt"
           type="button"
+          style="margin-top: 12px;"
         >
           Copy Full Prompt
         </button>
@@ -420,6 +460,17 @@ hidden    >
           </div>
         </div>
 
+        <!-- Copy button — TOP (duplicate of bottom button) -->
+        <button
+          class="btn-copy btn-copy-prompt btn-primary"
+          data-prompt-id="customer-email-response-templates"
+          data-model="gemini"
+          type="button"
+          style="margin-bottom: 12px;"
+        >
+          Copy Full Prompt
+        </button>
+
         <!-- Full prompt: gated -->
         <div
           class="gated-content"
@@ -448,11 +499,20 @@ For each:
 Research customer service best practices for my industry to calibrate tone and response expectations.</code></pre>
         </div>
 
+        <!-- Collapse/expand toggle -->
+        <button class="btn-toggle-prompt" type="button"
+                style="display: block; margin: 8px auto 0; background: transparent; border: 1px solid #37474F;
+                       color: #78909C; padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer;
+                       font-family: 'DM Sans', sans-serif;">
+          Collapse prompt &#9650;
+        </button>
+
         <button
-          class="btn-copy btn-copy-prompt"
+          class="btn-copy btn-copy-prompt btn-primary"
           data-prompt-id="customer-email-response-templates"
           data-model="gemini"
           type="button"
+          style="margin-top: 12px;"
         >
           Copy Full Prompt
         </button>
@@ -503,6 +563,17 @@ Business:...</code></pre>
           </div>
         </div>
 
+        <!-- Copy button — TOP (duplicate of bottom button) -->
+        <button
+          class="btn-copy btn-copy-prompt btn-primary"
+          data-prompt-id="customer-email-response-templates"
+          data-model="copilot"
+          type="button"
+          style="margin-bottom: 12px;"
+        >
+          Copy Full Prompt
+        </button>
+
         <!-- Full prompt: gated -->
         <div
           class="gated-content"
@@ -523,11 +594,20 @@ Scenarios:
 For each: name, subject line with merge fields, body under 150 words, warm + formal versions, escalation trigger, follow-up timing.</code></pre>
         </div>
 
+        <!-- Collapse/expand toggle -->
+        <button class="btn-toggle-prompt" type="button"
+                style="display: block; margin: 8px auto 0; background: transparent; border: 1px solid #37474F;
+                       color: #78909C; padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer;
+                       font-family: 'DM Sans', sans-serif;">
+          Collapse prompt &#9650;
+        </button>
+
         <button
-          class="btn-copy btn-copy-prompt"
+          class="btn-copy btn-copy-prompt btn-primary"
           data-prompt-id="customer-email-response-templates"
           data-model="copilot"
           type="button"
+          style="margin-top: 12px;"
         >
           Copy Full Prompt
         </button>
@@ -651,6 +731,23 @@ For each: name, subject line with merge fields, body under 150 words, warm + for
     toast.classList.add('show');
     setTimeout(function() { toast.classList.remove('show'); }, 3000);
   }
+
+  // Collapse/expand prompt text
+  document.querySelectorAll('.btn-toggle-prompt').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var panel = btn.closest('.variant-panel');
+      var promptText = panel.querySelector('.prompt-text-full');
+      if (promptText) {
+        if (promptText.style.display === 'none') {
+          promptText.style.display = '';
+          btn.innerHTML = 'Collapse prompt &#9650;';
+        } else {
+          promptText.style.display = 'none';
+          btn.innerHTML = 'Expand prompt &#9660;';
+        }
+      }
+    });
+  });
 
   // Copy button (gated via auth-gate.js)
   document.querySelectorAll('.btn-copy-prompt').forEach(function(btn) {
