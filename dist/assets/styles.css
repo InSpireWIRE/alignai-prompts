@@ -118,6 +118,7 @@ h3 {
   text-decoration: none;
 }
 .nav-link:hover { opacity: 1; color: #00C853; text-decoration: none; }
+.nav-link.active { color: #00C853; padding-bottom: 6px; border-bottom: 2px solid #00C853; }
 
 .btn-signin {
   font-family: 'DM Sans', sans-serif;
@@ -329,7 +330,7 @@ h3 {
    Category Cards
    ========================================================================== */
 
-.categories-section { padding: 48px 0; }
+.categories-section { padding: 48px 0; scroll-margin-top: 80px; }
 
 .category-grid {
   display: grid;
