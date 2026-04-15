@@ -150,10 +150,12 @@
 
 {% block content %}
 
-<!-- ===== Breadcrumb (crawlable) ===== -->
-<!-- Back link — visible affordance separate from breadcrumb. -->
-<div class="section-inner">
-  <a href="{% if category and category.slug %}/category/{{ category.slug }}/{% else %}/{% endif %}" class="back-link" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;color:#00C853;text-decoration:none;margin-bottom:12px;">&larr; Back{% if category and category.name %} to {{ category.name }}{% endif %}</a>
+<!-- ===== Back link + Breadcrumb (crawlable) ===== -->
+<div class="section-inner prompt-back-row">
+  <a href="{% if category and category.slug %}/category/{{ category.slug }}/{% else %}/{% endif %}" class="back-link-pill">
+    <span class="back-arrow" aria-hidden="true">&larr;</span>
+    <span>Back{% if category and category.name %} to {{ category.name }}{% endif %}</span>
+  </a>
 </div>
 
 <nav class="breadcrumb" aria-label="Breadcrumb">

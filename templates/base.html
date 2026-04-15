@@ -46,7 +46,7 @@
   <link rel="alternate" type="application/rss+xml" title="AlignAI Prompt Hub - New Prompts" href="/feed.xml">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/styles.css?v={{ build_iso_date }}">
 
   <!-- ===== Sitewide JSON-LD: Organization + WebSite ===== -->
   <script type="application/ld+json">
@@ -133,9 +133,9 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="/assets/auth-gate.js"></script>
-  <script src="/assets/analytics.js"></script>
-  <script src="/assets/search.js" defer></script>
+  <script src="/assets/auth-gate.js?v={{ build_iso_date }}"></script>
+  <script src="/assets/analytics.js?v={{ build_iso_date }}"></script>
+  <script src="/assets/search.js?v={{ build_iso_date }}" defer></script>
   {% block scripts_extra %}{% endblock %}
 
 </body>

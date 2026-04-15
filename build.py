@@ -193,7 +193,11 @@ def organise(data: dict) -> dict:
         if not cat_slug:
             continue
         if cat_slug not in categories:
-            cat_name = row.get("category_name") or cat_slug
+            # The v_prompt_catalog view exposes the human-readable name as
+            # `category` (Postgres convention). Older code also looked at
+            # `category_name`; keep both fallbacks so this works regardless of
+            # whether the view changes.
+            cat_name = row.get("category") or row.get("category_name") or cat_slug
             categories[cat_slug] = {
                 "slug": cat_slug,
                 "name": cat_name,
