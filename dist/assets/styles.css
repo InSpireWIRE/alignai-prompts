@@ -330,7 +330,7 @@ h3 {
    Category Cards
    ========================================================================== */
 
-.categories-section { padding: 48px 0; scroll-margin-top: 120px; }
+.categories-section { padding: 48px 0; scroll-margin-top: 140px; }
 
 .category-grid {
   display: grid;
@@ -842,7 +842,7 @@ h3 {
 }
 .btn-outline:hover { border-color: rgba(255,255,255,0.4); text-decoration: none; }
 
-.btn-copy {
+.btn-copy { display: inline-block !important; 
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
   font-weight: 600;
@@ -1347,4 +1347,35 @@ label {
   .hero { padding: 36px 16px 16px; }
   .hero-title { font-size: 30px; }
   body { font-size: 16px; }
+}
+
+/* Prompt collapse/expand */
+.prompt-text-full.prompt-collapsed {
+  max-height: 120px;
+  overflow: hidden;
+  position: relative;
+}
+.prompt-text-full.prompt-collapsed::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(transparent, #1B2838);
+  pointer-events: none;
+}
+.btn-toggle-prompt {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #78909C;
+  font-size: 13px;
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+.btn-toggle-prompt:hover {
+  color: #00C853;
+  border-color: #00C853;
 }
