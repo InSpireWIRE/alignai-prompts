@@ -4,30 +4,90 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}{{ page_title | default(SITE_NAME) }}{% endblock %}</title>
-  <meta name="description" content="{% block meta_description %}{{ page_description | default('AI prompts that actually work for small business. Built by AlignAI.') }}{% endblock %}">
+  <meta name="description" content="{% block meta_description %}{{ page_description | default('Copy-paste AI prompts optimized for Claude, ChatGPT, Gemini and Copilot. Verified monthly. Built for small business by AlignAI.') }}{% endblock %}">
   <link rel="canonical" href="{% block canonical %}{{ canonical_url | default(SITE_URL) }}{% endblock %}">
 
+  <!-- Robots / crawling -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="theme-color" content="#0A0E14">
+  <meta name="author" content="AlignAI">
+
   <!-- Open Graph -->
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}">
   <meta property="og:title" content="{{ page_title | default(SITE_NAME) }}">
-  <meta property="og:description" content="{{ page_description | default('AI prompts that actually work for small business.') }}">
+  <meta property="og:description" content="{{ page_description | default('Copy-paste AI prompts optimized for Claude, ChatGPT, Gemini and Copilot. Verified monthly.') }}">
   <meta property="og:image" content="{{ OG_IMAGE }}">
   <meta property="og:url" content="{{ canonical_url | default(SITE_URL) }}">
   <meta property="og:site_name" content="{{ SITE_NAME }}">
+  <meta property="og:locale" content="en_US">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ page_title | default(SITE_NAME) }}">
-  <meta name="twitter:description" content="{{ page_description | default('AI prompts that actually work for small business.') }}">
+  <meta name="twitter:description" content="{{ page_description | default('Copy-paste AI prompts optimized for Claude, ChatGPT, Gemini and Copilot.') }}">
   <meta name="twitter:image" content="{{ OG_IMAGE }}">
+  <meta name="twitter:site" content="@alignai">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
+  <!-- RSS feed -->
+  <link rel="alternate" type="application/rss+xml" title="AlignAI Prompt Hub - New Prompts" href="/feed.xml">
+
   <!-- Styles -->
   <link rel="stylesheet" href="/assets/styles.css">
+
+  <!-- ===== Sitewide JSON-LD: Organization + WebSite ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "{{ SITE_URL }}/#organization",
+        "name": "AlignAI",
+        "alternateName": "Align AI",
+        "url": "https://alignai.business",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ SITE_URL }}/assets/logo.png",
+          "width": 512,
+          "height": 512
+        },
+        "description": "AlignAI scores AI tools and publishes field-tested prompts for small businesses. They rank who pays. We score what works.",
+        "sameAs": [
+          "https://app.alignai.business",
+          "https://github.com/InSpireWIRE"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "{{ SITE_URL }}/#website",
+        "url": "{{ SITE_URL }}",
+        "name": "{{ SITE_NAME }}",
+        "description": "AI prompts optimized for Claude, ChatGPT, Gemini and Copilot. Verified monthly for small business.",
+        "publisher": { "@id": "{{ SITE_URL }}/#organization" },
+        "inLanguage": "en-US",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "{{ SITE_URL }}/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  }
+  </script>
 
   {% block head_extra %}{% endblock %}
 </head>
@@ -55,6 +115,12 @@
     <div class="footer-inner">
       <p class="footer-tagline">
         Built by <strong>AlignAI</strong> &mdash; They rank who pays. We score what works.
+      </p>
+      <p class="footer-links" style="margin-top:8px;font-size:12px;color:#78909C;">
+        <a href="/" style="color:#78909C;">Home</a> &middot;
+        <a href="/about/" style="color:#78909C;">About</a> &middot;
+        <a href="/sitemap.xml" style="color:#78909C;">Sitemap</a> &middot;
+        <a href="/feed.xml" style="color:#78909C;">RSS</a>
       </p>
     </div>
   </footer>

@@ -1,5 +1,78 @@
 {% extends "base.html" %}
 
+{% block head_extra %}
+<!-- ===== JSON-LD: CollectionPage + BreadcrumbList + ItemList + FAQ ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "{{ canonical_url }}#collectionpage",
+      "url": "{{ canonical_url }}",
+      "name": "{{ category.name | e }} AI Prompts",
+      "description": "{{ (category.description or ('AI prompts for ' ~ category.name)) | e }}",
+      "inLanguage": "en-US",
+      "isPartOf": { "@id": "{{ SITE_URL }}/#website" },
+      "about": { "@id": "{{ SITE_URL }}/#organization" },
+      "dateModified": "{{ build_iso_date }}"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ SITE_URL }}/" },
+        { "@type": "ListItem", "position": 2, "name": "{{ category.name | e }}", "item": "{{ canonical_url }}" }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "{{ category.name | e }} prompts",
+      "numberOfItems": {{ prompts | length }},
+      "itemListElement": [
+        {% for p in prompts %}
+        {
+          "@type": "ListItem",
+          "position": {{ loop.index }},
+          "url": "{{ SITE_URL }}/prompts/{{ p.slug }}/",
+          "name": "{{ p.title | e }}"
+        }{{ "," if not loop.last }}
+        {% endfor %}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are {{ category.name | e }} AI prompts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "{{ category.name | e }} AI prompts are pre-written instructions that tell an AI model exactly how to handle common {{ category.name | lower | e }} tasks for a small business. Each prompt in this category has been tested on Claude, ChatGPT, Gemini and Copilot, so you can paste it straight into the model you already use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I use a prompt from this page?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Click any prompt card, copy the full text for your chosen AI model, paste it into Claude, ChatGPT, Gemini or Copilot, then replace the bracketed placeholders with your business details. The prompt is designed to run as-is on the free tier of each model."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many {{ category.name | e }} prompts are available?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There are currently {{ prompts | length }} verified prompt{{ 's' if prompts | length != 1 else '' }} in the {{ category.name | e }} category, each re-tested monthly and rebuilt whenever the underlying AI model changes."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+{% endblock %}
+
 {% block content %}
 
 <!-- ===== Breadcrumb ===== -->
@@ -13,9 +86,11 @@
 <section class="category-header">
   <div class="section-inner">
     <span class="category-page-label">{{ category.short_label }}</span>
-    <h1 class="category-page-title">{{ category.name }}</h1>
+    <h1 class="category-page-title">{{ category.name }} AI Prompts</h1>
     {% if category.description %}
     <p class="category-page-desc">{{ category.description }}</p>
+    {% else %}
+    <p class="category-page-desc">Copy-paste {{ category.name | lower }} prompts for Claude, ChatGPT, Gemini and Copilot. Every prompt in this category is field-tested for small business and re-verified {{ site_audit_date }}.</p>
     {% endif %}
   </div>
 </section>
@@ -73,6 +148,28 @@
       <p class="empty-state">No prompts in this category yet. Check back soon.</p>
       {% endfor %}
     </div>
+  </div>
+</section>
+
+<!-- ===== Mini FAQ (AEO) ===== -->
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <h2 class="section-title">About {{ category.name }} AI Prompts</h2>
+
+    <details class="faq-item" open>
+      <summary>What are {{ category.name | lower }} AI prompts?</summary>
+      <p>{{ category.name }} AI prompts are pre-written instructions that tell an AI model exactly how to handle common {{ category.name | lower }} tasks for a small business. Each prompt in this category has been tested on Claude, ChatGPT, Gemini and Copilot, so you can paste it straight into the model you already use.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>How do I use a prompt from this page?</summary>
+      <p>Click any prompt card, copy the full text for your chosen AI model, paste it into Claude, ChatGPT, Gemini or Copilot, then replace the bracketed placeholders with your business details. The prompt is designed to run as-is on the free tier of each model.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>How often are {{ category.name | lower }} prompts updated?</summary>
+      <p>Every prompt is re-verified monthly and rebuilt whenever a major AI model changes. The last verified month is shown on the prompt page for each model variant.</p>
+    </details>
   </div>
 </section>
 

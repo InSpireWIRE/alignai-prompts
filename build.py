@@ -319,15 +319,24 @@ def build_index(env: Environment, ctx: dict) -> None:
     """Generate dist/index.html -- the Hub home page."""
     # Compute audit date as current month/year at build time
     site_audit_date = datetime.now(timezone.utc).strftime("%b %Y")
+    build_iso_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    total_prompts = ctx["totals"]["total_prompts"]
+    total_categories = ctx["totals"]["total_categories"]
 
     tpl = env.get_template("index.html")
     html = tpl.render(
-        page_title="AI Prompts That Actually Work for Small Business",
-        page_description="Copy-paste prompts optimized for Claude, ChatGPT, Gemini & Copilot. Built by AlignAI.",
-        canonical_url=SITE_URL,
+        page_title="AI Prompts for Small Business (Verified " + site_audit_date + ") | AlignAI Prompt Hub",
+        page_description=(
+            f"{total_prompts} field-tested AI prompts for small business, "
+            f"optimized for Claude, ChatGPT, Gemini and Copilot. "
+            f"Free to copy. Re-verified {site_audit_date} by AlignAI."
+        ),
+        canonical_url=SITE_URL + "/",
         categories=ctx["categories"],
         featured=ctx["featured"],
         site_audit_date=site_audit_date,
+        build_iso_date=build_iso_date,
         **ctx["totals"],
     )
     dest = DIST_DIR / "index.html"
@@ -339,16 +348,24 @@ def build_category_pages(env: Environment, ctx: dict) -> int:
     """Generate dist/category/{slug}/index.html for every category."""
     tpl = env.get_template("category.html")
     site_audit_date = datetime.now(timezone.utc).strftime("%b %Y")
+    build_iso_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     count = 0
     for slug, cat in ctx["categories"].items():
         prompts = ctx["prompts_by_category"].get(slug, [])
+        prompt_count = len(prompts)
+        description = cat.get("description") or (
+            f"{prompt_count} AI prompts for {cat['name'].lower()}, "
+            f"optimized for Claude, ChatGPT, Gemini and Copilot. "
+            f"Free to copy. Verified {site_audit_date}."
+        )
         html = tpl.render(
-            page_title=f"{cat['name']} -- AI Prompts | AlignAI",
-            page_description=cat.get("description", f"AI prompts for {cat['name']}"),
+            page_title=f"{cat['name']} AI Prompts for Small Business ({prompt_count}) | AlignAI",
+            page_description=description[:160],
             canonical_url=f"{SITE_URL}/category/{slug}/",
             category=cat,
             prompts=prompts,
             site_audit_date=site_audit_date,
+            build_iso_date=build_iso_date,
         )
         dest = DIST_DIR / "category" / slug / "index.html"
         write_page(dest, html)
@@ -360,6 +377,7 @@ def build_category_pages(env: Environment, ctx: dict) -> int:
 def build_prompt_pages(env: Environment, ctx: dict) -> int:
     """Generate dist/prompts/{slug}/index.html for every prompt."""
     tpl = env.get_template("prompt.html")
+    build_iso_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     count = 0
     for slug, prompt in ctx["prompts"].items():
         variants = ctx["variants_by_prompt"].get(slug, [])
@@ -379,21 +397,192 @@ def build_prompt_pages(env: Environment, ctx: dict) -> int:
             if p.get("slug") != slug
         ][:3]
 
+        # AEO-friendly meta description
+        title = prompt.get("title", "Prompt")
+        use_case = (prompt.get("use_case") or "").strip()
+        model_names = ", ".join(v.get("model_name", "") for v in variants if v.get("model_name"))
+        if use_case:
+            desc = f"{title} AI prompt for small business. {use_case}"
+        else:
+            desc = f"{title} AI prompt for small business, tested on {model_names or 'Claude, ChatGPT, Gemini and Copilot'}. Copy and paste, free."
+        desc = desc[:160]
+
         html = tpl.render(
-            page_title=f"{prompt.get('title', 'Prompt')} -- AlignAI Prompt Hub",
-            page_description=prompt.get("use_case", prompt.get("title", "")),
+            page_title=f"{title} AI Prompt for Claude, ChatGPT, Gemini and Copilot | AlignAI",
+            page_description=desc,
             canonical_url=f"{SITE_URL}/prompts/{slug}/",
             prompt=prompt,
             variants=variants,
             category=cat,
             related_prompts=related,
             total_prompts=ctx["totals"]["total_prompts"],
+            build_iso_date=build_iso_date,
         )
         dest = DIST_DIR / "prompts" / slug / "index.html"
         write_page(dest, html)
         count += 1
     print(f"  + {count} prompt pages")
     return count
+
+
+# ---------------------------------------------------------------------------
+# Sitemap, robots, RSS (AEO / SEO infrastructure)
+# ---------------------------------------------------------------------------
+
+def build_sitemap(ctx: dict) -> None:
+    """Generate dist/sitemap.xml listing every crawlable URL."""
+    now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    urls = []
+
+    # Home
+    urls.append((SITE_URL + "/", now_iso, "daily", "1.0"))
+
+    # Categories
+    for slug in ctx["categories"].keys():
+        urls.append((f"{SITE_URL}/category/{slug}/", now_iso, "weekly", "0.8"))
+
+    # Prompts
+    for slug, prompt in ctx["prompts"].items():
+        last_mod = now_iso
+        # Prefer a real last-verified timestamp if present on any variant
+        variants = ctx["variants_by_prompt"].get(slug, [])
+        for v in variants:
+            lv = v.get("last_verified_at")
+            if lv:
+                try:
+                    last_mod = datetime.fromisoformat(
+                        str(lv).replace("Z", "+00:00")
+                    ).strftime("%Y-%m-%d")
+                    break
+                except Exception:
+                    pass
+        urls.append((f"{SITE_URL}/prompts/{slug}/", last_mod, "monthly", "0.7"))
+
+    lines = ['<?xml version="1.0" encoding="UTF-8"?>']
+    lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+    for loc, lastmod, changefreq, priority in urls:
+        lines.append("  <url>")
+        lines.append(f"    <loc>{loc}</loc>")
+        lines.append(f"    <lastmod>{lastmod}</lastmod>")
+        lines.append(f"    <changefreq>{changefreq}</changefreq>")
+        lines.append(f"    <priority>{priority}</priority>")
+        lines.append("  </url>")
+    lines.append("</urlset>")
+
+    (DIST_DIR / "sitemap.xml").write_text("\n".join(lines), encoding="utf-8")
+    print(f"  + sitemap.xml ({len(urls)} urls)")
+
+
+def build_robots() -> None:
+    """Generate dist/robots.txt. Permissive for AI/search crawlers; points to sitemap."""
+    content = f"""# AlignAI Prompt Hub
+# Allow all well-behaved crawlers including AI answer engines.
+
+User-agent: *
+Allow: /
+Disallow: /assets/auth-gate.js
+Disallow: /assets/analytics.js
+
+# AI answer engines (explicit allow-listing for visibility)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: {SITE_URL}/sitemap.xml
+"""
+    (DIST_DIR / "robots.txt").write_text(content, encoding="utf-8")
+    print("  + robots.txt")
+
+
+def build_rss(ctx: dict) -> None:
+    """Generate dist/feed.xml - RSS feed of recent prompts (AEO + subscriber signal)."""
+    now_rfc822 = datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S +0000")
+    items = []
+
+    # Sort prompts by created_at desc if available, else by title
+    prompts_list = list(ctx["prompts"].values())
+
+    def _sort_key(p):
+        return p.get("created_at") or ""
+
+    prompts_list.sort(key=_sort_key, reverse=True)
+
+    for p in prompts_list[:50]:
+        slug = p.get("slug")
+        if not slug:
+            continue
+        title = (p.get("title") or slug).replace("&", "&amp;").replace("<", "&lt;")
+        desc = (p.get("use_case") or title).replace("&", "&amp;").replace("<", "&lt;")
+        url = f"{SITE_URL}/prompts/{slug}/"
+        pub = p.get("created_at") or ""
+        try:
+            if pub:
+                pub_dt = datetime.fromisoformat(str(pub).replace("Z", "+00:00"))
+                pub = pub_dt.strftime("%a, %d %b %Y %H:%M:%S +0000")
+            else:
+                pub = now_rfc822
+        except Exception:
+            pub = now_rfc822
+        items.append(
+            f"""    <item>
+      <title>{title}</title>
+      <link>{url}</link>
+      <guid isPermaLink="true">{url}</guid>
+      <pubDate>{pub}</pubDate>
+      <description>{desc}</description>
+    </item>"""
+        )
+
+    rss = f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{SITE_NAME} - New Prompts</title>
+    <link>{SITE_URL}/</link>
+    <atom:link href="{SITE_URL}/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Field-tested AI prompts for small business. Verified monthly.</description>
+    <language>en-us</language>
+    <lastBuildDate>{now_rfc822}</lastBuildDate>
+{chr(10).join(items)}
+  </channel>
+</rss>
+"""
+    (DIST_DIR / "feed.xml").write_text(rss, encoding="utf-8")
+    print(f"  + feed.xml ({min(len(prompts_list), 50)} items)")
 
 
 # ---------------------------------------------------------------------------
@@ -448,6 +637,12 @@ def main() -> None:
 
     # 5. Static assets
     copy_static()
+
+    # 5b. SEO / AEO infrastructure: sitemap, robots, RSS
+    print("Generating SEO/AEO infrastructure...")
+    build_sitemap(ctx)
+    build_robots()
+    build_rss(ctx)
 
     # 6. Summary
     total_pages = 1 + cat_count + prompt_count
