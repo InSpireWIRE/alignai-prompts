@@ -602,6 +602,33 @@ def copy_static() -> None:
         print(f"  ! No static/ directory found -- created empty {dest.relative_to(BASE_DIR)}")
 
 
+def build_search_index(ctx: dict) -> None:
+    """Generate dist/search-index.json for client-side homepage search."""
+    import json
+    prompts = ctx.get("prompts", {})
+    categories = ctx.get("categories", {})
+    items = []
+    for slug, p in prompts.items():
+        cat_slug = p.get("category_slug")
+        cat = categories.get(cat_slug, {})
+        items.append({
+            "slug": slug,
+            "title": p.get("title", ""),
+            "use_case": p.get("use_case", ""),
+            "tags": p.get("tags") or [],
+            "category_slug": cat_slug,
+            "category_name": cat.get("name") or cat_slug or "",
+            "difficulty": p.get("difficulty", ""),
+            "business_value": p.get("business_value", ""),
+        })
+    # Sort by featured first, then title — pleasant default order if user lands
+    # on the page with nothing typed.
+    items.sort(key=lambda x: (not bool(prompts.get(x["slug"], {}).get("featured")), x["title"].lower()))
+    out_path = DIST_DIR / "search-index.json"
+    out_path.write_text(json.dumps(items, ensure_ascii=False), encoding="utf-8")
+    print(f"  + search-index.json ({len(items)} prompts)")
+
+
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
@@ -638,11 +665,12 @@ def main() -> None:
     # 5. Static assets
     copy_static()
 
-    # 5b. SEO / AEO infrastructure: sitemap, robots, RSS
+    # 5b. SEO / AEO infrastructure: sitemap, robots, RSS, search index
     print("Generating SEO/AEO infrastructure...")
     build_sitemap(ctx)
     build_robots()
     build_rss(ctx)
+    build_search_index(ctx)
 
     # 6. Summary
     total_pages = 1 + cat_count + prompt_count

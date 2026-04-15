@@ -151,6 +151,11 @@
 {% block content %}
 
 <!-- ===== Breadcrumb (crawlable) ===== -->
+<!-- Back link — visible affordance separate from breadcrumb. -->
+<div class="section-inner">
+  <a href="{% if category and category.slug %}/category/{{ category.slug }}/{% else %}/{% endif %}" class="back-link" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;color:#00C853;text-decoration:none;margin-bottom:12px;">&larr; Back{% if category and category.name %} to {{ category.name }}{% endif %}</a>
+</div>
+
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <a href="/">Hub Home</a>
   <span class="breadcrumb-sep">&gt;</span>
