@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AlignAI Prompt Hub - New Prompts</title>
+    <link>https://prompts.alignai.business/</link>
+    <atom:link href="https://prompts.alignai.business/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Field-tested AI prompts for small business. Verified monthly.</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 Apr 2026 12:44:29 +0000</lastBuildDate>
+    <item>
+      <title>AI Search Readiness Audit &amp; Fix Plan</title>
+      <link>https://prompts.alignai.business/prompts/ai-search-readiness-audit/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/ai-search-readiness-audit/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Build an agentic workflow that ingests your homepage HTML, scores AI-search readiness on a 100-point rubric, classifies your site Hot/Warm/Cold for answer-engine citation, and drafts the exact fixes — JSON-LD blocks, rewritten paragraphs, robots.txt additions — ready to paste in.</description>
+    </item>
+    <item>
+      <title>Generate FAQs Your Customers Actually Search For</title>
+      <link>https://prompts.alignai.business/prompts/generate-customer-search-faqs/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/generate-customer-search-faqs/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate 10 FAQ Q&amp;A pairs phrased the way real customers type into ChatGPT, Google and voice search — not the way your marketing team would write them. Output is ready to drop into FAQPage JSON-LD and your visible FAQ section.</description>
+    </item>
+    <item>
+      <title>Rewrite Your Homepage Hero for AI Answer Engines</title>
+      <link>https://prompts.alignai.business/prompts/answer-first-hero-rewrite/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/answer-first-hero-rewrite/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Restructure your homepage's first 50 words so AI answer engines (ChatGPT Search, Perplexity, Google AI Overviews) can lift a clean, citation-ready answer to the question your customers actually type. Outputs three voiced versions plus reasoning so you can pick the one that matches your brand.</description>
+    </item>
+    <item>
+      <title>Find the Sentence AI Engines Will Quote From Your Page</title>
+      <link>https://prompts.alignai.business/prompts/find-citation-sentence/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/find-citation-sentence/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Identify the single sentence on any page most likely to be lifted as a featured snippet or pulled into an AI Overview citation — or, if no sentence qualifies, write the one you should add and tell you exactly where it belongs.</description>
+    </item>
+    <item>
+      <title>Write a How-To Guide AI Engines Will Cite</title>
+      <link>https://prompts.alignai.business/prompts/howto-guide-aeo-ready/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/howto-guide-aeo-ready/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate a complete how-to / tutorial article structured exactly the way Google AI Overviews, ChatGPT Search, and Perplexity reward — answer-first intro, numbered atomic steps with image cues, prerequisites, time estimate, and a paste-ready HowTo JSON-LD block. Optimized for citation, not just ranking.</description>
+    </item>
+    <item>
+      <title>Find Duplicate Schema Errors Killing Rich Results</title>
+      <link>https://prompts.alignai.business/prompts/find-duplicate-schema-errors/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/find-duplicate-schema-errors/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Scan a page for the #1 cause of Rich Results validation failures: the same data expressed in BOTH visible microdata (itemscope/itemtype/itemprop) AND JSON-LD. Returns a clear list of which microdata attributes to remove from the visible HTML so JSON-LD can stand alone — plus a check for orphaned aggregateRating, broken @id references, and 5 other common Rich Results killers.</description>
+    </item>
+    <item>
+      <title>Diagnose Why AI Engines Aren't Citing You</title>
+      <link>https://prompts.alignai.business/prompts/diagnose-no-ai-citations/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/diagnose-no-ai-citations/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>You're ranking on Google but ChatGPT, Perplexity, and Google AI Overviews never mention you. This agentic workflow walks the four-layer diagnostic — crawl access, schema coverage, content extractability, and entity authority — and tells you which layer is the bottleneck plus the next 3 actions to unblock it. Designed for businesses that already have basic SEO in place.</description>
+    </item>
+    <item>
+      <title>See Which Competitors AI Engines Cite Instead of You</title>
+      <link>https://prompts.alignai.business/prompts/competitor-citation-analysis/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/competitor-citation-analysis/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Run a structured query set across ChatGPT Search, Perplexity, Google AI Overviews, and Claude to discover which 3–5 competitors are getting cited for the queries you want to own — and what specifically those competitors are doing on their pages that you're not. Outputs a competitor-by-citation-pattern matrix plus a prioritized gap list.</description>
+    </item>
+    <item>
+      <title>AI-Powered Lead Qualification &amp; Scoring</title>
+      <link>https://prompts.alignai.business/prompts/ai-powered-lead-qualification-scoring/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/ai-powered-lead-qualification-scoring/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Build an agentic workflow that ingests inbound leads from a CRM export, scores them against your ICP, drafts personalized outreach sequences, and flags high-priority leads for immediate follow-up.</description>
+    </item>
+    <item>
+      <title>CMO Page Engagement Analyzer</title>
+      <link>https://prompts.alignai.business/prompts/cmo-page-engagement-analyzer/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/cmo-page-engagement-analyzer/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Analyze any web page through a CMO lens — messaging clarity, positioning strength, engagement hooks, content hierarchy, tagline effectiveness, and audience-market fit. Goes beyond design and CRO to evaluate whether the page tells the right story to the right people with the right energy. Outputs a rewritten messaging framework and engagement optimization plan.</description>
+    </item>
+    <item>
+      <title>Multi-Platform Social Media Calendar</title>
+      <link>https://prompts.alignai.business/prompts/multi-platform-social-media-calendar/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/multi-platform-social-media-calendar/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Create a 30-day social media content calendar across Instagram, LinkedIn, X, and TikTok with post types, hooks, hashtags, and optimal posting times tailored to your industry.</description>
+    </item>
+    <item>
+      <title>SEO Content Brief Generator</title>
+      <link>https://prompts.alignai.business/prompts/seo-content-brief-generator/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/seo-content-brief-generator/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate a structured SEO content brief for a blog post targeting a specific keyword, including title options, meta description, H2 outline, and internal linking suggestions.</description>
+    </item>
+    <item>
+      <title>Inventory Demand Forecasting Assistant</title>
+      <link>https://prompts.alignai.business/prompts/inventory-demand-forecasting-assistant/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/inventory-demand-forecasting-assistant/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Build an agentic workflow that analyzes 12 months of sales data, seasonal patterns, and supplier lead times to generate a rolling 90-day demand forecast with reorder alerts and safety stock recommendations.</description>
+    </item>
+    <item>
+      <title>Standard Operating Procedure (SOP) Generator</title>
+      <link>https://prompts.alignai.business/prompts/sop-generator/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/sop-generator/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate a complete SOP document for any repeatable business process — from employee onboarding to warehouse receiving — in a consistent, numbered-step format with role assignments and exception handling.</description>
+    </item>
+    <item>
+      <title>Vendor Negotiation Email Sequence</title>
+      <link>https://prompts.alignai.business/prompts/vendor-negotiation-email-sequence/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/vendor-negotiation-email-sequence/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Draft a 3-email negotiation sequence for renewing a vendor contract, including an opening anchor, a concession strategy, and a walk-away alternative, all adapted to your specific contract terms.</description>
+    </item>
+    <item>
+      <title>Loyalty Program Design &amp; Comms Builder</title>
+      <link>https://prompts.alignai.business/prompts/loyalty-program-design-comms-builder/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/loyalty-program-design-comms-builder/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Design a complete customer loyalty program including tier structure, point mechanics, reward catalog, and a full communication sequence (launch email, milestone triggers, win-back flows) tailored to your average order value and customer lifecycle.</description>
+    </item>
+    <item>
+      <title>Review Response Template Engine</title>
+      <link>https://prompts.alignai.business/prompts/review-response-template-engine/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/review-response-template-engine/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate professional, empathetic responses to Google/Yelp reviews — both positive and negative — that match your brand voice and include a specific call-to-action.</description>
+    </item>
+    <item>
+      <title>Support Ticket Triage &amp; Response Drafter</title>
+      <link>https://prompts.alignai.business/prompts/support-ticket-triage-response-drafter/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/support-ticket-triage-response-drafter/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Classify incoming support tickets by urgency and category, then draft context-aware first responses using your knowledge base and past resolution patterns as few-shot examples.</description>
+    </item>
+    <item>
+      <title>13-Week Cash Flow Forecast Builder</title>
+      <link>https://prompts.alignai.business/prompts/13-week-cash-flow-forecast-builder/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/13-week-cash-flow-forecast-builder/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate a week-by-week 13-week cash flow forecast template from your current bank balance, expected receivables, and fixed/variable expenses.</description>
+    </item>
+    <item>
+      <title>Dynamic Pricing Strategy Modeler</title>
+      <link>https://prompts.alignai.business/prompts/dynamic-pricing-strategy-modeler/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/dynamic-pricing-strategy-modeler/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Build a pricing analysis workflow that ingests your product catalog, cost structure, competitor pricing, and demand elasticity estimates to recommend optimal price points, bundling strategies, and promotional discount guardrails.</description>
+    </item>
+    <item>
+      <title>SWOT-to-Strategy Action Plan</title>
+      <link>https://prompts.alignai.business/prompts/swot-to-strategy-action-plan/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/swot-to-strategy-action-plan/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Conduct a structured SWOT analysis for your business, then use chain-of-thought reasoning to convert each finding into a prioritized 90-day action plan with owners, KPIs, and dependencies.</description>
+    </item>
+    <item>
+      <title>90-Day Onboarding Program Builder</title>
+      <link>https://prompts.alignai.business/prompts/90-day-onboarding-program-builder/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/90-day-onboarding-program-builder/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Create a structured 90-day onboarding plan broken into Week 1 (orientation), Weeks 2-4 (role ramp), and Months 2-3 (independence milestones) with check-in schedules, training resources, and manager talking points.</description>
+    </item>
+    <item>
+      <title>Job Description &amp; Posting Generator</title>
+      <link>https://prompts.alignai.business/prompts/job-description-posting-generator/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/job-description-posting-generator/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate a compelling, inclusive job description with role summary, responsibilities, requirements (must-have vs. nice-to-have), compensation range framing, and a culture section — optimized for job board SEO.</description>
+    </item>
+    <item>
+      <title>Performance Review Cycle Automation</title>
+      <link>https://prompts.alignai.business/prompts/performance-review-cycle-automation/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/performance-review-cycle-automation/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Design an end-to-end performance review workflow: self-assessment prompts, manager evaluation templates, 360-feedback question sets, calibration discussion guides, and development plan generators — all customized to your company values and competency framework.</description>
+    </item>
+    <item>
+      <title>Brand Identity System Builder</title>
+      <link>https://prompts.alignai.business/prompts/brand-identity-system-builder/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/brand-identity-system-builder/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Build a complete brand identity system from scratch — color palette with accessibility ratios, typography scale, voice and tone guidelines, visual style rules, and a one-page brand cheat sheet your team can actually use.</description>
+    </item>
+    <item>
+      <title>Design Critique Partner</title>
+      <link>https://prompts.alignai.business/prompts/design-critique-partner/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/design-critique-partner/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Get a professional design critique on any visual asset — website, logo, pitch deck, social graphics, packaging, or email template. Evaluates hierarchy, typography, color usage, spacing, brand consistency, and user experience. Outputs a prioritized fix list, not just opinions.</description>
+    </item>
+    <item>
+      <title>Logo Concept Brief Generator</title>
+      <link>https://prompts.alignai.business/prompts/logo-concept-brief-generator/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/logo-concept-brief-generator/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate a detailed creative brief for a logo design, including style direction, color psychology rationale, typography recommendations, and 5 distinct concept descriptions ready to hand to a designer or feed into an AI image tool.</description>
+    </item>
+    <item>
+      <title>Multi-Channel Campaign Brief Generator</title>
+      <link>https://prompts.alignai.business/prompts/multi-channel-campaign-brief/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/multi-channel-campaign-brief/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate a complete visual campaign brief spanning ads, email, landing page, and social — all from a single creative direction. Outputs design specs, copy frameworks, asset dimensions, and a production checklist so your designer (or AI tool) can execute without guessing.</description>
+    </item>
+    <item>
+      <title>Pitch Deck Visual Direction Guide</title>
+      <link>https://prompts.alignai.business/prompts/pitch-deck-visual-direction-guide/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/pitch-deck-visual-direction-guide/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate a complete visual direction document for a pitch deck — slide-by-slide layout recommendations, data visualization styles, image direction, color usage rules, and a consistent visual system that makes a 15-slide deck look like it was designed by a professional agency.</description>
+    </item>
+    <item>
+      <title>Product Mockup Prompt Generator</title>
+      <link>https://prompts.alignai.business/prompts/product-mockup-prompt-generator/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/product-mockup-prompt-generator/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate detailed image prompts for product photography mockups — lifestyle shots, flat lays, packaging renders, and hero images optimized for e-commerce listings, social media, and marketing materials.</description>
+    </item>
+    <item>
+      <title>Social Media Graphics Brief Generator</title>
+      <link>https://prompts.alignai.business/prompts/social-media-graphics-brief-generator/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/social-media-graphics-brief-generator/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate platform-specific graphic design briefs for Instagram, LinkedIn, X, and TikTok — with exact dimensions, text placement guidelines, visual direction, and ready-to-use prompts for Canva AI or image generation tools.</description>
+    </item>
+    <item>
+      <title>Website Accessibility Audit</title>
+      <link>https://prompts.alignai.business/prompts/website-accessibility-audit/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/website-accessibility-audit/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Audit your website or app for accessibility issues — WCAG 2.1 compliance, screen reader compatibility, keyboard navigation, color contrast, form usability, and alt text. Outputs a categorized issue list with severity, fix instructions, and a remediation priority roadmap. Helps avoid lawsuits and reach more customers.</description>
+    </item>
+    <item>
+      <title>Explainer Video Storyboard Builder</title>
+      <link>https://prompts.alignai.business/prompts/explainer-video-storyboard-builder/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/explainer-video-storyboard-builder/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Create a complete storyboard for a 60-90 second explainer video — scene-by-scene script, visual descriptions, motion/animation notes, voiceover timing, and music direction. Optimized for product demos, service overviews, and investor pitches.</description>
+    </item>
+    <item>
+      <title>Podcast Episode Outline &amp; Show Notes Generator</title>
+      <link>https://prompts.alignai.business/prompts/podcast-episode-outline-show-notes/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/podcast-episode-outline-show-notes/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate a complete podcast episode plan — topic angle, cold open hook, segment breakdown with timestamps, interview questions (if guest episode), show notes with SEO keywords, social media clips to cut, and a newsletter recap draft. One prompt produces your entire episode production workflow.</description>
+    </item>
+    <item>
+      <title>Short-Form Video Script &amp; Shot List</title>
+      <link>https://prompts.alignai.business/prompts/short-form-video-script-shot-list/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/short-form-video-script-shot-list/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate a complete 30-60 second video script with shot-by-shot breakdown, hook options, call-to-action variants, and platform-specific formatting for TikTok, Instagram Reels, and YouTube Shorts.</description>
+    </item>
+    <item>
+      <title>UGC-Style Ad Script Generator</title>
+      <link>https://prompts.alignai.business/prompts/ugc-style-ad-script-generator/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/ugc-style-ad-script-generator/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate authentic-sounding user-generated content ad scripts for social media — including the "real person" hook, product demo moment, objection handling, and CTA. Formatted for creators to film on their phone with zero production budget.</description>
+    </item>
+    <item>
+      <title>YouTube Thumbnail Concept Generator</title>
+      <link>https://prompts.alignai.business/prompts/youtube-thumbnail-concept-generator/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/youtube-thumbnail-concept-generator/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate 5 high-click-rate thumbnail concepts for a YouTube video, including text overlay (max 4 words), facial expression direction, color blocking strategy, and AI image prompts for background generation.</description>
+    </item>
+    <item>
+      <title>Customer Case Study Writer</title>
+      <link>https://prompts.alignai.business/prompts/customer-case-study-writer/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/customer-case-study-writer/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate a complete customer case study from raw interview notes or survey responses — including the narrative arc, pull quotes, data callouts, visual layout suggestions, and versions optimized for website, PDF, and sales deck formats.</description>
+    </item>
+    <item>
+      <title>Media Pitch Email Sequence</title>
+      <link>https://prompts.alignai.business/prompts/media-pitch-email-sequence/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/media-pitch-email-sequence/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate a 3-email pitch sequence for reaching journalists, podcasters, and bloggers — including the initial pitch, a follow-up with a different angle, and a final value-add touch. Each email is personalized to the outlet type.</description>
+    </item>
+    <item>
+      <title>Press Release Generator</title>
+      <link>https://prompts.alignai.business/prompts/press-release-generator/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/press-release-generator/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate a complete, AP-style press release for product launches, company milestones, partnerships, or events — including headline, subheadline, dateline, body with quotes, boilerplate, and media contact block.</description>
+    </item>
+    <item>
+      <title>Testimonial Request Email Sequence</title>
+      <link>https://prompts.alignai.business/prompts/testimonial-request-email-sequence/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/testimonial-request-email-sequence/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate a 2-email sequence to request customer testimonials — a warm initial ask and a gentle follow-up — plus a structured questionnaire that guides customers to give specific, usable testimonials instead of generic "great product" responses.</description>
+    </item>
+    <item>
+      <title>Freelancer &amp; Contractor Agreement Generator</title>
+      <link>https://prompts.alignai.business/prompts/freelancer-contractor-agreement-generator/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/freelancer-contractor-agreement-generator/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate a comprehensive independent contractor agreement covering scope of work, payment terms, intellectual property ownership, confidentiality, termination clauses, and liability limitations — written in plain English that both parties can actually understand.</description>
+    </item>
+    <item>
+      <title>Non-Disclosure Agreement (NDA) Generator</title>
+      <link>https://prompts.alignai.business/prompts/nda-generator/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/nda-generator/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate a mutual or one-way NDA for business discussions, partnerships, hiring, or vendor relationships — with clear definitions of confidential information, exclusions, obligations, term, and remedies.</description>
+    </item>
+    <item>
+      <title>Privacy Policy Generator</title>
+      <link>https://prompts.alignai.business/prompts/privacy-policy-generator/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/privacy-policy-generator/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate a GDPR and CCPA-aware privacy policy for your website or app — covering data collection, usage, sharing, cookies, user rights, and contact information. Structured by regulation requirement so nothing is missed.</description>
+    </item>
+    <item>
+      <title>Terms of Service Generator</title>
+      <link>https://prompts.alignai.business/prompts/terms-of-service-generator/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/terms-of-service-generator/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate comprehensive Terms of Service for a website, SaaS product, or e-commerce store — covering acceptable use, payment terms, refund policy, intellectual property, liability limitations, and dispute resolution.</description>
+    </item>
+    <item>
+      <title>Customer Churn Early Warning System</title>
+      <link>https://prompts.alignai.business/prompts/customer-churn-early-warning/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/customer-churn-early-warning/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Analyze your customer data to identify churn risk patterns, build an early warning checklist, and create targeted save campaigns for at-risk accounts. Works with CRM exports, payment data, or even a spreadsheet of customer activity.</description>
+    </item>
+    <item>
+      <title>KPI Dashboard Blueprint</title>
+      <link>https://prompts.alignai.business/prompts/kpi-dashboard-blueprint/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/kpi-dashboard-blueprint/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate a complete KPI dashboard specification from your business goals — what to track, how to measure it, target ranges, and which tools to pull data from. Perfect for setting up Google Sheets, Looker Studio, or any BI tool.</description>
+    </item>
+    <item>
+      <title>Revenue Forecasting Model Builder</title>
+      <link>https://prompts.alignai.business/prompts/revenue-forecasting-model/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/revenue-forecasting-model/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Build a multi-scenario revenue forecast from your historical data — baseline, optimistic, and conservative — with monthly projections, assumption documentation, and sensitivity analysis. Output is investor-ready or usable for internal planning.</description>
+    </item>
+    <item>
+      <title>Survey &amp; Feedback Insight Extractor</title>
+      <link>https://prompts.alignai.business/prompts/survey-feedback-insight-extractor/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/survey-feedback-insight-extractor/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Turn a pile of survey responses, NPS comments, support tickets, or review feedback into a structured insights report with themes, sentiment breakdown, priority actions, and quotable highlights. Works with any unstructured text feedback.</description>
+    </item>
+    <item>
+      <title>Abandoned Cart Email Recovery Sequence</title>
+      <link>https://prompts.alignai.business/prompts/abandoned-cart-recovery-sequence/</link>
+      <guid isPermaLink="true">https://prompts.alignai.business/prompts/abandoned-cart-recovery-sequence/</guid>
+      <pubDate>Tue, 21 Apr 2026 12:44:29 +0000</pubDate>
+      <description>Generate a 3-email abandoned cart recovery sequence with escalating urgency — a gentle reminder, a value reinforcement with social proof, and a final offer with scarcity. Each email includes subject line, preview text, body copy, and CTA.</description>
+    </item>
+  </channel>
+</rss>

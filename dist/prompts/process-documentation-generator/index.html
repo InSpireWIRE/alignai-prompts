@@ -3,73 +3,231 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Process Documentation Generator -- AlignAI Prompt Hub</title>
-  <meta name="description" content="Turn a verbal or rough explanation of how you do something into a clean, step-by-step SOP that anyone on your team can follow. Includes decision points, edge cases, tool-specific instructions, and a troubleshooting section.">
+  <title>Process Documentation Generator AI Prompt for Claude, ChatGPT, Gemini and Copilot | AlignAI</title>
+  <meta name="description" content="Process Documentation Generator AI prompt for small business. Turn a verbal or rough explanation of how you do something into a clean, step-by-step SOP that any">
   <link rel="canonical" href="https://prompts.alignai.business/prompts/process-documentation-generator/">
 
+  <!-- Robots / crawling -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+
+  <!-- Google Search Console ownership verification -->
+  <meta name="google-site-verification" content="Op3Rle-BFziGr5bOyTieZ5ceWDfXbTh_gXXzHswZd7E">
+  <meta name="theme-color" content="#0A0E14">
+  <meta name="author" content="AlignAI">
+
   <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Process Documentation Generator -- AlignAI Prompt Hub">
-  <meta property="og:description" content="Turn a verbal or rough explanation of how you do something into a clean, step-by-step SOP that anyone on your team can follow. Includes decision points, edge cases, tool-specific instructions, and a troubleshooting section.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Process Documentation Generator AI Prompt for Claude, ChatGPT, Gemini and Copilot | AlignAI">
+  <meta property="og:description" content="Process Documentation Generator AI prompt for small business. Turn a verbal or rough explanation of how you do something into a clean, step-by-step SOP that any">
   <meta property="og:image" content="https://prompts.alignai.business/assets/og-image.png">
   <meta property="og:url" content="https://prompts.alignai.business/prompts/process-documentation-generator/">
   <meta property="og:site_name" content="AlignAI Prompt Hub">
+  <meta property="og:locale" content="en_US">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Process Documentation Generator -- AlignAI Prompt Hub">
-  <meta name="twitter:description" content="Turn a verbal or rough explanation of how you do something into a clean, step-by-step SOP that anyone on your team can follow. Includes decision points, edge cases, tool-specific instructions, and a troubleshooting section.">
+  <meta name="twitter:title" content="Process Documentation Generator AI Prompt for Claude, ChatGPT, Gemini and Copilot | AlignAI">
+  <meta name="twitter:description" content="Process Documentation Generator AI prompt for small business. Turn a verbal or rough explanation of how you do something into a clean, step-by-step SOP that any">
   <meta name="twitter:image" content="https://prompts.alignai.business/assets/og-image.png">
+  <meta name="twitter:site" content="@alignai">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles.css">
+  <!-- RSS feed -->
+  <link rel="alternate" type="application/rss+xml" title="AlignAI Prompt Hub - New Prompts" href="/feed.xml">
 
-<!-- JSON-LD: HowTo structured data -->
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles.css?v=2026-04-21">
+
+  <!-- ===== Sitewide JSON-LD: Organization + WebSite ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://prompts.alignai.business/#organization",
+        "name": "AlignAI",
+        "alternateName": "Align AI",
+        "url": "https://alignai.business",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://prompts.alignai.business/assets/logo.png",
+          "width": 512,
+          "height": 512
+        },
+        "description": "AlignAI scores AI tools and publishes field-tested prompts for small businesses. They rank who pays. We score what works.",
+        "sameAs": [
+          "https://app.alignai.business",
+          "https://github.com/InSpireWIRE"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://prompts.alignai.business/#website",
+        "url": "https://prompts.alignai.business",
+        "name": "AlignAI Prompt Hub",
+        "description": "AI prompts optimized for Claude, ChatGPT, Gemini and Copilot. Verified monthly for small business.",
+        "publisher": { "@id": "https://prompts.alignai.business/#organization" },
+        "inLanguage": "en-US",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://prompts.alignai.business/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  }
+  </script>
+
+<!-- ===== JSON-LD: HowTo + Article + BreadcrumbList + FAQPage ===== -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Process Documentation Generator",
-  "description": "Turn a verbal or rough explanation of how you do something into a clean, step-by-step SOP that anyone on your team can follow. Includes decision points, edge cases, tool-specific instructions, and a troubleshooting section.",
-  "url": "https://prompts.alignai.business/prompts/process-documentation-generator/",
-  "tool": [
+  "@graph": [
     {
-      "@type": "HowToTool",
-      "name": "Claude"
+      "@type": "HowTo",
+      "@id": "https://prompts.alignai.business/prompts/process-documentation-generator/#howto",
+      "name": "How to use the Process Documentation Generator prompt",
+      "description": "Turn a verbal or rough explanation of how you do something into a clean, step-by-step SOP that anyone on your team can follow. Includes decision points, edge cases, tool-specific instructions, and a troubleshooting section.",
+      "url": "https://prompts.alignai.business/prompts/process-documentation-generator/",
+      "image": "https://prompts.alignai.business/assets/og-image.png",
+      "totalTime": "PT2M",
+      "inLanguage": "en-US",
+      "datePublished": "2026-04-21",
+      "dateModified": "2026-04-21",
+      "author": { "@id": "https://prompts.alignai.business/#organization" },
+      "publisher": { "@id": "https://prompts.alignai.business/#organization" },
+      "supply": [
+        { "@type": "HowToSupply", "name": "Claude account" },
+        { "@type": "HowToSupply", "name": "ChatGPT account" },
+        { "@type": "HowToSupply", "name": "Gemini account" },
+        { "@type": "HowToSupply", "name": "Copilot account" }
+      ],
+      "tool": [
+        { "@type": "HowToTool", "name": "Claude" },
+        { "@type": "HowToTool", "name": "ChatGPT" },
+        { "@type": "HowToTool", "name": "Gemini" },
+        { "@type": "HowToTool", "name": "Copilot" }
+      ],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Pick the AI model you use",
+          "text": "Choose the tab for Claude, ChatGPT, Gemini or Copilot. The prompt is tuned per model so the output quality is consistent across tools.",
+          "url": "https://prompts.alignai.business/prompts/process-documentation-generator/#variants"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Copy the full prompt",
+          "text": "Click the Copy Full Prompt button to copy the model-specific prompt to your clipboard.",
+          "url": "https://prompts.alignai.business/prompts/process-documentation-generator/#variants"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Paste into your AI tool",
+          "text": "Open Claude (or the model you chose) and paste the prompt into a new chat.",
+          "url": "https://prompts.alignai.business/prompts/process-documentation-generator/#variants"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Replace the bracketed placeholders",
+          "text": "Replace any [bracketed placeholders] with your specific business details, such as your company name, industry, audience or product.",
+          "url": "https://prompts.alignai.business/prompts/process-documentation-generator/#variants"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Run the prompt and review the output",
+          "text": "Send the message and review the generated output. If you need adjustments, ask the AI to refine the answer or tighten tone, length or format.",
+          "url": "https://prompts.alignai.business/prompts/process-documentation-generator/#variants"
+        }
+      ]
     },
     {
-      "@type": "HowToTool",
-      "name": "ChatGPT"
+      "@type": "TechArticle",
+      "@id": "https://prompts.alignai.business/prompts/process-documentation-generator/#article",
+      "headline": "Process Documentation Generator",
+      "description": "Turn a verbal or rough explanation of how you do something into a clean, step-by-step SOP that anyone on your team can follow. Includes decision points, edge cases, tool-specific instructions, and a troubleshooting section.",
+      "url": "https://prompts.alignai.business/prompts/process-documentation-generator/",
+      "image": "https://prompts.alignai.business/assets/og-image.png",
+      "inLanguage": "en-US",
+      "datePublished": "2026-04-21",
+      "dateModified": "2026-04-21",
+      "author": { "@id": "https://prompts.alignai.business/#organization" },
+      "publisher": { "@id": "https://prompts.alignai.business/#organization" },
+      "mainEntityOfPage": "https://prompts.alignai.business/prompts/process-documentation-generator/",
+"keywords": "SOP, process, documentation, standard operating procedure, workflow, how-to, operations",      "articleSection": "Training &amp; Knowledge",
+      "proficiencyLevel": "Beginner"
     },
     {
-      "@type": "HowToTool",
-      "name": "Gemini"
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://prompts.alignai.business/" }
+        , { "@type": "ListItem", "position": 2, "name": "Training &amp; Knowledge", "item": "https://prompts.alignai.business/category/training-and-knowledge/" }
+        , { "@type": "ListItem", "position": 3, "name": "Process Documentation Generator", "item": "https://prompts.alignai.business/prompts/process-documentation-generator/" }
+      ]
     },
     {
-      "@type": "HowToTool",
-      "name": "Copilot"
-    }
-  ],
-  "step": [
-    {
-      "@type": "HowToStep",
-      "name": "Copy the prompt",
-      "text": "Copy the AI prompt text optimized for your chosen model."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Paste into your AI tool",
-      "text": "Open Claude and paste the prompt."
-    },
-    {
-      "@type": "HowToStep",
-      "name": "Customize placeholders",
-      "text": "Replace any [bracketed placeholders] with your specific business details."
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does the Process Documentation Generator prompt do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Turn a verbal or rough explanation of how you do something into a clean, step-by-step SOP that anyone on your team can follow. Includes decision points, edge cases, tool-specific instructions, and a troubleshooting section."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which AI models is this prompt tested on?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This prompt is field-tested on Claude, ChatGPT, Gemini and Copilot. Each model has its own optimized variant on this page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a paid AI account to use this prompt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. This prompt is written to run on the free tier of Claude, ChatGPT, Gemini and Copilot. Paid tiers simply give you longer context windows and faster responses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I customize this prompt for my business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Any text inside square brackets is a placeholder you replace with your own business details, such as company name, audience, product or tone. You can also ask the AI to adjust format, length or style after the first output."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When was this prompt last verified?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Each model variant on this page shows its own freshness stamp. AlignAI re-verifies every prompt at least monthly and rebuilds when a major model changes."
+          }
+        }
+      ]
     }
   ]
 }
@@ -80,7 +238,13 @@
   <!-- ===== Header ===== -->
   <header class="site-header">
     <div class="header-inner">
-      <a href="/" class="logo" aria-label="AlignAI home"><span style="font-family:'Space Mono',monospace;font-size:18px;font-weight:700;"><span style="color:rgba(250,251,252,0.4);">[</span><span style="color:#FAFBFC;">align</span><span style="color:#00C853;">.ai</span><span style="color:rgba(250,251,252,0.4);">]</span></span></a>
+      <div class="logo-lockup">
+        <a href="https://alignai.business" class="logo" aria-label="AlignAI home">
+          <span class="brand-logo brand-logo--short">
+            <span class="brand-logo__bracket">[</span><span class="brand-logo__align">align</span><span class="brand-logo__ai">ai</span><span class="brand-logo__bracket">]</span>
+          </span>
+        </a>
+      </div>
       <nav class="header-nav" aria-label="Main navigation">
         <a href="/" class="nav-link">Prompt Hub</a>
         <a href="https://app.alignai.business" class="nav-link">Browse AI Tools</a>
@@ -92,16 +256,18 @@
   <!-- ===== Main Content ===== -->
   <main class="site-main">
 
-<!-- ===== Back Link ===== -->
-<div class="section-inner">
-  <a href="javascript:history.back()" class="back-link" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;color:#00C853;text-decoration:none;margin-bottom:12px;">&larr; Back</a>
+<!-- ===== Back link + Breadcrumb (crawlable) ===== -->
+<div class="section-inner prompt-back-row">
+  <a href="/category/training-and-knowledge/" class="back-link-pill">
+    <span class="back-arrow" aria-hidden="true">&larr;</span>
+    <span>Back to Training &amp; Knowledge</span>
+  </a>
 </div>
 
-<!-- ===== Breadcrumb ===== -->
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <a href="/">Hub Home</a>
   <span class="breadcrumb-sep">&gt;</span>
-  <a href="/category/training-and-knowledge/">training-and-knowledge</a>
+  <a href="/category/training-and-knowledge/">Training &amp; Knowledge</a>
   <span class="breadcrumb-sep">&gt;</span>
   <span class="breadcrumb-current">Process Documentation Generator</span>
 </nav>
@@ -144,8 +310,22 @@
   </div>
 </section>
 
+<!-- ===== How to use (AEO visible how-to) ===== -->
+<section class="howto-section" id="how-to-use">
+  <div class="section-inner">
+    <h2 class="subsection-title">How to use this prompt</h2>
+    <ol class="howto-steps">
+      <li><strong>Pick your AI model.</strong> Choose the tab for Claude, ChatGPT, Gemini or Copilot &mdash; each variant is tuned for that model.</li>
+      <li><strong>Copy the full prompt.</strong> Click <em>Copy Full Prompt</em> to copy the text to your clipboard.</li>
+      <li><strong>Paste into your AI tool.</strong> Open your chosen model and paste the prompt into a new chat.</li>
+      <li><strong>Replace the <code>[placeholders]</code>.</strong> Swap any bracketed fields for your company name, audience, product or tone.</li>
+      <li><strong>Run and refine.</strong> Review the output. If anything is off, ask the AI to tighten tone, length or format.</li>
+    </ol>
+  </div>
+</section>
+
 <!-- ===== Model Variant Tabs ===== -->
-<section class="variants-section">
+<section class="variants-section" id="variants">
   <div class="section-inner">
     <h2 class="subsection-title">Prompt Variants by Model</h2>
 
@@ -228,11 +408,11 @@
 [EXPLAIN THE PROCESS IN YOUR OWN WORDS — messy is fine. Include every step,...</code></pre>
           </div>
           <div class="gated-overlay-cta">
-            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <p class="gate-value-line">Unlock this prompt + all 92 in the library &mdash; free, updated monthly, zero spam.</p>
             <input type="email" class="gate-email-input" placeholder="you@example.com">
             <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
             <p class="gate-explainer" style="font-size: 12px; color: #78909C; margin-top: 0.75rem; line-height: 1.5;">
-              Your email unlocks all 74 prompts instantly. No password, no signup — just your email.
+              Your email unlocks all 92 prompts instantly. No password, no signup — just your email.
             </p>
           </div>
         </div>
@@ -254,7 +434,7 @@
           data-prompt-id="process-documentation-generator"
           data-model="claude"
         >
-          <pre class="prompt-text-full" style="display:none;"><code>You are a process documentation specialist. Turn my rough explanation into a clean, followable SOP.
+          <pre class="prompt-text-full"><code>You are a process documentation specialist. Turn my rough explanation into a clean, followable SOP.
 
 &lt;process_explanation&gt;
 [EXPLAIN THE PROCESS IN YOUR OWN WORDS — messy is fine. Include every step, tool used, decision point, and edge case you can think of. More detail = better doc.]
@@ -346,11 +526,11 @@ Process name:...</code></pre>
 Process name:...</code></pre>
           </div>
           <div class="gated-overlay-cta">
-            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <p class="gate-value-line">Unlock this prompt + all 92 in the library &mdash; free, updated monthly, zero spam.</p>
             <input type="email" class="gate-email-input" placeholder="you@example.com">
             <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
             <p class="gate-explainer" style="font-size: 12px; color: #78909C; margin-top: 0.75rem; line-height: 1.5;">
-              Your email unlocks all 74 prompts instantly. No password, no signup — just your email.
+              Your email unlocks all 92 prompts instantly. No password, no signup — just your email.
             </p>
           </div>
         </div>
@@ -372,7 +552,7 @@ Process name:...</code></pre>
           data-prompt-id="process-documentation-generator"
           data-model="chatgpt"
         >
-          <pre class="prompt-text-full" style="display:none;"><code>Act as a process documentation specialist. I am going to explain how I do something, and you will turn it into a clean SOP anyone can follow.
+          <pre class="prompt-text-full"><code>Act as a process documentation specialist. I am going to explain how I do something, and you will turn it into a clean SOP anyone can follow.
 
 Process name: [NAME]
 Who follows this: [ROLE]
@@ -453,11 +633,11 @@ hidden    >
 **Who follows it:**...</code></pre>
           </div>
           <div class="gated-overlay-cta">
-            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <p class="gate-value-line">Unlock this prompt + all 92 in the library &mdash; free, updated monthly, zero spam.</p>
             <input type="email" class="gate-email-input" placeholder="you@example.com">
             <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
             <p class="gate-explainer" style="font-size: 12px; color: #78909C; margin-top: 0.75rem; line-height: 1.5;">
-              Your email unlocks all 74 prompts instantly. No password, no signup — just your email.
+              Your email unlocks all 92 prompts instantly. No password, no signup — just your email.
             </p>
           </div>
         </div>
@@ -479,7 +659,7 @@ hidden    >
           data-prompt-id="process-documentation-generator"
           data-model="gemini"
         >
-          <pre class="prompt-text-full" style="display:none;"><code>Turn my rough process explanation into a clean SOP.
+          <pre class="prompt-text-full"><code>Turn my rough process explanation into a clean SOP.
 
 **Process:** [NAME]
 **Who follows it:** [ROLE]
@@ -560,11 +740,11 @@ Process: [NAME]
 Who follows...</code></pre>
           </div>
           <div class="gated-overlay-cta">
-            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <p class="gate-value-line">Unlock this prompt + all 92 in the library &mdash; free, updated monthly, zero spam.</p>
             <input type="email" class="gate-email-input" placeholder="you@example.com">
             <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
             <p class="gate-explainer" style="font-size: 12px; color: #78909C; margin-top: 0.75rem; line-height: 1.5;">
-              Your email unlocks all 74 prompts instantly. No password, no signup — just your email.
+              Your email unlocks all 92 prompts instantly. No password, no signup — just your email.
             </p>
           </div>
         </div>
@@ -586,7 +766,7 @@ Who follows...</code></pre>
           data-prompt-id="process-documentation-generator"
           data-model="copilot"
         >
-          <pre class="prompt-text-full" style="display:none;"><code>Turn my process explanation into a professional SOP.
+          <pre class="prompt-text-full"><code>Turn my process explanation into a professional SOP.
 
 Process: [NAME]
 Who follows it: [ROLE]
@@ -634,12 +814,47 @@ Create:
   </div>
 </section>
 
+<!-- ===== FAQ (AEO) ===== -->
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <h2 class="subsection-title">Frequently Asked Questions</h2>
+
+    <details class="faq-item" open>
+      <summary>What does the Process Documentation Generator prompt do?</summary>
+      <p>Turn a verbal or rough explanation of how you do something into a clean, step-by-step SOP that anyone on your team can follow. Includes decision points, edge cases, tool-specific instructions, and a troubleshooting section.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Which AI models is this prompt tested on?</summary>
+      <p>This prompt is field-tested on
+Claude, ChatGPT, Gemini and Copilot.
+        Each model has its own optimized variant above.
+      </p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do I need a paid AI account to use this prompt?</summary>
+      <p>No. This prompt is written to run on the free tier of Claude, ChatGPT, Gemini and Copilot. Paid tiers simply give you longer context windows and faster responses.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can I customize this prompt for my business?</summary>
+      <p>Yes. Any text inside square brackets is a placeholder you replace with your own business details, such as company name, audience, product or tone. You can also ask the AI to adjust format, length or style after the first output.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary>When was this prompt last verified?</summary>
+      <p>Each model variant above shows its own freshness stamp. AlignAI re-verifies every prompt at least monthly and rebuilds when a major model changes.</p>
+    </details>
+  </div>
+</section>
+
 <!-- ===== Related AI Tools ===== -->
 
 <!-- ===== Related Prompts ===== -->
 <section class="related-prompts-section">
   <div class="section-inner">
-    <h2 class="subsection-title">More in training-and-knowledge</h2>
+    <h2 class="subsection-title">More in Training &amp; Knowledge</h2>
     <div class="prompt-list">
       <a
         href="/prompts/employee-training-module-builder/"
@@ -696,8 +911,22 @@ Create:
   <!-- ===== Footer ===== -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <p class="footer-tagline">
-        Built by <strong>AlignAI</strong> &mdash; They rank who pays. We score what works.
+      <p class="footer-brand">
+        <span class="brand-logo brand-logo--short">
+          <span class="brand-logo__bracket">[</span><span class="brand-logo__align">align</span><span class="brand-logo__ai">ai</span><span class="brand-logo__bracket">]</span>
+        </span>
+        &mdash; AI intelligence for small businesses. Find it. Trust it. Use it.
+      </p>
+      <p class="footer-nav" style="margin-top:10px;font-size:14px;">
+        <a href="https://app.alignai.business" style="color:#94A3B8;transition:color 0.2s;">Browse AI Tools</a>
+        <span style="color:rgba(250,251,252,0.3);margin:0 8px;">&middot;</span>
+        <a href="https://prompts.alignai.business" style="color:#94A3B8;transition:color 0.2s;">Prompt Hub</a>
+      </p>
+      <p class="footer-links" style="margin-top:8px;font-size:12px;color:#78909C;">
+        <a href="/" style="color:#78909C;">Home</a> &middot;
+        <a href="/about/" style="color:#78909C;">About</a> &middot;
+        <a href="/sitemap.xml" style="color:#78909C;">Sitemap</a> &middot;
+        <a href="/feed.xml" style="color:#78909C;">RSS</a>
       </p>
     </div>
   </footer>
@@ -707,8 +936,9 @@ Create:
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="/assets/auth-gate.js"></script>
-  <script src="/assets/analytics.js"></script>
+  <script src="/assets/auth-gate.js?v=2026-04-21"></script>
+  <script src="/assets/analytics.js?v=2026-04-21"></script>
+  <script src="/assets/search.js?v=2026-04-21" defer></script>
 <script>
 (function() {
   // Tab switching
