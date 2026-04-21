@@ -1472,17 +1472,20 @@ label {
 }
 
 /* ===== Brand Logo (v4) ===== */
-.brand-logo {
-  font-family: 'Space Mono', 'Courier New', monospace;
-  font-weight: 700;
-  line-height: 1;
-  white-space: nowrap;
-  display: inline-block;
+.brand-logo,
+.brand-logo * {
+  font-family: 'Space Mono', 'Courier New', monospace !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
 }
-.brand-logo__bracket  { color: #94A3B8; }
-.brand-logo__align    { color: #FAFBFC; }
-.brand-logo__ai       { color: #00C853; }
-.brand-logo__business { color: #94A3B8; }
-.brand-logo--full  { font-size: clamp(24px, 4vw, 42px); }
-.brand-logo--short { font-size: clamp(20px, 3vw, 36px); }
-.brand-logo--on-light .brand-logo__align { color: #0D1B2A; }
+.brand-logo {
+  display: inline-block !important;
+}
+.brand-logo__bracket  { color: #94A3B8 !important; }
+.brand-logo__align    { color: #FAFBFC !important; }
+.brand-logo__ai       { color: #00C853 !important; }
+.brand-logo__business { color: #94A3B8 !important; }
+.brand-logo--full  { font-size: clamp(24px, 4vw, 42px) !important; }
+.brand-logo--short { font-size: clamp(20px, 3vw, 36px) !important; }
+.brand-logo--on-light .brand-logo__align { color: #0D1B2A !important; }
