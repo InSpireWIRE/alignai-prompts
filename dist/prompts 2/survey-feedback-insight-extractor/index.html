@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey &amp; Feedback Insight Extractor -- AlignAI Prompt Hub</title>
+  <meta name="description" content="Turn a pile of survey responses, NPS comments, support tickets, or review feedback into a structured insights report with themes, sentiment breakdown, priority actions, and quotable highlights. Works with any unstructured text feedback.">
+  <link rel="canonical" href="https://prompts.alignai.business/prompts/survey-feedback-insight-extractor/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Survey &amp; Feedback Insight Extractor -- AlignAI Prompt Hub">
+  <meta property="og:description" content="Turn a pile of survey responses, NPS comments, support tickets, or review feedback into a structured insights report with themes, sentiment breakdown, priority actions, and quotable highlights. Works with any unstructured text feedback.">
+  <meta property="og:image" content="https://prompts.alignai.business/assets/og-image.png">
+  <meta property="og:url" content="https://prompts.alignai.business/prompts/survey-feedback-insight-extractor/">
+  <meta property="og:site_name" content="AlignAI Prompt Hub">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Survey &amp; Feedback Insight Extractor -- AlignAI Prompt Hub">
+  <meta name="twitter:description" content="Turn a pile of survey responses, NPS comments, support tickets, or review feedback into a structured insights report with themes, sentiment breakdown, priority actions, and quotable highlights. Works with any unstructured text feedback.">
+  <meta name="twitter:image" content="https://prompts.alignai.business/assets/og-image.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles.css">
+
+<!-- JSON-LD: HowTo structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Survey &amp; Feedback Insight Extractor",
+  "description": "Turn a pile of survey responses, NPS comments, support tickets, or review feedback into a structured insights report with themes, sentiment breakdown, priority actions, and quotable highlights. Works with any unstructured text feedback.",
+  "url": "https://prompts.alignai.business/prompts/survey-feedback-insight-extractor/",
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Claude"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "ChatGPT"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Gemini"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Copilot"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Copy the prompt",
+      "text": "Copy the AI prompt text optimized for your chosen model."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Paste into your AI tool",
+      "text": "Open Claude and paste the prompt."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Customize placeholders",
+      "text": "Replace any [bracketed placeholders] with your specific business details."
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="AlignAI home"><span style="font-family:'Space Mono',monospace;font-size:18px;font-weight:700;"><span style="color:rgba(250,251,252,0.4);">[</span><span style="color:#FAFBFC;">align</span><span style="color:#00C853;">.ai</span><span style="color:rgba(250,251,252,0.4);">]</span></span></a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="/" class="nav-link">Prompt Hub</a>
+        <a href="https://app.alignai.business" class="nav-link">Browse AI Tools</a>
+        <button class="btn-signin" id="btn-signin" type="button">Sign In</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <main class="site-main">
+
+<!-- ===== Back Link ===== -->
+<div class="section-inner">
+  <a href="javascript:history.back()" class="back-link" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;color:#00C853;text-decoration:none;margin-bottom:12px;">&larr; Back</a>
+</div>
+
+<!-- ===== Breadcrumb ===== -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/">Hub Home</a>
+  <span class="breadcrumb-sep">&gt;</span>
+  <a href="/category/data-and-reporting/">data-and-reporting</a>
+  <span class="breadcrumb-sep">&gt;</span>
+  <span class="breadcrumb-current">Survey &amp; Feedback Insight Extractor</span>
+</nav>
+
+<!-- ===== Prompt Header ===== -->
+<section class="prompt-header">
+  <div class="section-inner">
+    <h1 class="prompt-page-title">Survey &amp; Feedback Insight Extractor</h1>
+    <p class="prompt-subtitle">Turn a pile of survey responses, NPS comments, support tickets, or review feedback into a structured insights report with themes, sentiment breakdown, priority actions, and quotable highlights. Works with any unstructured text feedback.</p>
+    <div class="prompt-meta">
+      <span class="badge badge-beginner">Beginner</span>
+      <span class="badge badge-style">PASTE &amp; GO</span>
+      <span class="badge badge-value">Decision-making</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Pro Tip ===== -->
+<section class="prompt-protip">
+  <div class="section-inner">
+    <div class="callout">
+      <span class="callout-label">Pro tip</span>
+      <p>Dump in raw feedback — typos, shorthand, and all. AI handles messy data better than you think. The more responses, the more reliable the patterns.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Tags ===== -->
+<section class="prompt-tags-section">
+  <div class="section-inner">
+    <div class="tag-pills">
+      <span class="tag-pill">survey</span>
+      <span class="tag-pill">feedback</span>
+      <span class="tag-pill">NPS</span>
+      <span class="tag-pill">sentiment</span>
+      <span class="tag-pill">customer insights</span>
+      <span class="tag-pill">qualitative data</span>
+      <span class="tag-pill">reviews</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Model Variant Tabs ===== -->
+<section class="variants-section">
+  <div class="section-inner">
+    <h2 class="subsection-title">Prompt Variants by Model</h2>
+
+    <!-- Tab buttons -->
+    <div class="variant-tabs" role="tablist" aria-label="AI model variants">
+      <button
+        class="variant-tab active"
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel-claude"
+        data-tab="claude"
+        type="button"
+      >
+        Claude
+      </button>
+      <button
+        class="variant-tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-chatgpt"
+        data-tab="chatgpt"
+        type="button"
+      >
+        ChatGPT
+      </button>
+      <button
+        class="variant-tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-gemini"
+        data-tab="gemini"
+        type="button"
+      >
+        Gemini
+      </button>
+      <button
+        class="variant-tab"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-copilot"
+        data-tab="copilot"
+        type="button"
+      >
+        Copilot
+      </button>
+    </div>
+
+    <!-- Tab panels -->
+    <div
+      class="variant-panel active"
+      role="tabpanel"
+      id="panel-claude"
+    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">Claude</span>
+          <span class="model-version">Claude 4.x</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>You are a customer research analyst. I am going to give you raw feedback data from my customers. Analyze it and extract actionable insights.
+
+&lt;feedback_data&gt;
+[PASTE ALL FEEDBACK HERE — survey...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="survey-feedback-insight-extractor" data-model="claude">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>You are a customer research analyst. I am going to give you raw feedback data from my customers. Analyze it and extract actionable insights.
+
+&lt;feedback_data&gt;
+[PASTE ALL FEEDBACK HERE — survey...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="survey-feedback-insight-extractor"
+          data-model="claude"
+        >
+          <pre class="prompt-text-full"><code>You are a customer research analyst. I am going to give you raw feedback data from my customers. Analyze it and extract actionable insights.
+
+&lt;feedback_data&gt;
+[PASTE ALL FEEDBACK HERE — survey responses, NPS comments, reviews, support tickets, emails, whatever you have]
+&lt;/feedback_data&gt;
+
+&lt;context&gt;
+Feedback source: [NPS survey / customer support tickets / app store reviews / post-purchase survey / other]
+Total responses: [NUMBER]
+Time period: [e.g., &#34;last 90 days&#34;]
+Business type: [YOUR_BUSINESS_TYPE]
+&lt;/context&gt;
+
+Deliver:
+
+1. **Theme analysis** — group all feedback into 5-8 recurring themes. For each: theme name, frequency (% of responses), sentiment (positive/negative/mixed), and 2-3 representative quotes.
+
+2. **Sentiment breakdown** — overall positive/neutral/negative split with percentages.
+
+3. **Top 5 action items** — ranked by impact × frequency. For each: what the feedback says, what to do about it, and expected impact.
+
+4. **Hidden gems** — 2-3 insights that appear in only a few responses but signal an emerging trend or unmet need.
+
+5. **Quotable highlights** — 5 best customer quotes usable for marketing, testimonials, or internal presentations.
+
+Stay grounded in the actual data. Cite specific responses to support every finding.</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="survey-feedback-insight-extractor"
+          data-model="claude"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Claude handles very large text dumps well inside XML tags — paste hundreds of responses. Ask for output in markdown table format for easy copy-paste into reports or slide decks.
+        </div>
+      </div>
+    </div>
+    <div
+      class="variant-panel"
+      role="tabpanel"
+      id="panel-chatgpt"
+hidden    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">ChatGPT</span>
+          <span class="model-version">GPT-5</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>Act as a customer research analyst. I have a batch of raw customer feedback and I need you to find the patterns and tell me what to do about them.
+
+Feedback source: [NPS survey /...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="survey-feedback-insight-extractor" data-model="chatgpt">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>Act as a customer research analyst. I have a batch of raw customer feedback and I need you to find the patterns and tell me what to do about them.
+
+Feedback source: [NPS survey /...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="survey-feedback-insight-extractor"
+          data-model="chatgpt"
+        >
+          <pre class="prompt-text-full"><code>Act as a customer research analyst. I have a batch of raw customer feedback and I need you to find the patterns and tell me what to do about them.
+
+Feedback source: [NPS survey / support tickets / reviews / post-purchase survey]
+Number of responses: [NUMBER]
+Time period: [e.g., &#34;last 90 days&#34;]
+Business type: [YOUR_BUSINESS_TYPE]
+
+Here is the raw feedback:
+[PASTE ALL FEEDBACK]
+
+Analyze this and give me:
+
+1. Theme analysis — 5-8 recurring themes, each with: name, what % of responses mention it, sentiment, and 2-3 direct quotes.
+
+2. Sentiment breakdown — % positive, neutral, negative.
+
+3. Top 5 action items ranked by impact × frequency — what the feedback says and what I should do.
+
+4. Hidden gems — 2-3 low-frequency insights that signal emerging trends.
+
+5. Quotable highlights — 5 best customer quotes for marketing or internal use.
+
+Base everything on the actual responses. No assumptions.</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="survey-feedback-insight-extractor"
+          data-model="chatgpt"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Upload a CSV through Code Interpreter for structured analysis with charts. ChatGPT can generate sentiment distribution graphs and word clouds automatically.
+        </div>
+      </div>
+    </div>
+    <div
+      class="variant-panel"
+      role="tabpanel"
+      id="panel-gemini"
+hidden    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">Gemini</span>
+          <span class="model-version">Gemini 3 Pro</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>I have a batch of customer feedback I need analyzed.
+
+**Feedback source:** [NPS survey / support tickets / reviews / post-purchase survey]
+**Responses:**...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="survey-feedback-insight-extractor" data-model="gemini">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>I have a batch of customer feedback I need analyzed.
+
+**Feedback source:** [NPS survey / support tickets / reviews / post-purchase survey]
+**Responses:**...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="survey-feedback-insight-extractor"
+          data-model="gemini"
+        >
+          <pre class="prompt-text-full"><code>I have a batch of customer feedback I need analyzed.
+
+**Feedback source:** [NPS survey / support tickets / reviews / post-purchase survey]
+**Responses:** [NUMBER]
+**Time period:** [e.g., &#34;last 90 days&#34;]
+**Business type:** [YOUR_BUSINESS_TYPE]
+
+Here is the raw feedback:
+[PASTE FEEDBACK]
+
+Analyze it and deliver:
+1. Theme analysis — 5-8 themes with frequency %, sentiment, and 2-3 quotes each
+2. Sentiment breakdown — positive/neutral/negative percentages
+3. Top 5 prioritized action items (impact × frequency)
+4. Hidden gems — 2-3 low-frequency signals worth watching
+5. Quotable highlights — 5 best quotes for marketing or presentations
+
+Research whether the themes you find align with common complaints in my industry. Compare my sentiment distribution to industry averages if available.</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="survey-feedback-insight-extractor"
+          data-model="gemini"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Gemini can benchmark your feedback themes against real-time industry complaint data via search grounding. Share a Google Forms response sheet directly for seamless ingestion.
+        </div>
+      </div>
+    </div>
+    <div
+      class="variant-panel"
+      role="tabpanel"
+      id="panel-copilot"
+hidden    >
+      <div class="tab-content">
+        <div class="variant-header">
+          <span class="model-name">Copilot</span>
+          <span class="model-version">Copilot (Microsoft 365)</span>
+        </div>
+
+        <!-- Freshness stamp -->
+        <div class="freshness-stamp freshness-fresh">
+          <span>FRESH APR 2026</span>
+          <span class="freshness-dot"></span>
+        </div>
+
+        <!-- Preview: visible to all -->
+        <div class="prompt-preview">
+          <pre class="prompt-text-preview"><code>I have customer feedback that needs analyzing.
+
+Source: [NPS survey / support tickets / reviews / post-purchase...</code></pre>
+        </div>
+
+        <!-- Gated overlay -->
+        <div class="gated-overlay" data-prompt-id="survey-feedback-insight-extractor" data-model="copilot">
+          <div class="gated-overlay-blur">
+            <pre class="prompt-text-preview"><code>I have customer feedback that needs analyzing.
+
+Source: [NPS survey / support tickets / reviews / post-purchase...</code></pre>
+          </div>
+          <div class="gated-overlay-cta">
+            <p>Enter your email to unlock this prompt</p>
+            <p class="gate-value-line">Unlock this prompt + all 74 in the library &mdash; free, updated monthly, zero spam.</p>
+            <input type="email" class="gate-email-input" placeholder="you@example.com">
+            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+          </div>
+        </div>
+
+        <!-- Full prompt: gated -->
+        <div
+          class="gated-content"
+          data-prompt-id="survey-feedback-insight-extractor"
+          data-model="copilot"
+        >
+          <pre class="prompt-text-full"><code>I have customer feedback that needs analyzing.
+
+Source: [NPS survey / support tickets / reviews / post-purchase survey]
+Number of responses: [NUMBER]
+Time period: [last 90 days / other]
+Business type: [YOUR_BUSINESS_TYPE]
+
+Feedback:
+[PASTE ALL FEEDBACK]
+
+Analyze it and give me:
+1. 5-8 recurring themes — name, frequency %, sentiment, and 2-3 quotes each
+2. Overall sentiment split — % positive, neutral, negative
+3. Top 5 action items ranked by impact × frequency
+4. 2-3 hidden gems — low-frequency signals worth watching
+5. 5 best customer quotes usable for marketing
+
+Base everything on the actual feedback, not assumptions.</code></pre>
+        </div>
+
+        <button
+          class="btn-copy btn-copy-prompt"
+          data-prompt-id="survey-feedback-insight-extractor"
+          data-model="copilot"
+          type="button"
+        >
+          Copy Full Prompt
+        </button>
+
+        <div class="model-notes">
+          <strong>Notes:</strong> Copilot in Excel can process feedback data with pivot tables and sentiment tagging. Paste responses into a column, then ask Copilot to categorize and chart them — it generates the analysis in-sheet.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Related AI Tools ===== -->
+
+<!-- ===== Related Prompts ===== -->
+<section class="related-prompts-section">
+  <div class="section-inner">
+    <h2 class="subsection-title">More in data-and-reporting</h2>
+    <div class="prompt-list">
+      <a
+        href="/prompts/customer-churn-early-warning/"
+        class="prompt-card"
+      >
+        <div class="prompt-card-left">
+          <h3 class="prompt-card-title">Customer Churn Early Warning System</h3>
+          <p class="prompt-card-usecase">Analyze your customer data to identify churn risk patterns, build an early warning checklist, and...</p>
+        </div>
+        <div class="prompt-card-right">
+          <span class="badge badge-intermediate">Intermediate</span>
+          <span class="badge badge-value">Revenue-protecting</span>
+        </div>
+      </a>
+      <a
+        href="/prompts/kpi-dashboard-blueprint/"
+        class="prompt-card"
+      >
+        <div class="prompt-card-left">
+          <h3 class="prompt-card-title">KPI Dashboard Blueprint</h3>
+          <p class="prompt-card-usecase">Generate a complete KPI dashboard specification from your business goals — what to track, how to...</p>
+        </div>
+        <div class="prompt-card-right">
+          <span class="badge badge-intermediate">Intermediate</span>
+          <span class="badge badge-value">Decision-making</span>
+        </div>
+      </a>
+      <a
+        href="/prompts/revenue-forecasting-model/"
+        class="prompt-card"
+      >
+        <div class="prompt-card-left">
+          <h3 class="prompt-card-title">Revenue Forecasting Model Builder</h3>
+          <p class="prompt-card-usecase">Build a multi-scenario revenue forecast from your historical data — baseline, optimistic, and...</p>
+        </div>
+        <div class="prompt-card-right">
+          <span class="badge badge-expert">Expert</span>
+          <span class="badge badge-value">Revenue-driving</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Request Similar ===== -->
+<section class="request-section">
+  <div class="section-inner">
+    <p class="section-subtitle">Don&rsquo;t see what you need? <button class="btn-link" id="btn-request-similar" type="button">Request a prompt</button> tailored to your use case.</p>
+  </div>
+</section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-tagline">
+        Built by <strong>AlignAI</strong> &mdash; They rank who pays. We score what works.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast notification container -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/assets/auth-gate.js"></script>
+  <script src="/assets/analytics.js"></script>
+<script>
+(function() {
+  // Tab switching
+  var tabs = document.querySelectorAll('.variant-tab');
+  var panels = document.querySelectorAll('.variant-panel');
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var target = tab.dataset.tab;
+
+      tabs.forEach(function(t) {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      panels.forEach(function(p) {
+        if (p.id === 'panel-' + target) {
+          p.classList.add('active');
+          p.removeAttribute('hidden');
+        } else {
+          p.classList.remove('active');
+          p.setAttribute('hidden', '');
+        }
+      });
+    });
+  });
+
+  // Toast helper
+  function showToast(msg) {
+    var toast = document.getElementById('toast');
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 3000);
+  }
+
+  // Copy button (gated via auth-gate.js)
+  document.querySelectorAll('.btn-copy-prompt').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var panel = btn.closest('.variant-panel');
+      var fullText = panel.querySelector('.prompt-text-full code');
+      if (fullText) {
+        navigator.clipboard.writeText(fullText.textContent).then(function() {
+          showToast('Prompt copied to clipboard');
+        });
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

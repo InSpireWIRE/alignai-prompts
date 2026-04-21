@@ -99,10 +99,24 @@ h3 {
   padding: 16px 32px;
 }
 
+.logo-lockup {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
 .logo {
   text-decoration: none;
 }
 .logo:hover { text-decoration: none; }
+
+.logo-descriptor {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: #94A3B8;
+  font-weight: 400;
+  white-space: nowrap;
+}
 
 .header-nav {
   display: flex;
@@ -234,14 +248,17 @@ h3 {
   font-size: 16px;
   padding: 14px 20px;
   background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1.5px solid rgba(0,200,83,0.45);
   border-radius: 12px;
   color: #FAFBFC;
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
-.search-input::placeholder { color: rgba(250,251,252,0.3); }
-.search-input:focus { border-color: rgba(0,200,83,0.4); }
+.search-input::placeholder { color: #94A3B8; }
+.search-input:focus {
+  border-color: #00C853;
+  box-shadow: 0 0 0 2px rgba(0,200,83,0.15);
+}
 
 .search-btn {
   display: none;
@@ -1254,6 +1271,12 @@ label {
   padding: 0 32px;
 }
 
+.footer-brand {
+  font-size: 14px;
+  color: rgba(250,251,252,0.5);
+  margin-bottom: 0;
+}
+
 .footer-tagline {
   font-size: 14px;
   color: rgba(250,251,252,0.5);
@@ -1264,6 +1287,8 @@ label {
   color: rgba(250,251,252,0.6);
   font-weight: 600;
 }
+
+.footer-nav a:hover { color: #00C853 !important; }
 
 .footer-links { display: none; }
 .footer-copy { display: none; }
@@ -1299,6 +1324,7 @@ label {
     padding: 12px 16px;
   }
   .header-nav { gap: 12px; }
+  .logo-descriptor { display: none; }
 
   .hero { padding: 48px 16px 20px; }
   .hero-title { font-size: 36px; }
@@ -1444,3 +1470,19 @@ label {
   padding: 0 2px;
   border-radius: 2px;
 }
+
+/* ===== Brand Logo (v4) ===== */
+.brand-logo {
+  font-family: 'Space Mono', 'Courier New', monospace;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  display: inline-block;
+}
+.brand-logo__bracket  { color: #94A3B8; }
+.brand-logo__align    { color: #FAFBFC; }
+.brand-logo__ai       { color: #00C853; }
+.brand-logo__business { color: #94A3B8; }
+.brand-logo--full  { font-size: clamp(24px, 4vw, 42px); }
+.brand-logo--short { font-size: clamp(20px, 3vw, 36px); }
+.brand-logo--on-light .brand-logo__align { color: #0D1B2A; }
