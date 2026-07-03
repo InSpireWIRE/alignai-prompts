@@ -678,6 +678,41 @@ h3 {
 .variant-panel { display: none; }
 .variant-panel.active { display: block; }
 
+/* Sub-variant segmented toggle (e.g. Opus 4.8 | Fable 5 inside the Claude tab) */
+.subvariant-toggle {
+  display: inline-flex;
+  gap: 2px;
+  margin: 22px 0 4px;
+  padding: 3px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+}
+
+.subvariant-tab {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  padding: 7px 16px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #FAFBFC;
+  opacity: 0.55;
+  cursor: pointer;
+  transition: opacity 0.2s, background 0.2s, color 0.2s;
+}
+.subvariant-tab:hover { opacity: 0.85; }
+.subvariant-tab.active {
+  opacity: 1;
+  background: #00C853;
+  color: #0D1B2A;
+}
+
+.subvariant-panel { display: none; }
+.subvariant-panel.active { display: block; }
+
 .tab-content {
   padding: 28px 0;
 }

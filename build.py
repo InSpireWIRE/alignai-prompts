@@ -166,6 +166,63 @@ def friendly_style(style: Optional[str]) -> Optional[str]:
 
 
 # ---------------------------------------------------------------------------
+# Model sub-variant helpers
+# ---------------------------------------------------------------------------
+
+def short_model_label(model_version: Optional[str], model_name: str) -> str:
+    """
+    Short label for the sub-variant toggle inside a model tab.
+    Strips the model-family prefix so "Claude Opus 4.8" -> "Opus 4.8" and
+    "Claude Fable 5" -> "Fable 5". Falls back to the model name.
+    """
+    if not model_version:
+        return model_name
+    label = model_version.strip()
+    for prefix in ("Claude ", "OpenAI ", "Google ", "Microsoft "):
+        if label.startswith(prefix):
+            return label[len(prefix):]
+    return label
+
+
+def _subvariant_sort_key(v: dict) -> int:
+    """Order sub-variants within a model tab: Opus first, then Fable, then rest."""
+    mv = (v.get("model_version") or "").lower()
+    if "opus" in mv:
+        return 0
+    if "fable" in mv:
+        return 1
+    return 2
+
+
+def group_variants(variants: list) -> list:
+    """
+    Collapse a flat variant list into one group per model_name, preserving the
+    Claude→ChatGPT→Gemini→Copilot tab order and, within a model, ordering
+    sub-variants (e.g. Claude Opus 4.8 before Claude Fable 5).
+
+    Returns a list of dicts: {model_name, slug, subvariants[], multi(bool)}.
+    """
+    model_order = {"claude": 0, "chatgpt": 1, "gemini": 2, "copilot": 3}
+    groups: dict = {}
+    for v in variants:
+        mn = v.get("model_name") or "Unknown"
+        groups.setdefault(mn, []).append(v)
+
+    ordered = []
+    for mn in sorted(groups, key=lambda m: model_order.get(m.lower(), 99)):
+        subs = sorted(groups[mn], key=_subvariant_sort_key)
+        for sv in subs:
+            sv["short_label"] = short_model_label(sv.get("model_version"), mn)
+        ordered.append({
+            "model_name": mn,
+            "slug": mn.lower().replace(" ", "-"),
+            "subvariants": subs,
+            "multi": len(subs) > 1,
+        })
+    return ordered
+
+
+# ---------------------------------------------------------------------------
 # Data organisation helpers
 # ---------------------------------------------------------------------------
 
@@ -389,6 +446,10 @@ def build_prompt_pages(env: Environment, ctx: dict) -> int:
         model_order = {"claude": 0, "chatgpt": 1, "gemini": 2, "copilot": 3}
         variants.sort(key=lambda v: model_order.get((v.get("model_name") or "").lower(), 99))
 
+        # Group into one tab per model_name, with ordered sub-variants inside
+        # each model (e.g. Claude Opus 4.8 before Claude Fable 5).
+        variant_groups = group_variants(variants)
+
         cat_slug = prompt.get("category_slug", "")
         cat = ctx["categories"].get(cat_slug, {})
 
@@ -404,7 +465,7 @@ def build_prompt_pages(env: Environment, ctx: dict) -> int:
         # AEO-friendly meta description
         title = prompt.get("title", "Prompt")
         use_case = (prompt.get("use_case") or "").strip()
-        model_names = ", ".join(v.get("model_name", "") for v in variants if v.get("model_name"))
+        model_names = ", ".join(g["model_name"] for g in variant_groups if g.get("model_name"))
         if use_case:
             desc = f"{title} AI prompt for small business. {use_case}"
         else:
@@ -417,6 +478,7 @@ def build_prompt_pages(env: Environment, ctx: dict) -> int:
             canonical_url=f"{SITE_URL}/prompts/{slug}/",
             prompt=prompt,
             variants=variants,
+            variant_groups=variant_groups,
             category=cat,
             related_prompts=related,
             total_prompts=ctx["totals"]["total_prompts"],

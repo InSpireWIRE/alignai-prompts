@@ -22,13 +22,13 @@
       "author": { "@id": "{{ SITE_URL }}/#organization" },
       "publisher": { "@id": "{{ SITE_URL }}/#organization" },
       "supply": [
-        {% for v in variants %}
-        { "@type": "HowToSupply", "name": "{{ v.model_name | e }} account" }{{ "," if not loop.last }}
+        {% for g in variant_groups %}
+        { "@type": "HowToSupply", "name": "{{ g.model_name | e }} account" }{{ "," if not loop.last }}
         {% endfor %}
       ],
       "tool": [
-        {% for v in variants %}
-        { "@type": "HowToTool", "name": "{{ v.model_name | e }}" }{{ "," if not loop.last }}
+        {% for g in variant_groups %}
+        { "@type": "HowToTool", "name": "{{ g.model_name | e }}" }{{ "," if not loop.last }}
         {% endfor %}
       ],
       "step": [
@@ -50,7 +50,7 @@
           "@type": "HowToStep",
           "position": 3,
           "name": "Paste into your AI tool",
-          "text": "Open {{ variants[0].model_name | default('your AI tool') | e }} (or the model you chose) and paste the prompt into a new chat.",
+          "text": "Open {{ variant_groups[0].model_name | default('your AI tool') | e }} (or the model you chose) and paste the prompt into a new chat.",
           "url": "{{ canonical_url }}#variants"
         },
         {
@@ -114,7 +114,7 @@
           "name": "Which AI models is this prompt tested on?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "This prompt is field-tested on {% for v in variants %}{{ v.model_name | e }}{% if not loop.last %}{% if loop.revindex == 2 %} and {% else %}, {% endif %}{% endif %}{% endfor %}. Each model has its own optimized variant on this page."
+            "text": "This prompt is field-tested on {% for g in variant_groups %}{{ g.model_name | e }}{% if not loop.last %}{% if loop.revindex == 2 %} and {% else %}, {% endif %}{% endif %}{% endfor %}. Each model has its own optimized variant on this page."
           }
         },
         {
@@ -235,108 +235,136 @@
   <div class="section-inner">
     <h2 class="subsection-title">Prompt Variants by Model</h2>
 
-    <!-- Tab buttons -->
+    <!-- Tab buttons: one per model family -->
     <div class="variant-tabs" role="tablist" aria-label="AI model variants">
-      {% for v in variants %}
+      {% for g in variant_groups %}
       <button
         class="variant-tab{% if loop.first %} active{% endif %}"
         role="tab"
         aria-selected="{{ 'true' if loop.first else 'false' }}"
-        aria-controls="panel-{{ v.model_name | lower | replace(' ', '-') }}"
-        data-tab="{{ v.model_name | lower | replace(' ', '-') }}"
+        aria-controls="panel-{{ g.slug }}"
+        data-tab="{{ g.slug }}"
         type="button"
       >
-        {{ v.model_name }}
+        {{ g.model_name }}
       </button>
       {% endfor %}
     </div>
 
-    <!-- Tab panels -->
-    {% for v in variants %}
+    <!-- Tab panels: one per model family -->
+    {% for g in variant_groups %}
     <div
       class="variant-panel{% if loop.first %} active{% endif %}"
       role="tabpanel"
-      id="panel-{{ v.model_name | lower | replace(' ', '-') }}"
+      id="panel-{{ g.slug }}"
       {% if not loop.first %}hidden{% endif %}
     >
-      <div class="tab-content">
-        <div class="variant-header">
-          <span class="model-name">{{ v.model_name }}</span>
-          {% if v.model_version %}
-          <span class="model-version">{{ v.model_version }}</span>
+      {% if g.multi %}
+      <!-- Sub-variant selector (e.g. Opus 4.8 | Fable 5), shown only when a
+           model family has more than one sub-variant. -->
+      <div class="subvariant-toggle" role="tablist" aria-label="{{ g.model_name }} model versions">
+        {% for sv in g.subvariants %}
+        <button
+          class="subvariant-tab{% if loop.first %} active{% endif %}"
+          role="tab"
+          aria-selected="{{ 'true' if loop.first else 'false' }}"
+          aria-controls="subpanel-{{ g.slug }}-{{ loop.index0 }}"
+          data-subtab="subpanel-{{ g.slug }}-{{ loop.index0 }}"
+          type="button"
+        >
+          {{ sv.short_label }}
+        </button>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% for sv in g.subvariants %}
+      <div
+        class="subvariant-panel{% if loop.first %} active{% endif %}"
+        role="tabpanel"
+        id="subpanel-{{ g.slug }}-{{ loop.index0 }}"
+        {% if not loop.first %}hidden{% endif %}
+      >
+        <div class="tab-content">
+          <div class="variant-header">
+            <span class="model-name">{{ g.model_name }}</span>
+            {% if sv.model_version %}
+            <span class="model-version">{{ sv.model_version }}</span>
+            {% endif %}
+          </div>
+
+          <!-- Freshness stamp -->
+          <div class="freshness-stamp freshness-{{ sv.freshness_class | default('stale') }}">
+            <span>{{ sv.freshness_date | default('UNVERIFIED') }}</span>
+            <span class="freshness-dot"></span>
+          </div>
+
+          <!-- Preview: visible to all -->
+          <div class="prompt-preview">
+            <pre class="prompt-text-preview"><code>{{ sv.prompt_text | prompt_preview }}</code></pre>
+          </div>
+
+          <!-- Gated overlay -->
+          <div class="gated-overlay" data-prompt-id="{{ prompt.slug }}" data-model="{{ g.model_name | lower }}">
+            <div class="gated-overlay-blur">
+              <pre class="prompt-text-preview"><code>{{ sv.prompt_text | prompt_preview }}</code></pre>
+            </div>
+            <div class="gated-overlay-cta">
+              <p class="gate-value-line">Unlock this prompt + all {{ total_prompts }} in the library &mdash; free, updated monthly, zero spam.</p>
+              <input type="email" class="gate-email-input" placeholder="you@example.com">
+              <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
+              <p class="gate-explainer" style="font-size: 12px; color: #78909C; margin-top: 0.75rem; line-height: 1.5;">
+                Your email unlocks all {{ total_prompts }} prompts instantly. No password, no signup — just your email.
+              </p>
+            </div>
+          </div>
+
+          <!-- Copy button — TOP (duplicate of bottom button) -->
+          <button
+            class="btn-copy btn-copy-prompt btn-primary"
+            data-prompt-id="{{ prompt.slug }}"
+            data-model="{{ g.model_name | lower }}"
+            type="button"
+            style="margin-bottom: 12px;"
+          >
+            Copy Full Prompt
+          </button>
+
+          <!-- Full prompt: gated -->
+          <div
+            class="gated-content"
+            data-prompt-id="{{ prompt.slug }}"
+            data-model="{{ g.model_name | lower }}"
+          >
+            <pre class="prompt-text-full"><code>{{ sv.prompt_text | e }}</code></pre>
+          </div>
+
+          <!-- Collapse/expand toggle -->
+          <button class="btn-toggle-prompt" type="button"
+                  style="display: block; margin: 8px auto 0; background: transparent; border: 1px solid #37474F;
+                         color: #78909C; padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer;
+                         font-family: 'DM Sans', sans-serif;">
+            Collapse prompt &#9650;
+          </button>
+
+          <button
+            class="btn-copy btn-copy-prompt btn-primary"
+            data-prompt-id="{{ prompt.slug }}"
+            data-model="{{ g.model_name | lower }}"
+            type="button"
+            style="margin-top: 12px;"
+          >
+            Copy Full Prompt
+          </button>
+
+          {% if sv.model_notes %}
+          <div class="model-notes">
+            <strong>Notes:</strong> {{ sv.model_notes }}
+          </div>
           {% endif %}
         </div>
-
-        <!-- Freshness stamp -->
-        <div class="freshness-stamp freshness-{{ v.freshness_class | default('stale') }}">
-          <span>{{ v.freshness_date | default('UNVERIFIED') }}</span>
-          <span class="freshness-dot"></span>
-        </div>
-
-        <!-- Preview: visible to all -->
-        <div class="prompt-preview">
-          <pre class="prompt-text-preview"><code>{{ v.prompt_text | prompt_preview }}</code></pre>
-        </div>
-
-        <!-- Gated overlay -->
-        <div class="gated-overlay" data-prompt-id="{{ prompt.slug }}" data-model="{{ v.model_name | lower }}">
-          <div class="gated-overlay-blur">
-            <pre class="prompt-text-preview"><code>{{ v.prompt_text | prompt_preview }}</code></pre>
-          </div>
-          <div class="gated-overlay-cta">
-            <p class="gate-value-line">Unlock this prompt + all {{ total_prompts }} in the library &mdash; free, updated monthly, zero spam.</p>
-            <input type="email" class="gate-email-input" placeholder="you@example.com">
-            <button class="btn-primary btn-gate-unlock" type="button">Unlock Prompt</button>
-            <p class="gate-explainer" style="font-size: 12px; color: #78909C; margin-top: 0.75rem; line-height: 1.5;">
-              Your email unlocks all {{ total_prompts }} prompts instantly. No password, no signup — just your email.
-            </p>
-          </div>
-        </div>
-
-        <!-- Copy button — TOP (duplicate of bottom button) -->
-        <button
-          class="btn-copy btn-copy-prompt btn-primary"
-          data-prompt-id="{{ prompt.slug }}"
-          data-model="{{ v.model_name | lower }}"
-          type="button"
-          style="margin-bottom: 12px;"
-        >
-          Copy Full Prompt
-        </button>
-
-        <!-- Full prompt: gated -->
-        <div
-          class="gated-content"
-          data-prompt-id="{{ prompt.slug }}"
-          data-model="{{ v.model_name | lower }}"
-        >
-          <pre class="prompt-text-full"><code>{{ v.prompt_text | e }}</code></pre>
-        </div>
-
-        <!-- Collapse/expand toggle -->
-        <button class="btn-toggle-prompt" type="button"
-                style="display: block; margin: 8px auto 0; background: transparent; border: 1px solid #37474F;
-                       color: #78909C; padding: 6px 16px; border-radius: 4px; font-size: 12px; cursor: pointer;
-                       font-family: 'DM Sans', sans-serif;">
-          Collapse prompt &#9650;
-        </button>
-
-        <button
-          class="btn-copy btn-copy-prompt btn-primary"
-          data-prompt-id="{{ prompt.slug }}"
-          data-model="{{ v.model_name | lower }}"
-          type="button"
-          style="margin-top: 12px;"
-        >
-          Copy Full Prompt
-        </button>
-
-        {% if v.model_notes %}
-        <div class="model-notes">
-          <strong>Notes:</strong> {{ v.model_notes }}
-        </div>
-        {% endif %}
       </div>
+      {% endfor %}
     </div>
     {% endfor %}
   </div>
@@ -356,7 +384,7 @@
     <details class="faq-item">
       <summary>Which AI models is this prompt tested on?</summary>
       <p>This prompt is field-tested on
-        {% for v in variants %}{{ v.model_name }}{% if not loop.last %}{% if loop.revindex == 2 %} and {% else %}, {% endif %}{% endif %}{% endfor %}.
+        {% for g in variant_groups %}{{ g.model_name }}{% if not loop.last %}{% if loop.revindex == 2 %} and {% else %}, {% endif %}{% endif %}{% endfor %}.
         Each model has its own optimized variant above.
       </p>
     </details>
@@ -463,6 +491,34 @@
     });
   });
 
+  // Sub-variant switching (e.g. Opus 4.8 | Fable 5 inside the Claude tab).
+  // Scoped per model panel so toggles in different tabs don't interfere.
+  document.querySelectorAll('.subvariant-toggle').forEach(function(toggle) {
+    var group = toggle.closest('.variant-panel');
+    var subtabs = toggle.querySelectorAll('.subvariant-tab');
+    subtabs.forEach(function(subtab) {
+      subtab.addEventListener('click', function() {
+        var target = subtab.dataset.subtab;
+        subtabs.forEach(function(t) {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        subtab.classList.add('active');
+        subtab.setAttribute('aria-selected', 'true');
+
+        group.querySelectorAll('.subvariant-panel').forEach(function(sp) {
+          if (sp.id === target) {
+            sp.classList.add('active');
+            sp.removeAttribute('hidden');
+          } else {
+            sp.classList.remove('active');
+            sp.setAttribute('hidden', '');
+          }
+        });
+      });
+    });
+  });
+
   // Toast helper
   function showToast(msg) {
     var toast = document.getElementById('toast');
@@ -474,7 +530,7 @@
   // Collapse/expand prompt text
   document.querySelectorAll('.btn-toggle-prompt').forEach(function(btn) {
     btn.addEventListener('click', function() {
-      var panel = btn.closest('.variant-panel');
+      var panel = btn.closest('.subvariant-panel') || btn.closest('.variant-panel');
       var promptText = panel.querySelector('.prompt-text-full');
       if (promptText) {
         if (promptText.style.display === 'none') {
@@ -491,7 +547,7 @@
   // Copy button (gated via auth-gate.js)
   document.querySelectorAll('.btn-copy-prompt').forEach(function(btn) {
     btn.addEventListener('click', function() {
-      var panel = btn.closest('.variant-panel');
+      var panel = btn.closest('.subvariant-panel') || btn.closest('.variant-panel');
       var fullText = panel.querySelector('.prompt-text-full code');
       if (fullText) {
         navigator.clipboard.writeText(fullText.textContent).then(function() {
