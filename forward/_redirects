@@ -1,0 +1,5 @@
+/prompts/:slug/ https://unbought.ai/prompts/:slug 301
+/prompts/:slug https://unbought.ai/prompts/:slug 301
+/category/:slug/ https://unbought.ai/prompts/category/:slug 301
+/category/:slug https://unbought.ai/prompts/category/:slug 301
+/* https://unbought.ai/prompts 301
